@@ -3,6 +3,23 @@ const { Resend } = require('resend');
 const TO_EMAIL = 'bisyriy@gmail.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const hits = new Map(); // ip -> { count, resetAt }
+
+// Best-effort per-IP throttle. Resets on cold start and isn't shared across
+// instances, but that's enough to blunt casual spam without adding a dependency.
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = hits.get(ip);
+  if (!entry || now > entry.resetAt) {
+    hits.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RATE_LIMIT;
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -12,6 +29,11 @@ module.exports = async function handler(req, res) {
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY is not set');
     return res.status(500).json({ error: 'Email service is not configured yet.' });
+  }
+
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket.remoteAddress || 'unknown';
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many messages sent. Please try again later.' });
   }
 
   const { name, email, message, company } = req.body || {};

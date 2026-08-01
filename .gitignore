@@ -1,0 +1,4 @@
+node_modules/
+_reference/
+_repro*
+error.png

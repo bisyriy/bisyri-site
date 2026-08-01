@@ -1,0 +1,18 @@
+<svg width="100%" viewBox="0 0 690 690" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Sharp B Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Minimal angular B logo on dark rounded square</desc>
+
+  <rect width="680" height="680" fill="#f0f0f0" style="fill:rgb(240, 240, 240);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="140" y="140" width="400" height="400" rx="60" fill="#1a1a1a" style="fill:rgb(26, 26, 26);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!--
+    B built from clean filled paths only.
+    Stem: x=215 to x=275, y=195 to y=485
+    Top bump: x=275 to x=440, y=195 to y=335  (right edge angled)
+    Bottom bump: x=275 to x=455, y=335 to y=485 (right edge angled)
+    Inner counters cut out using fill-rule evenodd
+  -->
+
+  <path fill-rule="evenodd" fill="#ffffff" d="&#10;    M215,195&#10;    L215,485&#10;    L390,485&#10;    Q460,485 460,415&#10;    Q460,368 422,348&#10;    Q455,328 455,270&#10;    Q455,195 385,195&#10;    Z&#10;&#10;    M275,240&#10;    L275,318&#10;    L378,318&#10;    Q408,318 408,270&#10;    Q408,240 378,240&#10;    Z&#10;&#10;    M275,362&#10;    L275,440&#10;    L385,440&#10;    Q415,440 415,400&#10;    Q415,362 385,362&#10;    Z&#10;  " style="fill:rgb(255, 255, 255);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>

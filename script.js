@@ -65,6 +65,42 @@
     else if (mq.addListener) mq.addListener(onDesktop); // Safari < 14
   }
 
+  /* ---- contact form ---- */
+  var cform = document.getElementById('contactForm');
+  if (cform) {
+    var cstatus = cform.querySelector('.cf-status');
+    cform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = cform.querySelector('button[type="submit"]');
+      var data = {
+        name: cform.name.value.trim(),
+        email: cform.email.value.trim(),
+        message: cform.message.value.trim(),
+        company: cform.company.value
+      };
+      cstatus.textContent = 'Sending…';
+      cstatus.className = 'cf-status';
+      btn.disabled = true;
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        return r.json().then(function (body) { return { ok: r.ok, body: body }; });
+      }).then(function (res) {
+        if (!res.ok) throw new Error(res.body && res.body.error);
+        cstatus.textContent = 'Thanks — I\'ll get back to you soon.';
+        cstatus.classList.add('ok');
+        cform.reset();
+      }).catch(function (err) {
+        cstatus.textContent = (err && err.message) || 'Something went wrong — please email me directly.';
+        cstatus.classList.add('err');
+      }).finally(function () {
+        btn.disabled = false;
+      });
+    });
+  }
+
   /* ---- back to top ---- */
   var totop = document.querySelector('.totop');
   if (totop) {

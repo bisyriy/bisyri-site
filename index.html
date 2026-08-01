@@ -148,8 +148,21 @@
 <section class="contact wrap reveal" id="contact">
   <h2>Got a project in <em>mind?</em></h2>
   <p>Tell me what you need — I'll reply with a clear scope and quote.</p>
+
+  <form id="contactForm" class="cform" novalidate>
+    <div class="cform-row">
+      <label class="cf-field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+      <label class="cf-field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <label class="cf-field"><span>Message</span><textarea name="message" rows="5" required placeholder="What are you looking to build?"></textarea></label>
+    <label class="cf-hp" aria-hidden="true">Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+    <button class="btn primary" type="submit">Send message →</button>
+    <p class="cf-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="cf-divider">or reach me directly</p>
   <div class="cta">
-    <a class="btn primary" href="mailto:bisyriy@gmail.com">Email me →</a>
+    <a class="btn ghost" href="mailto:bisyriy@gmail.com">Email me →</a>
     <a class="btn ghost" href="https://linkedin.com/in/bisyriy" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </section>

@@ -13,7 +13,7 @@
   .bar nav{font-family:var(--mono);font-size:12.5px;color:var(--sub);display:flex;gap:20px}
   .bar nav a{text-decoration:none;transition:color .15s}.bar nav a:hover{color:var(--indigo)}
   @media(max-width:640px){.bar nav{display:none}}
-  .hero{padding:84px 0 54px}
+  .hero{padding-top:84px;padding-bottom:54px}
   .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--indigo);text-transform:uppercase;margin-bottom:22px}
   .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,6.4vw,68px);line-height:1.02;letter-spacing:-.03em;max-width:15ch}
   .hero h1 em{font-style:normal;color:var(--indigo)}
@@ -23,7 +23,7 @@
   .stat .n{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.02em}
   .stat .l{font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;margin-top:6px}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .sec{padding:62px 0 0}
+  .sec{padding-top:62px}
   .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
   .sec-head .idx{font-family:var(--mono);font-size:12.5px;color:var(--indigo)}
   .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,28px);letter-spacing:-.02em}
@@ -79,7 +79,7 @@
   .approach .row div{min-width:150px}
   .approach .row .k{font-family:var(--mono);font-size:11.5px;color:#7E84F0;text-transform:uppercase;letter-spacing:.05em}
   .approach .row .v{margin-top:5px;font-size:14.5px;color:#EDEef2}
-  .contact{padding:74px 0 90px;text-align:center}
+  .contact{padding-top:74px;padding-bottom:90px;text-align:center}
   .contact h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,46px);letter-spacing:-.025em;line-height:1.05}
   .contact h2 em{font-style:normal;color:var(--indigo)}
   .contact p{margin-top:16px;color:var(--sub)}

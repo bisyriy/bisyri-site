@@ -71,6 +71,7 @@
   .metric{font-family:var(--mono);font-size:11.5px;color:var(--ink);background:var(--indigo-soft);border:1px solid #DAD8FA;border-radius:7px;padding:7px 10px;margin-top:12px}
   .visit{margin-top:13px;font-family:var(--mono);font-size:12px;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
   .visit:hover{color:var(--indigo);border-color:var(--indigo)}.visit .arr{transition:transform .15s}.visit:hover .arr{transform:translateX(3px)}
+.work-more{margin-top:36px;text-align:center}
   .approach{margin-top:18px;background:var(--ink);color:#EDEef2;border-radius:16px;padding:clamp(28px,4vw,46px)}
   .approach .eyebrow{color:#A6A0F7}
   .approach h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-.02em;max-width:24ch;line-height:1.15}

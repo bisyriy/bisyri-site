@@ -101,6 +101,23 @@
     });
   }
 
+  /* ---- reading progress bar ---- */
+  var rpBar = document.querySelector('.read-progress');
+  if (rpBar) {
+    var artBody = document.getElementById('article');
+    function updateProgress() {
+      if (!artBody) return;
+      var rect = artBody.getBoundingClientRect();
+      var visible = -rect.top;
+      var total = artBody.offsetHeight - window.innerHeight;
+      var pct = total > 0 ? Math.min(100, Math.max(0, (visible / total) * 100)) : 0;
+      rpBar.style.width = pct + '%';
+      rpBar.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
   /* ---- back to top ---- */
   var totop = document.querySelector('.totop');
   if (totop) {

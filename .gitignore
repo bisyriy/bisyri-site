@@ -6,3 +6,6 @@ error.png
 .vercel
 .env*
 CLAUDE.md
+
+video/node_modules/
+video/out/

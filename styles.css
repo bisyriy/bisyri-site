@@ -161,6 +161,53 @@
 .article-cta p{margin-top:14px;color:#AFB4C0;font-size:15.5px;max-width:52ch;margin-inline:auto}
 .article-cta .cta{margin-top:24px}
 
+/* ===== AEO animated explainer slideshow ===== */
+.aeo-slides{position:relative;background:#0F1014;border-radius:18px;overflow:hidden;margin:2.8em 0}
+.aeo-slides .sp{position:absolute;top:0;left:0;height:3px;background:var(--indigo);z-index:5;border-radius:0 2px 2px 0;width:0%}
+.slide-track{display:flex;will-change:transform;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.slide{flex:none;width:100%;padding:36px 40px 20px;box-sizing:border-box;min-height:300px}
+.slide-nav{display:flex;align-items:center;justify-content:center;gap:12px;padding:0 40px 22px}
+.slide-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.18);border:0;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.slide-dot.on{background:var(--indigo);transform:scale(1.35)}
+.slide-arrow{background:none;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.4);cursor:pointer;font-size:13px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;transition:border-color .15s,color .15s;line-height:1}
+.slide-arrow:hover{border-color:var(--indigo);color:var(--indigo)}
+/* shared slide typography */
+.sl-tag{font-family:var(--mono);font-size:11px;color:#A6A0F7;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+.sl-h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,4.5vw,36px);color:#EDEef2;letter-spacing:-.025em;line-height:1.05;margin-bottom:12px}
+.sl-h1 em{font-style:normal;color:var(--indigo)}
+.sl-sub{font-family:var(--body);font-size:14.5px;color:#AFB4C0;line-height:1.55;margin-bottom:20px}
+.sl-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sl-chip{font-family:var(--mono);font-size:11px;color:#5B6270;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:5px 12px}
+/* slide 2 — compare */
+.sl-cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.sl-col{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:16px 18px}
+.sl-col.accent{border-color:rgba(79,70,229,.4)}
+.sl-col-h{font-family:var(--display);font-weight:600;font-size:14px;color:#EDEef2;margin-bottom:10px}
+.sl-col-item{font-family:var(--body);font-size:12.5px;color:#AFB4C0;line-height:1.5;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;gap:8px;align-items:flex-start}
+.sl-col-item:last-child{border-bottom:0}
+.sl-dot-mark{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.sl-quote{font-family:var(--body);font-size:13px;color:#EDEef2;font-style:italic;background:rgba(79,70,229,.1);border-left:2px solid var(--indigo);border-radius:0 8px 8px 0;padding:11px 15px;line-height:1.6}
+.sl-quote em{font-style:normal;color:#A6A0F7}
+/* slide 3 & 4 — list / grid */
+.sl-list,.sl-grid{display:flex;flex-direction:column;gap:8px}
+.sl-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sl-item{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:12px 14px}
+.sl-num{font-family:var(--mono);font-size:11px;color:var(--indigo);font-weight:700;flex-shrink:0;width:18px;padding-top:2px}
+.sl-item-h{font-family:var(--display);font-weight:600;font-size:13.5px;color:#EDEef2;line-height:1.3}
+.sl-item-d{font-family:var(--body);font-size:12px;color:#AFB4C0;margin-top:3px;line-height:1.45}
+/* slide 5 — CTA */
+.sl-cta{text-align:center;padding:10px 0 6px}
+.sl-cta-h{font-family:var(--display);font-weight:700;font-size:clamp(22px,4vw,32px);color:#EDEef2;letter-spacing:-.025em;line-height:1.1;margin-bottom:10px}
+.sl-cta-h em{font-style:normal;color:var(--indigo)}
+.sl-cta-p{font-family:var(--body);font-size:14px;color:#AFB4C0;line-height:1.6;margin-bottom:20px;max-width:44ch;margin-inline:auto}
+.sl-cta-btn{display:inline-flex;align-items:center;min-height:44px;background:var(--indigo);color:#fff;font-family:var(--mono);font-size:13px;font-weight:700;padding:12px 28px;border-radius:999px;text-decoration:none;letter-spacing:.02em;transition:opacity .15s}
+.sl-cta-btn:hover{opacity:.85}
+@media(max-width:580px){
+  .slide{padding:26px 22px 16px}
+  .sl-cmp,.sl-grid{grid-template-columns:1fr}
+  .slide-nav{padding:0 22px 18px}
+}
+
 /* ===== PWA/UX polish (added) ===== */
 
 /* skip link */

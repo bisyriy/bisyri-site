@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free Meta Title & Description Generator — SEO-Optimised Tags | Bisyri</title>
+<meta name="description" content="Generate SEO-optimised meta titles and descriptions instantly. Enter your topic, choose your page type, and get ready-to-use title tags and meta descriptions with live character counts.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/meta-title-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free Meta Title & Description Generator">
+<meta property="og:description" content="Generate SEO-optimised meta titles and descriptions instantly. No sign-up required.">
+<meta property="og:url" content="https://bisyri.co/tools/meta-title-generator/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Meta Title & Description Generator",
+  "description": "Generate SEO-optimised meta titles and descriptions instantly. Enter your topic, choose your page type, and get ready-to-use tags with live character counts.",
+  "url": "https://bisyri.co/tools/meta-title-generator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+.mg-wrap { max-width: 720px; margin: 0 auto; padding: 0 0 64px; }
+.mg-hero { padding: 56px 0 40px; }
+.mg-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 8px 0 12px; }
+.mg-hero p { color: var(--sub); max-width: 560px; }
+
+.mg-form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 32px; margin-bottom: 32px; }
+.mg-section { margin-bottom: 24px; }
+.mg-label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+.mg-input, .mg-select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 0.95rem; outline: none; transition: border-color .15s; box-sizing: border-box; }
+.mg-input:focus, .mg-select:focus { border-color: var(--indigo); }
+.mg-hint { font-size: 0.8rem; color: var(--sub); margin-top: 6px; }
+.mg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 540px) { .mg-row { grid-template-columns: 1fr; } }
+
+.mg-generate { display: block; width: 100%; padding: 14px 24px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-family: var(--sans); font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.mg-generate:hover { opacity: .88; }
+
+.mg-results { display: none; }
+.mg-results.visible { display: block; }
+.mg-results-header { font-size: 1.1rem; font-weight: 700; margin: 0 0 20px; }
+
+.mg-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.mg-card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sub); margin-bottom: 12px; }
+.mg-variant { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.mg-variant:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.mg-variant-text { font-size: 0.95rem; color: var(--body); margin: 0 0 8px; line-height: 1.5; font-family: var(--mono); background: var(--bg); padding: 10px 12px; border-radius: 6px; border: 1px solid var(--line); word-break: break-word; }
+.mg-variant-footer { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mg-char-badge { font-size: 0.78rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; }
+.mg-char-good { background: #d1fae5; color: #065f46; }
+.mg-char-warn { background: #fef3c7; color: #92400e; }
+.mg-char-bad  { background: #fee2e2; color: #991b1b; }
+@media (prefers-color-scheme: dark) {
+  .mg-char-good { background: #064e3b; color: #6ee7b7; }
+  .mg-char-warn { background: #78350f; color: #fcd34d; }
+  .mg-char-bad  { background: #7f1d1d; color: #fca5a5; }
+}
+:root[data-theme="light"] .mg-char-good { background: #d1fae5; color: #065f46; }
+:root[data-theme="light"] .mg-char-warn { background: #fef3c7; color: #92400e; }
+:root[data-theme="light"] .mg-char-bad  { background: #fee2e2; color: #991b1b; }
+:root[data-theme="dark"]  .mg-char-good { background: #064e3b; color: #6ee7b7; }
+:root[data-theme="dark"]  .mg-char-warn { background: #78350f; color: #fcd34d; }
+:root[data-theme="dark"]  .mg-char-bad  { background: #7f1d1d; color: #fca5a5; }
+
+.mg-copy-btn { font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--bg); color: var(--sub); cursor: pointer; transition: border-color .15s, color .15s; font-family: var(--sans); }
+.mg-copy-btn:hover { border-color: var(--indigo); color: var(--indigo); }
+.mg-copy-btn.copied { border-color: #10b981; color: #10b981; }
+
+.mg-serp-preview { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.mg-serp-preview h3 { font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sub); margin: 0 0 16px; }
+.mg-serp-box { background: var(--bg); border-radius: 8px; padding: 16px 18px; }
+.mg-serp-url { font-size: 0.8rem; color: var(--sub); margin-bottom: 4px; }
+.mg-serp-title { font-size: 1.05rem; font-weight: 600; color: #1a0dab; margin-bottom: 4px; line-height: 1.3; }
+@media (prefers-color-scheme: dark) { .mg-serp-title { color: #8ab4f8; } }
+:root[data-theme="dark"] .mg-serp-title { color: #8ab4f8; }
+:root[data-theme="light"] .mg-serp-title { color: #1a0dab; }
+.mg-serp-desc { font-size: 0.88rem; color: var(--sub); line-height: 1.55; }
+
+.mg-info { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin-top: 12px; }
+.mg-info h2 { font-size: 1rem; margin: 0 0 12px; }
+.mg-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 540px) { .mg-info-grid { grid-template-columns: 1fr; } }
+.mg-info-item { }
+.mg-info-item strong { font-size: 0.85rem; color: var(--body); }
+.mg-info-item p { font-size: 0.82rem; color: var(--sub); margin: 4px 0 0; line-height: 1.5; }
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+<div class="wrap">
+<div class="mg-wrap">
+
+  <div class="mg-hero">
+    <div class="eyebrow">Free Tool</div>
+    <h1>Meta Title &amp; Description Generator</h1>
+    <p>Enter your page details and get SEO-optimised title tags and meta descriptions — with live character counts and a Google SERP preview. Free, instant, no sign-up.</p>
+  </div>
+
+  <div class="mg-form">
+    <div class="mg-section">
+      <label class="mg-label" for="mg-topic">Page topic / primary keyword</label>
+      <input class="mg-input" id="mg-topic" type="text" placeholder="e.g. web design services Vienna, SEO for restaurants, plumber London">
+      <p class="mg-hint">The main keyword or subject of the page — be specific.</p>
+    </div>
+    <div class="mg-row">
+      <div class="mg-section">
+        <label class="mg-label" for="mg-brand">Brand or business name</label>
+        <input class="mg-input" id="mg-brand" type="text" placeholder="e.g. Bisyri, Acme Plumbing">
+      </div>
+      <div class="mg-section">
+        <label class="mg-label" for="mg-page-type">Page type</label>
+        <select class="mg-select" id="mg-page-type">
+          <option value="homepage">Homepage</option>
+          <option value="service" selected>Service page</option>
+          <option value="blog">Blog post / article</option>
+          <option value="about">About page</option>
+          <option value="contact">Contact page</option>
+          <option value="product">Product page</option>
+          <option value="local">Local / location page</option>
+        </select>
+      </div>
+    </div>
+    <div class="mg-section">
+      <label class="mg-label" for="mg-usp">Key benefit or unique selling point <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input class="mg-input" id="mg-usp" type="text" placeholder="e.g. fast turnaround, 10 years experience, free consultation, no contracts">
+    </div>
+    <button class="mg-generate" id="mg-btn" type="button">Generate Meta Tags →</button>
+  </div>
+
+  <div class="mg-serp-preview" id="mg-serp" style="display:none;">
+    <h3>Google SERP Preview</h3>
+    <div class="mg-serp-box">
+      <div class="mg-serp-url" id="mg-serp-url">bisyri.co › services</div>
+      <div class="mg-serp-title" id="mg-serp-title">Your title tag will appear here</div>
+      <div class="mg-serp-desc" id="mg-serp-desc">Your meta description will appear here — this is what Google shows below your title in search results.</div>
+    </div>
+  </div>
+
+  <div class="mg-results" id="mg-results">
+    <p class="mg-results-header">Your Meta Tags</p>
+
+    <div class="mg-card">
+      <div class="mg-card-label">Title Tags — 3 variants</div>
+      <div id="mg-titles"></div>
+    </div>
+
+    <div class="mg-card">
+      <div class="mg-card-label">Meta Descriptions — 3 variants</div>
+      <div id="mg-descs"></div>
+    </div>
+
+    <div class="mg-info">
+      <h2>Character count guide</h2>
+      <div class="mg-info-grid">
+        <div class="mg-info-item">
+          <strong>Title tags</strong>
+          <p>50–60 characters is the sweet spot. Google truncates titles over ~60 characters in results. Under 40 characters leaves ranking opportunity on the table.</p>
+        </div>
+        <div class="mg-info-item">
+          <strong>Meta descriptions</strong>
+          <p>140–160 characters is optimal. Google truncates at ~160 characters on desktop and ~120 on mobile. Longer descriptions may still be used — just cut off.</p>
+        </div>
+        <div class="mg-info-item">
+          <strong>Green badge</strong>
+          <p>Character count is in the ideal range for that element type.</p>
+        </div>
+        <div class="mg-info-item">
+          <strong>Yellow / red badge</strong>
+          <p>Too short (missed opportunity) or too long (may be truncated). Edit to adjust.</p>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--sub);margin:16px 0 0;">Need schema markup too? Use the <a href="/tools/schema-generator/">free Schema Markup Generator</a> to generate JSON-LD for your site. Or <a href="/#contact">get in touch</a> for a full SEO audit.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← All tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('mg-btn');
+  var resultsEl = document.getElementById('mg-results');
+  var titlesEl = document.getElementById('mg-titles');
+  var descsEl = document.getElementById('mg-descs');
+  var serpEl = document.getElementById('mg-serp');
+  var serpTitle = document.getElementById('mg-serp-title');
+  var serpDesc = document.getElementById('mg-serp-desc');
+  var serpUrl = document.getElementById('mg-serp-url');
+
+  function charBadgeClass(len, min, max) {
+    if (len >= min && len <= max) return 'mg-char-good';
+    if (len < min) return len >= min - 10 ? 'mg-char-warn' : 'mg-char-bad';
+    return len <= max + 10 ? 'mg-char-warn' : 'mg-char-bad';
+  }
+
+  function charLabel(len, min, max) {
+    var cls = charBadgeClass(len, min, max);
+    var status = cls === 'mg-char-good' ? '✓' : cls === 'mg-char-warn' ? '⚠' : '✗';
+    return '<span class="mg-char-badge ' + cls + '">' + status + ' ' + len + ' chars</span>';
+  }
+
+  function renderVariants(container, items, minC, maxC) {
+    container.innerHTML = '';
+    items.forEach(function (text, i) {
+      var len = text.length;
+      var div = document.createElement('div');
+      div.className = 'mg-variant';
+      div.innerHTML =
+        '<p class="mg-variant-text" id="mg-v-' + container.id + '-' + i + '">' + escHtml(text) + '</p>' +
+        '<div class="mg-variant-footer">' +
+          charLabel(len, minC, maxC) +
+          '<button class="mg-copy-btn" data-copy="' + escAttr(text) + '">Copy</button>' +
+        '</div>';
+      container.appendChild(div);
+    });
+  }
+
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function escAttr(s) {
+    return s.replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  function titleTemplates(topic, brand, pageType, usp) {
+    var t = topic.trim();
+    var b = brand.trim();
+    var u = usp.trim();
+    var sep = b ? ' — ' : '';
+    var brandSuffix = b ? sep + b : '';
+    var uspPart = u ? ' · ' + u : '';
+
+    var templates = {
+      homepage: [
+        (b || t) + ' | ' + (t || 'Web Design, SEO & AI Automation'),
+        (b ? b + ' — ' : '') + t + (u ? ' · ' + u : ''),
+        (t || b) + ' — ' + (u || 'Official Website') + (b && t ? ' | ' + b : '')
+      ],
+      service: [
+        t + brandSuffix,
+        t + (u ? ' — ' + u : '') + (b ? ' | ' + b : ''),
+        (u ? u + ': ' : '') + t + (b ? ' — ' + b : '')
+      ],
+      blog: [
+        t + (b ? ' — ' + b : ''),
+        'How to ' + t + (b ? ' | ' + b : ''),
+        t + ': ' + (u || 'A Complete Guide') + (b ? ' — ' + b : '')
+      ],
+      about: [
+        'About ' + (b || t) + (u ? ' — ' + u : ''),
+        (b ? b + ' — ' : '') + 'About Us' + (u ? ' · ' + u : ''),
+        'Who We Are' + (b ? ' | ' + b : '') + (u ? ' — ' + u : '')
+      ],
+      contact: [
+        'Contact ' + (b || t) + (u ? ' — ' + u : ''),
+        (b ? 'Get in Touch — ' + b : 'Contact Us — ' + t),
+        (u ? u + ' — ' : '') + 'Contact ' + (b || t)
+      ],
+      product: [
+        t + brandSuffix + (u ? ' — ' + u : ''),
+        'Buy ' + t + (u ? ' — ' + u : '') + (b ? ' | ' + b : ''),
+        t + (u ? ': ' + u : '') + (b ? ' — ' + b : '')
+      ],
+      local: [
+        t + (b ? ' — ' + b : ''),
+        t + (u ? ' | ' + u : '') + (b ? ' — ' + b : ''),
+        (u ? u + ': ' : '') + t + (b ? ' | ' + b : '')
+      ]
+    };
+
+    return (templates[pageType] || templates.service).map(function(s){ return s.replace(/\s{2,}/g,' ').replace(/\s—\s—\s/g,' — ').replace(/\|\s*\|/g,'|').trim(); });
+  }
+
+  function descTemplates(topic, brand, pageType, usp) {
+    var t = topic.trim();
+    var b = brand.trim();
+    var u = usp.trim();
+    var brandPhrase = b ? ' from ' + b : '';
+    var uspPhrase = u ? u + '. ' : '';
+
+    var templates = {
+      homepage: [
+        uspPhrase + 'Explore ' + t + brandPhrase + '. ' + (u ? 'We offer ' + t + ' with ' + u + '.' : 'Professional services tailored to your business.') + ' Get in touch today.',
+        (b ? b + ' offers ' : 'Professional ') + t + (u ? ' with ' + u : '') + '. ' + (u ? 'Find out how we can help your business grow.' : 'Built for results.') + ' Contact us for a free consultation.',
+        'Looking for ' + t + '?' + (u ? ' ' + u + '.' : '') + (b ? ' ' + b + ' delivers' : ' We deliver') + ' results-focused ' + t + ' for businesses that want to grow. ' + (u ? '' : 'Get started today.')
+      ],
+      service: [
+        uspPhrase + 'Professional ' + t + brandPhrase + '. ' + (u ? '' : 'Expert service, proven results. ') + 'Contact us today to discuss your project and get a free quote.',
+        (b ? b + ' provides ' : 'Expert ') + t + (u ? ' — ' + u : '') + '. ' + 'We work with businesses of all sizes. ' + (u ? '' : 'Fast turnaround, transparent pricing. ') + 'Get in touch.',
+        'Need ' + t + '?' + (u ? ' ' + u + '.' : '') + (b ? ' ' + b : ' We') + ' deliver ' + t + ' that drives real results. ' + 'Book a free consultation and see what\'s possible.'
+      ],
+      blog: [
+        uspPhrase + 'Everything you need to know about ' + t + '. ' + 'A practical, no-fluff guide covering what works in 2026 — with step-by-step advice you can apply today.',
+        'In-depth guide to ' + t + (u ? ' — including ' + u : '') + '. ' + 'Learn what\'s actually effective in 2026, and how to implement it for your website or business.',
+        'Not sure about ' + t + '? ' + (u ? u + '. ' : '') + 'This guide breaks it down clearly — what it is, why it matters, and exactly how to get started.'
+      ],
+      about: [
+        'Learn about ' + (b || t) + (u ? ' — ' + u : '') + '. ' + 'We\'re a team focused on delivering real results for our clients. ' + 'Find out how we work and what drives us.',
+        (b ? b + ' — ' : '') + 'who we are, what we do, and why we do it. ' + (u ? u + '. ' : '') + 'Meet the people behind your project.',
+        (u ? u + '. ' : '') + 'Find out the story behind ' + (b || t) + ' and what makes us different from every other agency.'
+      ],
+      contact: [
+        uspPhrase + 'Get in touch with ' + (b || t) + '. ' + 'Whether you have a question, a project in mind, or just want to explore options — we\'d love to hear from you.',
+        'Ready to start your project? ' + (b ? 'Contact ' + b + ' today. ' : '') + (u ? u + '. ' : '') + 'We respond to all enquiries within one business day.',
+        (b ? b + ' — ' : '') + 'contact us for ' + t + (u ? ' with ' + u : '') + '. ' + 'Free consultation. No obligation.'
+      ],
+      product: [
+        uspPhrase + 'Shop ' + t + brandPhrase + '. ' + (u ? '' : 'High quality, fast delivery, trusted by thousands of customers. ') + 'Order today.',
+        (b ? b + '\'s ' : '') + t + (u ? ' — ' + u : '') + '. ' + 'Great quality at a fair price. ' + 'Free delivery available. Buy now.',
+        'Looking for ' + t + '? ' + (u ? u + '. ' : '') + (b ? 'At ' + b + ', we offer ' : 'Shop ') + t + ' with fast delivery and easy returns.'
+      ],
+      local: [
+        uspPhrase + 'Looking for ' + t + '? ' + (b ? b + ' offers ' : 'Professional ') + t + ' in your area' + (u ? ' — ' + u : '') + '. ' + 'Contact us for a free quote.',
+        (b ? b + ' — ' : '') + 'local ' + t + (u ? ' with ' + u : '') + '. ' + 'Serving customers across the region. ' + 'Fast, reliable, trusted. Get in touch today.',
+        'Need ' + t + ' nearby? ' + (u ? u + '. ' : '') + (b ? b + ' provides ' : 'We provide ') + t + ' for local businesses and residents. ' + 'Call or message for a free consultation.'
+      ]
+    };
+
+    return (templates[pageType] || templates.service).map(function(s){ return s.replace(/\s{2,}/g,' ').replace(/\.\./g,'.').trim(); });
+  }
+
+  btn.addEventListener('click', function () {
+    var topic = document.getElementById('mg-topic').value.trim();
+    var brand = document.getElementById('mg-brand').value.trim();
+    var pageType = document.getElementById('mg-page-type').value;
+    var usp = document.getElementById('mg-usp').value.trim();
+
+    if (!topic && !brand) {
+      document.getElementById('mg-topic').focus();
+      return;
+    }
+
+    var titles = titleTemplates(topic, brand, pageType, usp);
+    var descs = descTemplates(topic, brand, pageType, usp);
+
+    renderVariants(titlesEl, titles, 50, 60);
+    renderVariants(descsEl, descs, 140, 160);
+
+    serpTitle.textContent = titles[0];
+    serpDesc.textContent = descs[0];
+    var slug = topic.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '').slice(0, 40);
+    serpUrl.textContent = (brand ? brand.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'') + '.com' : 'yourdomain.com') + ' › ' + (pageType === 'homepage' ? '' : pageType === 'blog' ? 'blog › ' : '') + slug;
+
+    resultsEl.classList.add('visible');
+    serpEl.style.display = 'block';
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('mg-copy-btn')) return;
+    var text = e.target.getAttribute('data-copy');
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(function () {
+      e.target.textContent = 'Copied!';
+      e.target.classList.add('copied');
+      setTimeout(function () {
+        e.target.textContent = 'Copy';
+        e.target.classList.remove('copied');
+      }, 1800);
+    }).catch(function () {
+      e.target.textContent = 'Copy';
+    });
+  });
+
+  document.getElementById('mg-topic').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') btn.click();
+  });
+  document.getElementById('mg-brand').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') btn.click();
+  });
+  document.getElementById('mg-usp').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') btn.click();
+  });
+})();
+</script>
+</body></html>

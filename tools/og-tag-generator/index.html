@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free Open Graph Tag Generator — OG Meta Tags for Social Sharing | Bisyri</title>
+<meta name="description" content="Generate Open Graph and Twitter Card meta tags instantly. Preview how your page will look when shared on Facebook, LinkedIn, and Twitter. Free, no sign-up required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/og-tag-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free Open Graph Tag Generator — OG Meta Tags for Social Sharing">
+<meta property="og:description" content="Generate Open Graph and Twitter Card meta tags instantly. Preview how your page looks when shared on social media. Free, no sign-up.">
+<meta property="og:url" content="https://bisyri.co/tools/og-tag-generator/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Open Graph Tag Generator",
+  "description": "Generate Open Graph and Twitter Card meta tags for any webpage. Preview social sharing appearance for Facebook, LinkedIn, and Twitter.",
+  "url": "https://bisyri.co/tools/og-tag-generator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+.og-wrap { max-width: 720px; margin: 0 auto; padding: 0 0 64px; }
+.og-hero { padding: 56px 0 40px; }
+.og-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 8px 0 12px; }
+.og-hero p { color: var(--sub); max-width: 560px; }
+
+.og-form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 32px; margin-bottom: 32px; }
+.og-section { margin-bottom: 20px; }
+.og-label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+.og-label span { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.og-input, .og-select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 0.95rem; outline: none; transition: border-color .15s; box-sizing: border-box; }
+.og-input:focus, .og-select:focus { border-color: var(--indigo); }
+.og-hint { font-size: 0.8rem; color: var(--sub); margin-top: 5px; }
+.og-char { font-size: 0.78rem; margin-top: 5px; }
+.og-char.ok { color: #10b981; }
+.og-char.warn { color: #f59e0b; }
+.og-char.over { color: #ef4444; }
+
+.og-generate { display: block; width: 100%; padding: 14px 24px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-family: var(--sans); font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.og-generate:hover { opacity: .88; }
+
+.og-results { display: none; }
+.og-results.visible { display: block; }
+
+/* Preview cards */
+.og-previews { margin-bottom: 28px; }
+.og-previews h3 { font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sub); margin: 0 0 16px; }
+.og-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.og-tab { font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--bg); color: var(--sub); cursor: pointer; transition: border-color .15s, color .15s, background .15s; font-family: var(--sans); }
+.og-tab.active { border-color: var(--indigo); color: var(--indigo); background: var(--card); }
+
+.og-preview-pane { display: none; }
+.og-preview-pane.active { display: block; }
+
+/* Facebook/LinkedIn card */
+.og-card-fb { background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; max-width: 500px; }
+.og-card-fb-img { width: 100%; aspect-ratio: 1.91; background: var(--line); display: flex; align-items: center; justify-content: center; color: var(--sub); font-size: 0.85rem; overflow: hidden; position: relative; }
+.og-card-fb-img img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.og-card-fb-img img.loaded { display: block; }
+.og-card-fb-img .og-img-placeholder { position: absolute; }
+.og-card-fb-body { padding: 12px 14px; }
+.og-card-fb-domain { font-size: 0.72rem; text-transform: uppercase; color: var(--sub); margin-bottom: 4px; letter-spacing: .04em; }
+.og-card-fb-title { font-size: 0.95rem; font-weight: 700; color: var(--body); margin-bottom: 4px; line-height: 1.3; }
+.og-card-fb-desc { font-size: 0.82rem; color: var(--sub); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Twitter card */
+.og-card-tw { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; max-width: 500px; display: flex; }
+.og-card-tw-img { width: 100px; min-height: 100px; flex-shrink: 0; background: var(--line); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.og-card-tw-img img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.og-card-tw-img img.loaded { display: block; }
+.og-card-tw-body { padding: 12px 14px; flex: 1; min-width: 0; }
+.og-card-tw-title { font-size: 0.88rem; font-weight: 700; color: var(--body); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.og-card-tw-desc { font-size: 0.82rem; color: var(--sub); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.og-card-tw-domain { font-size: 0.75rem; color: var(--sub); margin-top: 6px; }
+
+/* Code output */
+.og-code-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+.og-code-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.og-code-label { font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sub); }
+.og-copy-all { font-size: 0.82rem; font-weight: 600; padding: 5px 14px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--bg); color: var(--sub); cursor: pointer; transition: border-color .15s, color .15s; font-family: var(--sans); }
+.og-copy-all:hover { border-color: var(--indigo); color: var(--indigo); }
+.og-copy-all.copied { border-color: #10b981; color: #10b981; }
+.og-code-block { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; overflow-x: auto; }
+.og-code-block code { font-family: var(--mono); font-size: 0.82rem; color: var(--body); white-space: pre; display: block; line-height: 1.6; }
+
+.og-info { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; font-size: 0.85rem; color: var(--sub); line-height: 1.6; }
+.og-info strong { color: var(--body); }
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+<div class="wrap">
+<div class="og-wrap">
+
+  <div class="og-hero">
+    <div class="eyebrow">Free Tool</div>
+    <h1>Open Graph Tag Generator</h1>
+    <p>Generate Open Graph and Twitter Card meta tags for any page — and preview how it will look when shared on Facebook, LinkedIn, and Twitter. Free, instant, no sign-up.</p>
+  </div>
+
+  <div class="og-form">
+    <div class="og-section">
+      <label class="og-label" for="og-title">Page title <span>(og:title)</span></label>
+      <input class="og-input" id="og-title" type="text" placeholder="e.g. Web Design Services Vienna — Bisyri" maxlength="200">
+      <div class="og-char" id="og-title-count"></div>
+      <p class="og-hint">Recommended: under 60 characters. Matches your &lt;title&gt; tag in most cases.</p>
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="og-desc">Description <span>(og:description)</span></label>
+      <input class="og-input" id="og-desc" type="text" placeholder="e.g. Professional web design for small businesses in Vienna. Fast, modern, SEO-ready websites." maxlength="300">
+      <div class="og-char" id="og-desc-count"></div>
+      <p class="og-hint">Recommended: 100–200 characters for social sharing.</p>
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="og-url">Page URL <span>(og:url / canonical)</span></label>
+      <input class="og-input" id="og-url" type="url" placeholder="https://yourdomain.com/page/">
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="og-image">Image URL <span>(og:image)</span></label>
+      <input class="og-input" id="og-image" type="url" placeholder="https://yourdomain.com/images/og-image.jpg">
+      <p class="og-hint">Recommended size: 1200×630px (1.91:1 ratio). Min 600×315px. JPEG or PNG.</p>
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="og-sitename">Site name <span>(og:site_name)</span></label>
+      <input class="og-input" id="og-sitename" type="text" placeholder="e.g. Bisyri">
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="og-type">Content type <span>(og:type)</span></label>
+      <select class="og-select" id="og-type">
+        <option value="website" selected>website — homepage, service pages</option>
+        <option value="article">article — blog posts, guides</option>
+        <option value="product">product — product pages</option>
+      </select>
+    </div>
+    <div class="og-section">
+      <label class="og-label" for="tw-card">Twitter Card type</label>
+      <select class="og-select" id="tw-card">
+        <option value="summary_large_image" selected>summary_large_image — large image above title (recommended)</option>
+        <option value="summary">summary — small thumbnail left of title</option>
+      </select>
+    </div>
+    <button class="og-generate" id="og-btn" type="button">Generate Tags →</button>
+  </div>
+
+  <div class="og-results" id="og-results">
+
+    <div class="og-previews">
+      <h3>Social Preview</h3>
+      <div class="og-tabs">
+        <button class="og-tab active" data-tab="facebook">Facebook / LinkedIn</button>
+        <button class="og-tab" data-tab="twitter">Twitter / X</button>
+      </div>
+
+      <div class="og-preview-pane active" id="og-pane-facebook">
+        <div class="og-card-fb">
+          <div class="og-card-fb-img">
+            <img id="og-prev-img-fb" src="" alt="">
+            <span class="og-img-placeholder" id="og-img-placeholder-fb">No image set</span>
+          </div>
+          <div class="og-card-fb-body">
+            <div class="og-card-fb-domain" id="og-prev-domain-fb">yourdomain.com</div>
+            <div class="og-card-fb-title" id="og-prev-title-fb">Your page title</div>
+            <div class="og-card-fb-desc" id="og-prev-desc-fb">Your page description will appear here.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="og-preview-pane" id="og-pane-twitter">
+        <div class="og-card-tw">
+          <div class="og-card-tw-img" id="og-tw-img-wrap">
+            <img id="og-prev-img-tw" src="" alt="">
+          </div>
+          <div class="og-card-tw-body">
+            <div class="og-card-tw-title" id="og-prev-title-tw">Your page title</div>
+            <div class="og-card-tw-desc" id="og-prev-desc-tw">Your description will appear here.</div>
+            <div class="og-card-tw-domain" id="og-prev-domain-tw">yourdomain.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="og-code-card">
+      <div class="og-code-header">
+        <span class="og-code-label">Generated Tags — paste into &lt;head&gt;</span>
+        <button class="og-copy-all" id="og-copy-all">Copy all</button>
+      </div>
+      <div class="og-code-block">
+        <code id="og-output"></code>
+      </div>
+    </div>
+
+    <div class="og-info">
+      <strong>How to use:</strong> Paste the generated tags inside the <code>&lt;head&gt;</code> section of each page. Replace any existing <code>og:</code> or <code>twitter:</code> meta tags. For WordPress, use Yoast SEO or Rank Math — they handle these tags automatically. For custom sites, add them directly to each page template.
+      <br><br>
+      <strong>Image tip:</strong> Create a single 1200×630px image for each major page type (homepage, blog, service pages). Don't reuse the same image across your entire site — Facebook and LinkedIn cache previews, and a unique image per page increases share engagement.
+      <br><br>
+      Need schema markup too? Use the <a href="/tools/schema-generator/">free Schema Markup Generator</a> for JSON-LD structured data, or the <a href="/tools/meta-title-generator/">Meta Title Generator</a> for SEO-optimised title tags.
+    </div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← All tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function () {
+  var titleEl = document.getElementById('og-title');
+  var descEl = document.getElementById('og-desc');
+  var titleCount = document.getElementById('og-title-count');
+  var descCount = document.getElementById('og-desc-count');
+
+  function updateCount(input, countEl, good, max) {
+    var len = input.value.length;
+    if (!len) { countEl.textContent = ''; return; }
+    var cls = len <= good ? 'ok' : len <= max ? 'warn' : 'over';
+    countEl.className = 'og-char ' + cls;
+    countEl.textContent = len + ' characters' + (len > max ? ' — too long' : len > good ? ' — slightly long' : ' — good');
+  }
+
+  titleEl.addEventListener('input', function () { updateCount(titleEl, titleCount, 60, 90); });
+  descEl.addEventListener('input', function () { updateCount(descEl, descCount, 200, 300); });
+
+  function escHtml(s) {
+    return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function getDomain(url) {
+    try { return new URL(url).hostname.replace(/^www\./, ''); } catch(e) { return url || 'yourdomain.com'; }
+  }
+
+  function buildTags(title, desc, url, image, siteName, type, twCard) {
+    var lines = [];
+    lines.push('<!-- Open Graph / Facebook / LinkedIn -->');
+    if (type) lines.push('<meta property="og:type" content="' + escHtml(type) + '">');
+    if (url) lines.push('<meta property="og:url" content="' + escHtml(url) + '">');
+    if (title) lines.push('<meta property="og:title" content="' + escHtml(title) + '">');
+    if (desc) lines.push('<meta property="og:description" content="' + escHtml(desc) + '">');
+    if (image) lines.push('<meta property="og:image" content="' + escHtml(image) + '">');
+    if (image) lines.push('<meta property="og:image:width" content="1200">');
+    if (image) lines.push('<meta property="og:image:height" content="630">');
+    if (siteName) lines.push('<meta property="og:site_name" content="' + escHtml(siteName) + '">');
+    lines.push('');
+    lines.push('<!-- Twitter Card -->');
+    lines.push('<meta name="twitter:card" content="' + escHtml(twCard) + '">');
+    if (url) lines.push('<meta name="twitter:url" content="' + escHtml(url) + '">');
+    if (title) lines.push('<meta name="twitter:title" content="' + escHtml(title) + '">');
+    if (desc) lines.push('<meta name="twitter:description" content="' + escHtml(desc) + '">');
+    if (image) lines.push('<meta name="twitter:image" content="' + escHtml(image) + '">');
+    return lines.join('\n');
+  }
+
+  function updatePreviews(title, desc, url, image) {
+    var domain = getDomain(url);
+    document.getElementById('og-prev-domain-fb').textContent = domain.toUpperCase();
+    document.getElementById('og-prev-title-fb').textContent = title || 'Your page title';
+    document.getElementById('og-prev-desc-fb').textContent = desc || 'Your page description will appear here.';
+    document.getElementById('og-prev-domain-tw').textContent = domain;
+    document.getElementById('og-prev-title-tw').textContent = title || 'Your page title';
+    document.getElementById('og-prev-desc-tw').textContent = desc || 'Your description will appear here.';
+
+    var placeholder = document.getElementById('og-img-placeholder-fb');
+    var imgFb = document.getElementById('og-prev-img-fb');
+    var imgTw = document.getElementById('og-prev-img-tw');
+
+    if (image) {
+      placeholder.style.display = 'none';
+      imgFb.src = image;
+      imgFb.onload = function() { imgFb.classList.add('loaded'); };
+      imgFb.onerror = function() { imgFb.classList.remove('loaded'); placeholder.style.display = ''; };
+      imgTw.src = image;
+      imgTw.onload = function() { imgTw.classList.add('loaded'); };
+      imgTw.onerror = function() { imgTw.classList.remove('loaded'); };
+    } else {
+      placeholder.style.display = '';
+      imgFb.classList.remove('loaded');
+      imgTw.classList.remove('loaded');
+    }
+  }
+
+  document.getElementById('og-btn').addEventListener('click', function () {
+    var title = titleEl.value.trim();
+    var desc = descEl.value.trim();
+    var url = document.getElementById('og-url').value.trim();
+    var image = document.getElementById('og-image').value.trim();
+    var siteName = document.getElementById('og-sitename').value.trim();
+    var type = document.getElementById('og-type').value;
+    var twCard = document.getElementById('tw-card').value;
+
+    var tags = buildTags(title, desc, url, image, siteName, type, twCard);
+    document.getElementById('og-output').textContent = tags;
+    updatePreviews(title, desc, url, image);
+
+    var resultsEl = document.getElementById('og-results');
+    resultsEl.classList.add('visible');
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  document.querySelectorAll('.og-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.og-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.og-preview-pane').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var pane = document.getElementById('og-pane-' + tab.getAttribute('data-tab'));
+      if (pane) pane.classList.add('active');
+    });
+  });
+
+  document.getElementById('og-copy-all').addEventListener('click', function () {
+    var text = document.getElementById('og-output').textContent;
+    var btn = document.getElementById('og-copy-all');
+    navigator.clipboard.writeText(text).then(function () {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function () { btn.textContent = 'Copy all'; btn.classList.remove('copied'); }, 1800);
+    }).catch(function () {});
+  });
+
+  titleEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') document.getElementById('og-btn').click(); });
+  descEl.addEventListener('keydown', function(e){ if (e.key === 'Enter') document.getElementById('og-btn').click(); });
+})();
+</script>
+</body></html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free Schema Markup Generator — JSON-LD Code for SEO &amp; AEO | Bisyri</title>
+<meta name="description" content="Generate JSON-LD schema markup code for free. LocalBusiness, Person, Organization, FAQPage, and Article schema — paste-ready code for your website in seconds.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/schema-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free Schema Markup Generator — JSON-LD for SEO &amp; AEO">
+<meta property="og:description" content="Generate ready-to-paste JSON-LD schema markup for LocalBusiness, Person, Organization, FAQPage, and Article. Free, instant, no sign-up.">
+<meta property="og:url" content="https://bisyri.co/tools/schema-generator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Schema Markup Generator — JSON-LD for SEO &amp; AEO">
+<meta name="twitter:description" content="Generate ready-to-paste JSON-LD schema markup for LocalBusiness, Person, Organization, FAQPage, and Article. Free, instant, no sign-up.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Schema Markup Generator",
+  "description": "Free tool to generate JSON-LD schema markup for LocalBusiness, Person, Organization, FAQPage, and Article schema types.",
+  "url": "https://bisyri.co/tools/schema-generator/",
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"},
+  "applicationCategory": "SEOApplication",
+  "isAccessibleForFree": true,
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+/* ── Schema Generator Tool ─────────────────────────────── */
+.sg-outer{padding-bottom:80px}
+.sg-wrap{max-width:720px;margin:0 auto;padding:0 28px}
+
+/* type selector */
+.sg-type-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:28px 0 36px}
+.sg-type-btn{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center;cursor:pointer;transition:border-color .18s,background .18s;font-family:var(--display);font-size:13px;font-weight:600;color:var(--body);line-height:1.3}
+.sg-type-btn:hover{border-color:var(--indigo);background:var(--card)}
+.sg-type-btn.active{border-color:var(--indigo);background:rgba(79,70,229,.08);color:var(--indigo)}
+.sg-type-icon{font-size:22px;display:block;margin-bottom:7px}
+
+/* form */
+.sg-form{display:none;animation:sgfade .22s ease}
+.sg-form.visible{display:block}
+@keyframes sgfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.sg-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;margin-bottom:16px}
+.sg-section-title{font-family:var(--display);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:20px}
+
+.sg-field{margin-bottom:18px}
+.sg-field:last-child{margin-bottom:0}
+.sg-label{display:block;font-size:13px;font-weight:600;color:var(--body);margin-bottom:6px}
+.sg-label .opt{font-weight:400;color:var(--sub);font-size:12px;margin-left:4px}
+.sg-input,.sg-textarea{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:9px;padding:10px 13px;font-family:var(--sans);font-size:14px;color:var(--body);transition:border-color .18s;box-sizing:border-box}
+.sg-input:focus,.sg-textarea:focus{outline:none;border-color:var(--indigo)}
+.sg-textarea{resize:vertical;min-height:80px;line-height:1.55}
+.sg-hint{font-size:12px;color:var(--sub);margin-top:5px}
+
+/* FAQ rows */
+.sg-faq-list{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.sg-faq-row{background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:16px}
+.sg-faq-row-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--sub)}
+.sg-faq-remove{background:none;border:none;cursor:pointer;color:var(--sub);font-size:18px;line-height:1;padding:0 2px;transition:color .15s}
+.sg-faq-remove:hover{color:#e55}
+.sg-add-faq{background:none;border:1.5px dashed var(--line);border-radius:9px;padding:10px 16px;width:100%;cursor:pointer;font-family:var(--display);font-size:13px;font-weight:600;color:var(--sub);transition:border-color .18s,color .18s}
+.sg-add-faq:hover{border-color:var(--indigo);color:var(--indigo)}
+
+/* generate button */
+.sg-generate{display:inline-flex;align-items:center;gap:8px;background:var(--indigo);color:#fff;border:none;border-radius:10px;padding:13px 26px;font-family:var(--display);font-size:15px;font-weight:700;cursor:pointer;transition:opacity .18s;margin-top:8px}
+.sg-generate:hover{opacity:.88}
+
+/* output */
+.sg-output{display:none;margin-top:28px;animation:sgfade .22s ease}
+.sg-output.visible{display:block}
+.sg-output-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sg-output-title{font-family:var(--display);font-weight:700;font-size:15px}
+.sg-copy-btn{background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:8px 16px;font-family:var(--display);font-size:13px;font-weight:600;cursor:pointer;color:var(--body);transition:border-color .18s,color .18s;display:flex;align-items:center;gap:6px}
+.sg-copy-btn:hover{border-color:var(--indigo);color:var(--indigo)}
+.sg-copy-btn.copied{border-color:#22c55e;color:#22c55e}
+.sg-code{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;overflow-x:auto;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--body);white-space:pre}
+.sg-paste-note{font-size:13px;color:var(--sub);margin-top:12px;line-height:1.6}
+.sg-paste-note code{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-family:var(--mono);font-size:12px}
+
+/* validation error */
+.sg-error{color:#e55;font-size:13px;margin-top:10px;display:none}
+.sg-error.visible{display:block}
+
+@media(max-width:480px){
+  .sg-type-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main" class="sg-outer">
+  <section class="blog-hero wrap">
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Schema Markup <em>Generator</em></h1>
+    <p class="blog-lede">Generate ready-to-paste JSON-LD schema code for your website. Free, instant, no sign-up required.</p>
+  </section>
+
+  <div class="sg-wrap">
+
+    <p style="font-size:14px;color:var(--sub);margin-bottom:4px">Select schema type:</p>
+    <div class="sg-type-grid" role="group" aria-label="Schema type selector">
+      <button class="sg-type-btn" data-type="LocalBusiness" aria-pressed="false">
+        <span class="sg-type-icon">🏪</span>LocalBusiness
+      </button>
+      <button class="sg-type-btn" data-type="Person" aria-pressed="false">
+        <span class="sg-type-icon">👤</span>Person
+      </button>
+      <button class="sg-type-btn" data-type="Organization" aria-pressed="false">
+        <span class="sg-type-icon">🏢</span>Organization
+      </button>
+      <button class="sg-type-btn" data-type="FAQPage" aria-pressed="false">
+        <span class="sg-type-icon">❓</span>FAQPage
+      </button>
+      <button class="sg-type-btn" data-type="Article" aria-pressed="false">
+        <span class="sg-type-icon">📄</span>Article
+      </button>
+    </div>
+
+    <!-- LocalBusiness Form -->
+    <div class="sg-form" id="form-LocalBusiness">
+      <div class="sg-section">
+        <div class="sg-section-title">Business Details</div>
+        <div class="sg-field"><label class="sg-label" for="lb-name">Business name</label><input class="sg-input" id="lb-name" type="text" placeholder="Acme Plumbing"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-type">Business type <span class="opt">(optional)</span></label><input class="sg-input" id="lb-type" type="text" placeholder="Plumber, Restaurant, HairSalon…"><p class="sg-hint">See <a href="https://schema.org/LocalBusiness" target="_blank" rel="noopener">schema.org/LocalBusiness</a> subtypes</p></div>
+        <div class="sg-field"><label class="sg-label" for="lb-desc">Description <span class="opt">(optional)</span></label><textarea class="sg-textarea" id="lb-desc" placeholder="What your business does, who it serves"></textarea></div>
+        <div class="sg-field"><label class="sg-label" for="lb-url">Website URL</label><input class="sg-input" id="lb-url" type="url" placeholder="https://example.com"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-tel">Phone <span class="opt">(optional)</span></label><input class="sg-input" id="lb-tel" type="tel" placeholder="+1-555-000-0000"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-email">Email <span class="opt">(optional)</span></label><input class="sg-input" id="lb-email" type="email" placeholder="hello@example.com"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-price">Price range <span class="opt">(optional)</span></label><input class="sg-input" id="lb-price" type="text" placeholder="$$ or €€€"></div>
+      </div>
+      <div class="sg-section">
+        <div class="sg-section-title">Address</div>
+        <div class="sg-field"><label class="sg-label" for="lb-street">Street address</label><input class="sg-input" id="lb-street" type="text" placeholder="123 Main Street"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-city">City</label><input class="sg-input" id="lb-city" type="text" placeholder="Vienna"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-state">State / Region <span class="opt">(optional)</span></label><input class="sg-input" id="lb-state" type="text" placeholder="Vienna"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-postal">Postal code</label><input class="sg-input" id="lb-postal" type="text" placeholder="1010"></div>
+        <div class="sg-field"><label class="sg-label" for="lb-country">Country code</label><input class="sg-input" id="lb-country" type="text" placeholder="AT" maxlength="2"><p class="sg-hint">2-letter ISO code: AT, US, GB, MY…</p></div>
+      </div>
+      <div class="sg-section">
+        <div class="sg-section-title">Opening Hours <span style="font-weight:400;text-transform:none;font-size:12px;color:var(--sub)">(optional)</span></div>
+        <div class="sg-field"><label class="sg-label" for="lb-hours">Hours <span class="opt">(one per line)</span></label><textarea class="sg-textarea" id="lb-hours" style="min-height:100px" placeholder="Mo-Fr 09:00-17:00&#10;Sa 10:00-14:00"></textarea><p class="sg-hint">Format: Mo-Fr 09:00-17:00 · Mo,Tu,We,Th,Fr · Sa-Su closed</p></div>
+      </div>
+      <p class="sg-error" id="err-LocalBusiness">Please fill in at least the business name, website URL, city, and country.</p>
+      <button class="sg-generate" data-target="LocalBusiness">Generate Schema Code →</button>
+    </div>
+
+    <!-- Person Form -->
+    <div class="sg-form" id="form-Person">
+      <div class="sg-section">
+        <div class="sg-section-title">Personal Details</div>
+        <div class="sg-field"><label class="sg-label" for="p-name">Full name</label><input class="sg-input" id="p-name" type="text" placeholder="Jane Smith"></div>
+        <div class="sg-field"><label class="sg-label" for="p-jobtitle">Job title <span class="opt">(optional)</span></label><input class="sg-input" id="p-jobtitle" type="text" placeholder="Freelance Web Designer"></div>
+        <div class="sg-field"><label class="sg-label" for="p-desc">Description <span class="opt">(optional)</span></label><textarea class="sg-textarea" id="p-desc" placeholder="Short bio — what you do, who you serve"></textarea></div>
+        <div class="sg-field"><label class="sg-label" for="p-url">Website URL</label><input class="sg-input" id="p-url" type="url" placeholder="https://example.com"></div>
+        <div class="sg-field"><label class="sg-label" for="p-email">Email <span class="opt">(optional)</span></label><input class="sg-input" id="p-email" type="email" placeholder="hello@example.com"></div>
+      </div>
+      <div class="sg-section">
+        <div class="sg-section-title">Social Profiles <span style="font-weight:400;text-transform:none;font-size:12px;color:var(--sub)">(optional — one URL per line)</span></div>
+        <div class="sg-field"><textarea class="sg-textarea" id="p-sameas" style="min-height:90px" placeholder="https://linkedin.com/in/yourprofile&#10;https://twitter.com/yourhandle&#10;https://github.com/yourhandle"></textarea></div>
+      </div>
+      <p class="sg-error" id="err-Person">Please fill in at least the name and website URL.</p>
+      <button class="sg-generate" data-target="Person">Generate Schema Code →</button>
+    </div>
+
+    <!-- Organization Form -->
+    <div class="sg-form" id="form-Organization">
+      <div class="sg-section">
+        <div class="sg-section-title">Organization Details</div>
+        <div class="sg-field"><label class="sg-label" for="org-name">Organization name</label><input class="sg-input" id="org-name" type="text" placeholder="Acme Corp"></div>
+        <div class="sg-field"><label class="sg-label" for="org-desc">Description <span class="opt">(optional)</span></label><textarea class="sg-textarea" id="org-desc" placeholder="What the organization does"></textarea></div>
+        <div class="sg-field"><label class="sg-label" for="org-url">Website URL</label><input class="sg-input" id="org-url" type="url" placeholder="https://example.com"></div>
+        <div class="sg-field"><label class="sg-label" for="org-logo">Logo URL <span class="opt">(optional)</span></label><input class="sg-input" id="org-logo" type="url" placeholder="https://example.com/logo.png"></div>
+        <div class="sg-field"><label class="sg-label" for="org-email">Email <span class="opt">(optional)</span></label><input class="sg-input" id="org-email" type="email" placeholder="hello@example.com"></div>
+        <div class="sg-field"><label class="sg-label" for="org-tel">Phone <span class="opt">(optional)</span></label><input class="sg-input" id="org-tel" type="tel" placeholder="+1-555-000-0000"></div>
+        <div class="sg-field"><label class="sg-label" for="org-founded">Founded year <span class="opt">(optional)</span></label><input class="sg-input" id="org-founded" type="text" placeholder="2018"></div>
+      </div>
+      <div class="sg-section">
+        <div class="sg-section-title">Social Profiles <span style="font-weight:400;text-transform:none;font-size:12px;color:var(--sub)">(optional — one URL per line)</span></div>
+        <div class="sg-field"><textarea class="sg-textarea" id="org-sameas" style="min-height:90px" placeholder="https://linkedin.com/company/yourorg&#10;https://twitter.com/yourhandle"></textarea></div>
+      </div>
+      <p class="sg-error" id="err-Organization">Please fill in at least the organization name and website URL.</p>
+      <button class="sg-generate" data-target="Organization">Generate Schema Code →</button>
+    </div>
+
+    <!-- FAQPage Form -->
+    <div class="sg-form" id="form-FAQPage">
+      <div class="sg-section">
+        <div class="sg-section-title">FAQ Questions &amp; Answers</div>
+        <p style="font-size:14px;color:var(--sub);margin-bottom:18px;line-height:1.6">Add the questions and answers from your page. Paste this schema in the <code style="font-family:var(--mono);font-size:12px;background:var(--bg);border:1px solid var(--line);padding:1px 5px;border-radius:4px">&lt;head&gt;</code> of the page that contains the FAQ content.</p>
+        <div class="sg-faq-list" id="faq-list">
+          <div class="sg-faq-row" data-index="0">
+            <div class="sg-faq-row-head"><span>Question 1</span><button class="sg-faq-remove" aria-label="Remove question 1" style="display:none">×</button></div>
+            <div class="sg-field"><label class="sg-label" for="faq-q-0">Question</label><input class="sg-input faq-q" id="faq-q-0" type="text" placeholder="How long does it take to build a website?"></div>
+            <div class="sg-field" style="margin-bottom:0"><label class="sg-label" for="faq-a-0">Answer</label><textarea class="sg-textarea faq-a" id="faq-a-0" placeholder="Most small business websites take 2–4 weeks from brief to launch, depending on content readiness and revision rounds."></textarea></div>
+          </div>
+        </div>
+        <button class="sg-add-faq" id="add-faq-btn" type="button">+ Add another question</button>
+      </div>
+      <p class="sg-error" id="err-FAQPage">Please add at least one question and answer.</p>
+      <button class="sg-generate" data-target="FAQPage">Generate Schema Code →</button>
+    </div>
+
+    <!-- Article Form -->
+    <div class="sg-form" id="form-Article">
+      <div class="sg-section">
+        <div class="sg-section-title">Article Details</div>
+        <div class="sg-field"><label class="sg-label" for="art-headline">Headline</label><input class="sg-input" id="art-headline" type="text" placeholder="The Complete Guide to Local SEO in 2026"></div>
+        <div class="sg-field"><label class="sg-label" for="art-desc">Description</label><textarea class="sg-textarea" id="art-desc" placeholder="A short summary of the article (1–2 sentences)"></textarea></div>
+        <div class="sg-field"><label class="sg-label" for="art-url">Article URL</label><input class="sg-input" id="art-url" type="url" placeholder="https://example.com/blog/local-seo-guide"></div>
+        <div class="sg-field"><label class="sg-label" for="art-author-name">Author name</label><input class="sg-input" id="art-author-name" type="text" placeholder="Jane Smith"></div>
+        <div class="sg-field"><label class="sg-label" for="art-author-url">Author URL <span class="opt">(optional)</span></label><input class="sg-input" id="art-author-url" type="url" placeholder="https://example.com/about"></div>
+        <div class="sg-field"><label class="sg-label" for="art-published">Date published</label><input class="sg-input" id="art-published" type="date"><p class="sg-hint">The date the article was first published</p></div>
+        <div class="sg-field"><label class="sg-label" for="art-modified">Date modified <span class="opt">(optional)</span></label><input class="sg-input" id="art-modified" type="date"><p class="sg-hint">Leave blank if never updated</p></div>
+      </div>
+      <p class="sg-error" id="err-Article">Please fill in the headline, description, URL, author name, and publish date.</p>
+      <button class="sg-generate" data-target="Article">Generate Schema Code →</button>
+    </div>
+
+    <!-- Output -->
+    <div class="sg-output" id="sg-output">
+      <div class="sg-output-head">
+        <span class="sg-output-title">Your Schema Code</span>
+        <button class="sg-copy-btn" id="copy-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy code
+        </button>
+      </div>
+      <pre class="sg-code" id="sg-code-output"></pre>
+      <p class="sg-paste-note">Paste this inside the <code>&lt;head&gt;</code> tag of your page. Then verify it with <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Google's Rich Results Test</a>. Want help implementing schema across your whole site? <a href="/#contact">Get in touch →</a></p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← All tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+  // --- Type selector ---
+  var typeBtns = document.querySelectorAll('.sg-type-btn');
+  var forms = document.querySelectorAll('.sg-form');
+  var output = document.getElementById('sg-output');
+  var currentType = null;
+
+  typeBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = btn.dataset.type;
+      typeBtns.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+      forms.forEach(function(f){ f.classList.remove('visible'); });
+      output.classList.remove('visible');
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed','true');
+      document.getElementById('form-' + t).classList.add('visible');
+      currentType = t;
+    });
+  });
+
+  // --- FAQ rows ---
+  var faqCount = 1;
+  document.getElementById('add-faq-btn').addEventListener('click', function(){
+    var list = document.getElementById('faq-list');
+    var idx = faqCount++;
+    var row = document.createElement('div');
+    row.className = 'sg-faq-row';
+    row.dataset.index = idx;
+    row.innerHTML = '<div class="sg-faq-row-head"><span>Question ' + (idx+1) + '</span><button class="sg-faq-remove" aria-label="Remove question ' + (idx+1) + '">×</button></div>'
+      + '<div class="sg-field"><label class="sg-label" for="faq-q-' + idx + '">Question</label><input class="sg-input faq-q" id="faq-q-' + idx + '" type="text" placeholder="Another question..."></div>'
+      + '<div class="sg-field" style="margin-bottom:0"><label class="sg-label" for="faq-a-' + idx + '">Answer</label><textarea class="sg-textarea faq-a" id="faq-a-' + idx + '" placeholder="Answer..."></textarea></div>';
+    list.appendChild(row);
+    // show remove buttons when >1 row
+    updateRemoveButtons();
+    row.querySelector('.faq-q').focus();
+  });
+
+  document.getElementById('faq-list').addEventListener('click', function(e){
+    if(e.target.classList.contains('sg-faq-remove')){
+      e.target.closest('.sg-faq-row').remove();
+      updateRemoveButtons();
+      renumberFaqs();
+    }
+  });
+
+  function updateRemoveButtons(){
+    var rows = document.querySelectorAll('.sg-faq-row');
+    rows.forEach(function(r){
+      var btn = r.querySelector('.sg-faq-remove');
+      btn.style.display = rows.length > 1 ? '' : 'none';
+    });
+  }
+
+  function renumberFaqs(){
+    var rows = document.querySelectorAll('.sg-faq-row');
+    rows.forEach(function(r, i){
+      r.querySelector('.sg-faq-row-head span').textContent = 'Question ' + (i+1);
+    });
+  }
+
+  // --- Helpers ---
+  function v(id){ return (document.getElementById(id)||{}).value || ''; }
+  function clean(s){ return s.trim().replace(/\s+/g,' '); }
+
+  function parseSameAs(raw){
+    return raw.split('\n').map(function(l){ return l.trim(); }).filter(function(l){ return l.length > 0; });
+  }
+
+  function parseHours(raw){
+    return raw.split('\n').map(function(l){ return l.trim(); }).filter(function(l){ return l.length > 0; });
+  }
+
+  function showError(type){ document.getElementById('err-' + type).classList.add('visible'); }
+  function hideError(type){ document.getElementById('err-' + type).classList.remove('visible'); }
+
+  // --- Generators ---
+  function generateLocalBusiness(){
+    var name = clean(v('lb-name'));
+    var url = clean(v('lb-url'));
+    var city = clean(v('lb-city'));
+    var country = clean(v('lb-country'));
+    if(!name || !url || !city || !country){ showError('LocalBusiness'); return null; }
+    hideError('LocalBusiness');
+    var type = clean(v('lb-type')) || 'LocalBusiness';
+    var schema = { "@context":"https://schema.org", "@type": type, "name": name, "url": url };
+    var desc = clean(v('lb-desc')); if(desc) schema.description = desc;
+    var tel = clean(v('lb-tel')); if(tel) schema.telephone = tel;
+    var email = clean(v('lb-email')); if(email) schema.email = email;
+    var price = clean(v('lb-price')); if(price) schema.priceRange = price;
+    var addr = { "@type":"PostalAddress", "addressLocality": city, "addressCountry": country };
+    var street = clean(v('lb-street')); if(street) addr.streetAddress = street;
+    var state = clean(v('lb-state')); if(state) addr.addressRegion = state;
+    var postal = clean(v('lb-postal')); if(postal) addr.postalCode = postal;
+    schema.address = addr;
+    var hours = parseHours(v('lb-hours')); if(hours.length) schema.openingHours = hours;
+    return schema;
+  }
+
+  function generatePerson(){
+    var name = clean(v('p-name'));
+    var url = clean(v('p-url'));
+    if(!name || !url){ showError('Person'); return null; }
+    hideError('Person');
+    var schema = { "@context":"https://schema.org", "@type":"Person", "name": name, "url": url };
+    var job = clean(v('p-jobtitle')); if(job) schema.jobTitle = job;
+    var desc = clean(v('p-desc')); if(desc) schema.description = desc;
+    var email = clean(v('p-email')); if(email) schema.email = email;
+    var sa = parseSameAs(v('p-sameas')); if(sa.length) schema.sameAs = sa;
+    return schema;
+  }
+
+  function generateOrganization(){
+    var name = clean(v('org-name'));
+    var url = clean(v('org-url'));
+    if(!name || !url){ showError('Organization'); return null; }
+    hideError('Organization');
+    var schema = { "@context":"https://schema.org", "@type":"Organization", "name": name, "url": url };
+    var desc = clean(v('org-desc')); if(desc) schema.description = desc;
+    var logo = clean(v('org-logo')); if(logo) schema.logo = logo;
+    var email = clean(v('org-email')); if(email) schema.email = email;
+    var tel = clean(v('org-tel')); if(tel) schema.telephone = tel;
+    var founded = clean(v('org-founded')); if(founded) schema.foundingDate = founded;
+    var sa = parseSameAs(v('org-sameas')); if(sa.length) schema.sameAs = sa;
+    return schema;
+  }
+
+  function generateFAQPage(){
+    var rows = document.querySelectorAll('.sg-faq-row');
+    var items = [];
+    rows.forEach(function(row){
+      var q = row.querySelector('.faq-q').value.trim();
+      var a = row.querySelector('.faq-a').value.trim();
+      if(q && a) items.push({ "@type":"Question", "name": q, "acceptedAnswer": { "@type":"Answer", "text": a } });
+    });
+    if(!items.length){ showError('FAQPage'); return null; }
+    hideError('FAQPage');
+    return { "@context":"https://schema.org", "@type":"FAQPage", "mainEntity": items };
+  }
+
+  function generateArticle(){
+    var headline = clean(v('art-headline'));
+    var desc = clean(v('art-desc'));
+    var url = clean(v('art-url'));
+    var authorName = clean(v('art-author-name'));
+    var published = v('art-published');
+    if(!headline || !desc || !url || !authorName || !published){ showError('Article'); return null; }
+    hideError('Article');
+    var author = { "@type":"Person", "name": authorName };
+    var authorUrl = clean(v('art-author-url')); if(authorUrl) author.url = authorUrl;
+    var schema = {
+      "@context":"https://schema.org", "@type":"Article",
+      "headline": headline, "description": desc, "url": url,
+      "author": author, "publisher": author,
+      "datePublished": published,
+      "mainEntityOfPage": { "@type":"WebPage", "@id": url }
+    };
+    var modified = v('art-modified'); if(modified) schema.dateModified = modified;
+    return schema;
+  }
+
+  // --- Generate button ---
+  document.querySelectorAll('.sg-generate').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.dataset.target;
+      var schema = null;
+      if(type === 'LocalBusiness') schema = generateLocalBusiness();
+      else if(type === 'Person') schema = generatePerson();
+      else if(type === 'Organization') schema = generateOrganization();
+      else if(type === 'FAQPage') schema = generateFAQPage();
+      else if(type === 'Article') schema = generateArticle();
+      if(!schema) return;
+      var code = '<script type="application/ld+json">\n' + JSON.stringify(schema, null, 2) + '\n<\/script>';
+      document.getElementById('sg-code-output').textContent = code;
+      output.classList.add('visible');
+      output.scrollIntoView({ behavior:'smooth', block:'start' });
+      resetCopyBtn();
+    });
+  });
+
+  // --- Copy ---
+  function resetCopyBtn(){
+    var btn = document.getElementById('copy-btn');
+    btn.classList.remove('copied');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy code';
+  }
+
+  document.getElementById('copy-btn').addEventListener('click', function(){
+    var code = document.getElementById('sg-code-output').textContent;
+    if(!code) return;
+    navigator.clipboard.writeText(code).then(function(){
+      var btn = document.getElementById('copy-btn');
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 12 4 10"/><line x1="4" y1="10" x2="4" y2="18"/><line x1="20" y1="6" x2="20" y2="18"/></svg> Copied!';
+      setTimeout(resetCopyBtn, 2200);
+    }).catch(function(){
+      var ta = document.createElement('textarea');
+      ta.value = code; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      var btn = document.getElementById('copy-btn');
+      btn.classList.add('copied');
+      btn.textContent = 'Copied!';
+      setTimeout(resetCopyBtn, 2200);
+    });
+  });
+
+  // Set today's date as default for article published
+  var todayInput = document.getElementById('art-published');
+  if(todayInput) todayInput.valueAsDate = new Date();
+})();
+</script>
+</body></html>

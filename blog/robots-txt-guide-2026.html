@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>How to Write a robots.txt File for Your Website (2026 Guide) — Bisyri Blog</title>
+<meta name="description" content="A practical guide to writing a robots.txt file — what it does, what to block, how to handle WordPress and e-commerce, and the common mistakes that get sites deindexed.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/blog/robots-txt-guide-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="How to Write a robots.txt File for Your Website (2026 Guide)">
+<meta property="og:description" content="A practical guide to robots.txt — what to block, what not to block, and the common mistakes that silently kill organic traffic.">
+<meta property="og:url" content="https://bisyri.co/blog/robots-txt-guide-2026.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Write a robots.txt File for Your Website (2026 Guide)">
+<meta name="twitter:description" content="A practical guide to robots.txt — what to block, what not to block, and the common mistakes that kill organic traffic.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Write a robots.txt File for Your Website (2026 Guide)",
+  "description": "A practical guide to writing a robots.txt file — what it does, what to block, how to handle WordPress and e-commerce, and the common mistakes that get sites deindexed.",
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"},
+  "publisher": {"@type": "Person", "name": "Bisyri"},
+  "datePublished": "2026-08-03",
+  "dateModified": "2026-08-03",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bisyri.co/blog/robots-txt-guide-2026.html"},
+  "url": "https://bisyri.co/blog/robots-txt-guide-2026.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What happens if I don't have a robots.txt file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If there is no robots.txt file, search engines will crawl your entire website by default — every accessible page. This is fine for most small sites, but for larger sites or those with admin areas, duplicate content, or private pages, having no robots.txt means crawl budget is wasted on pages that shouldn't be indexed and sensitive URLs are exposed to public crawlers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can robots.txt prevent a page from appearing in Google?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not reliably. robots.txt controls crawling, not indexing. If another site links to a blocked page, Google can still list it in search results — just without a description (since it couldn't crawl it). To reliably remove a page from Google, use a noindex meta tag or the URL removal tool in Google Search Console, not robots.txt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does blocking Googlebot in robots.txt hurt my SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you accidentally block important pages. The most common mistake is blocking Googlebot from crawling CSS and JavaScript files — this prevents Google from rendering your pages properly, which can hurt rankings. Never block /wp-content/ entirely on WordPress sites, and always test your robots.txt with Google Search Console's URL Inspection tool after making changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I block AI bots like GPTBot in my robots.txt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blocking AI training bots (GPTBot, CCBot, anthropic-ai) stops your content being used to train AI language models without your consent. However, this is different from AI answer engines like Perplexity or Google AI Overviews — those crawl the web to generate answers in real time and respect robots.txt for crawling, but blocking them also means you lose the chance of being cited in AI answers. Most businesses should block training bots but allow answer-engine crawlers."
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+</head>
+<body id="top">
+<div class="read-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/tools/">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/tools/">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <div class="article-wrap">
+
+    <a class="article-back" href="/blog/">← All posts</a>
+
+    <article>
+    <header class="article-header">
+      <div class="post-cat">SEO · Technical</div>
+      <h1>How to Write a robots.txt File for Your Website (2026 Guide)</h1>
+      <div class="post-meta">
+        <span>Bisyri</span><span class="dot">·</span><span>3 Aug 2026</span><span class="dot">·</span><span>8 min read</span>
+      </div>
+    </header>
+
+    <hr class="article-divider">
+
+    <div class="article-body" id="article">
+
+      <p>A misconfigured robots.txt file is one of the most common reasons a website loses organic traffic overnight. I've seen it happen on client sites — a well-meaning developer adds a single line that accidentally blocks Googlebot from crawling the entire site, and rankings collapse within weeks.</p>
+
+      <p>This guide covers what robots.txt actually does, what to block (and what never to block), how to handle common platforms like WordPress and Shopify, and how to deal with the new wave of AI scrapers.</p>
+
+      <p>If you want to skip straight to generating your file, use our <a href="/tools/robots-txt-generator/">free Robots.txt Generator</a> — it handles WordPress, e-commerce, and AI bot blocking with a few clicks.</p>
+
+      <div class="article-callout"><strong>Key rule to remember:</strong> robots.txt controls crawling, not indexing. A page you block in robots.txt can still appear in Google search results if other sites link to it. Use <code>noindex</code> meta tags to control indexing.</div>
+
+      <h2>What is robots.txt?</h2>
+
+      <p>robots.txt is a plain text file that sits at the root of your domain (at <code>yourdomain.com/robots.txt</code>) and tells web crawlers which pages they are and aren't allowed to visit.</p>
+
+      <p>It works through a simple instruction set:</p>
+
+      <ul>
+        <li><strong>User-agent:</strong> which bot the rule applies to. <code>*</code> means all bots.</li>
+        <li><strong>Disallow:</strong> a path (or partial path) the bot should not crawl.</li>
+        <li><strong>Allow:</strong> explicitly permit a path (used when you've disallowed a parent directory but want to allow a subdirectory).</li>
+        <li><strong>Sitemap:</strong> tells crawlers where your XML sitemap lives.</li>
+      </ul>
+
+      <p>A minimal, do-nothing robots.txt looks like this:</p>
+
+      <pre class="article-code">User-agent: *
+Disallow:
+
+Sitemap: https://yourdomain.com/sitemap.xml</pre>
+
+      <p><code>Disallow:</code> with nothing after it means "allow everything". The sitemap line tells Google and Bing where to find your full page inventory.</p>
+
+      <h2>What should you actually block?</h2>
+
+      <p>The goal of robots.txt is not to hide your site — it's to protect your crawl budget and prevent sensitive or low-value pages from being crawled unnecessarily. Here's what typically makes sense to block:</p>
+
+      <h3>Admin and login pages</h3>
+      <p>Pages like <code>/admin/</code>, <code>/wp-admin/</code>, and <code>/wp-login.php</code> should always be blocked. They have no value in search results, and exposing them to crawlers is a minor security risk. Google doesn't need to know your login page exists.</p>
+
+      <h3>Duplicate or low-value content</h3>
+      <p>Search result pages (<code>/search/</code>), tag archives (<code>/tag/</code>), and some author pages generate duplicate or thin content. Blocking them conserves crawl budget for your real content.</p>
+
+      <h3>Private application areas</h3>
+      <p>For SaaS products or web apps, block <code>/app/</code>, <code>/dashboard/</code>, <code>/account/</code>, and similar paths. These pages require authentication and serve no purpose in search results.</p>
+
+      <h3>E-commerce transactional pages</h3>
+      <p>Cart (<code>/cart/</code>), checkout (<code>/checkout/</code>), and order confirmation pages are transactional dead ends for crawlers. Block them to keep crawl budget on product and category pages.</p>
+
+      <h2>What should you never block?</h2>
+
+      <p>This is where sites get into trouble. These are the paths you should <strong>never</strong> disallow for Googlebot:</p>
+
+      <ul>
+        <li><strong>CSS and JavaScript files</strong> — Google needs to render your pages to understand them. Blocking <code>/wp-content/</code> or <code>/assets/</code> entirely breaks rendering and can destroy rankings.</li>
+        <li><strong>Images in product or content pages</strong> — Google Images can drive real traffic. Only block images in private areas.</li>
+        <li><strong>Your sitemap path</strong> — never block <code>/sitemap.xml</code> or <code>/sitemap_index.xml</code>.</li>
+        <li><strong>Your main content pages</strong> — pages you want to rank should never appear in Disallow.</li>
+      </ul>
+
+      <div class="article-callout"><strong>WordPress warning:</strong> Never use <code>Disallow: /wp-content/</code>. This blocks all themes, plugins, and media — Google can't render your pages properly. Only block <code>/wp-admin/</code> and specific admin paths.</div>
+
+      <h2>Platform-specific recommendations</h2>
+
+      <h3>WordPress</h3>
+      <p>WordPress generates a default robots.txt that blocks <code>/wp-admin/</code> while allowing <code>/wp-admin/admin-ajax.php</code> (which is needed for some plugins). A solid WordPress robots.txt looks like this:</p>
+
+      <pre class="article-code">User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://yourdomain.com/sitemap.xml</pre>
+
+      <p>Note: <code>/wp-content/uploads/</code> and <code>/wp-content/themes/</code> should remain crawlable — these contain your images and CSS.</p>
+
+      <h3>Shopify</h3>
+      <p>Shopify generates its own robots.txt automatically and blocks <code>/cart</code>, <code>/checkout</code>, <code>/account</code>, and other transactional paths by default. Since 2021 you can customise it via <code>robots.txt.liquid</code> in your theme — but the defaults are sensible for most stores.</p>
+
+      <h3>Wix, Squarespace, Webflow</h3>
+      <p>These platforms manage robots.txt at the platform level. Wix and Squarespace give you limited control; Webflow lets you set a custom robots.txt in Site Settings → SEO. All three block admin paths by default.</p>
+
+      <h2>Should you block AI scrapers?</h2>
+
+      <p>This is a nuanced question with a real answer. There are two types of AI bots you need to think about separately:</p>
+
+      <h3>AI training bots</h3>
+      <p>These bots crawl your site to collect training data for large language models. OpenAI's GPTBot, Common Crawl's CCBot, Anthropic's anthropic-ai and Claude-Web, ByteDance's Bytespider, and Cohere's cohere-ai all fall into this category.</p>
+
+      <p>Blocking these prevents your content from being used to train AI models without compensation or consent. If you care about that, block them:</p>
+
+      <pre class="article-code">User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /</pre>
+
+      <h3>AI answer-engine crawlers</h3>
+      <p>These are different. Perplexity, Google AI Overviews, and similar tools crawl the web in real time to generate answers. Blocking them means you lose the chance of being cited when someone asks an AI a question your content answers.</p>
+
+      <p>This is the core trade-off of <a href="/blog/what-is-aeo-2026.html">Answer Engine Optimisation (AEO)</a>. If being cited in AI answers is part of your strategy — and for most businesses it should be — you want answer-engine crawlers to access your content. Training bots and answer bots are not the same thing.</p>
+
+      <p>Our <a href="/tools/robots-txt-generator/">Robots.txt Generator</a> blocks training bots by default but leaves answer engines open.</p>
+
+      <h2>The Sitemap line</h2>
+
+      <p>Always include your sitemap URL at the bottom of robots.txt:</p>
+
+      <pre class="article-code">Sitemap: https://yourdomain.com/sitemap.xml</pre>
+
+      <p>This isn't a crawl instruction — it's a hint to Google, Bing, and other search engines about where to find your full page list. If you have a sitemap index file (common on WordPress with Yoast or RankMath), use that URL instead:</p>
+
+      <pre class="article-code">Sitemap: https://yourdomain.com/sitemap_index.xml</pre>
+
+      <p>Submit this sitemap in Google Search Console too — the robots.txt sitemap line helps, but Search Console submission is the more reliable signal.</p>
+
+      <h2>Testing your robots.txt</h2>
+
+      <p>After creating or editing your robots.txt, test it before it causes damage:</p>
+
+      <ol>
+        <li><strong>Google Search Console → Settings → robots.txt</strong> — Google's built-in tester shows exactly which URLs are blocked and which are allowed under your current file.</li>
+        <li><strong>Fetch a specific URL</strong> with the URL Inspection tool in Search Console to confirm Google can access your important pages.</li>
+        <li>Visit <code>yourdomain.com/robots.txt</code> directly in your browser to confirm the file is live and readable.</li>
+      </ol>
+
+      <h2>Common mistakes to avoid</h2>
+
+      <ul>
+        <li><strong>Blocking CSS/JS</strong> — kills rendering, hurts rankings silently.</li>
+        <li><strong>Disallowing <code>/</code> for all bots</strong> — blocks your entire site from being crawled. This has shipped to production more than once.</li>
+        <li><strong>Using robots.txt as a security measure</strong> — it's a polite request, not a lock. Malicious bots ignore it. Use server-side authentication for actual security.</li>
+        <li><strong>Blocking pages you want indexed</strong> — a surprisingly common issue when using wildcard patterns like <code>Disallow: /*?</code> which can match URLs you didn't intend.</li>
+        <li><strong>Forgetting the sitemap line</strong> — small omission, meaningful impact on crawl efficiency.</li>
+      </ul>
+
+      <h2>Putting it all together</h2>
+
+      <p>robots.txt is one piece of a larger technical SEO picture. A well-configured file helps Google focus on your real content, but it needs to work alongside a proper sitemap, clean internal linking, and correct use of <code>noindex</code> where appropriate. See our <a href="/blog/seo-checklist-2026.html">full SEO checklist</a> for the complete picture.</p>
+
+      <p>For schema markup — the other technical layer that helps AI engines understand your content — use the <a href="/tools/schema-generator/">Schema Markup Generator</a>. Together, robots.txt (what to crawl) and schema (how to understand what's crawled) form the technical foundation that both Google and AI answer engines need.</p>
+
+      <div class="article-cta">
+        <p>Need help with technical SEO or getting your site set up to attract clients from AI search?</p>
+        <a href="/#contact" class="btn">Work with Bisyri →</a>
+      </div>
+
+    </div>
+    </article>
+
+    <nav class="article-related" aria-label="Related articles">
+      <h2 class="related-heading">Related</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/tools/robots-txt-generator/">
+          <div class="related-cat">Free Tool</div>
+          <div class="related-title">Robots.txt Generator →</div>
+        </a>
+        <a class="related-card" href="/blog/seo-checklist-2026.html">
+          <div class="related-cat">SEO</div>
+          <div class="related-title">The SEO Checklist I Use on Every Client Website →</div>
+        </a>
+        <a class="related-card" href="/blog/how-to-add-schema-markup-2026.html">
+          <div class="related-cat">Schema</div>
+          <div class="related-title">How to Add Schema Markup to Your Website →</div>
+        </a>
+        <a class="related-card" href="/blog/what-is-aeo-2026.html">
+          <div class="related-cat">AEO</div>
+          <div class="related-title">What Is AEO and Why It Matters in 2026 →</div>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/blog/" style="color:inherit;text-decoration:none">← All articles</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../script.js"></script>
+</body></html>

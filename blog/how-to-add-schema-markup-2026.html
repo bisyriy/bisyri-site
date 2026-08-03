@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>How to Add Schema Markup to Your Website (2026 Guide) — Bisyri Blog</title>
+<meta name="description" content="A plain-English guide to adding JSON-LD schema markup to any website. What schema is, which types to add first, and exactly how to implement it — no coding experience required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/blog/how-to-add-schema-markup-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="How to Add Schema Markup to Your Website (2026 Guide)">
+<meta property="og:description" content="A plain-English guide to adding JSON-LD schema markup to any website. What schema is, which types to add first, and exactly how to implement it — no coding experience required.">
+<meta property="og:url" content="https://bisyri.co/blog/how-to-add-schema-markup-2026.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Add Schema Markup to Your Website (2026 Guide)">
+<meta name="twitter:description" content="A plain-English guide to adding JSON-LD schema markup to any website. What schema is, which types to add first, and exactly how to implement it — no coding experience required.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Add Schema Markup to Your Website (2026 Guide)",
+  "description": "A plain-English guide to adding JSON-LD schema markup to any website. What schema is, which types to add first, and exactly how to implement it — no coding experience required.",
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"},
+  "publisher": {"@type": "Person", "name": "Bisyri"},
+  "datePublished": "2026-08-03",
+  "dateModified": "2026-08-03",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bisyri.co/blog/how-to-add-schema-markup-2026.html"},
+  "url": "https://bisyri.co/blog/how-to-add-schema-markup-2026.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is schema markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema markup is structured data you add to your website's HTML that tells search engines and AI systems exactly what your content represents — not just what it says, but what kind of thing it is. It uses a vocabulary from Schema.org and is typically written in a format called JSON-LD, which sits inside a script tag in your page's head section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does schema markup directly improve Google rankings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema markup does not directly boost your position in Google's standard rankings. What it does is help Google understand your content more accurately, which can unlock enhanced results (rich snippets, FAQ dropdowns, review stars) that improve your click-through rate. It also plays a significant role in whether your content gets cited in Google AI Overviews and other AI-generated answers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between JSON-LD and microdata for schema?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "JSON-LD and microdata are two different ways of embedding schema markup in a webpage. JSON-LD places the structured data in a separate script block in the page head — it does not touch your visible HTML. Microdata embeds the structured data as attributes on your existing HTML elements. Google recommends JSON-LD because it is easier to add, easier to maintain, and separates the structured data from your presentation code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which schema type should I add first?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most business websites, add Organization or Person schema to the homepage first — this establishes your entity identity for both Google and AI engines. Second priority is FAQPage schema on any page with a Q&A section, since this is the most impactful schema type for appearing in AI-generated answers. Third is Article schema on all blog posts, and LocalBusiness schema if you serve customers in a specific area."
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+</head>
+<body id="top">
+<div class="read-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <div class="article-wrap">
+
+    <a class="article-back" href="/blog/">← All posts</a>
+
+    <article>
+    <header class="article-header">
+      <div class="post-cat">SEO · AEO · Schema</div>
+      <h1>How to Add Schema Markup to Your Website (2026 Guide)</h1>
+      <div class="post-meta">
+        <span>Bisyri</span><span class="dot">·</span><span>3 Aug 2026</span><span class="dot">·</span><span>9 min read</span>
+      </div>
+    </header>
+
+    <hr class="article-divider">
+
+    <div class="article-body" id="article">
+
+      <p>Schema markup is one of the highest-leverage SEO improvements you can make to any website — and one of the most consistently skipped. Most sites don't have it. The ones that do have a meaningful advantage in both traditional search results and AI-generated answers.</p>
+
+      <p>This guide explains exactly what schema markup is, which types to add first, and how to implement it — with or without a developer.</p>
+
+      <h2>What is Schema Markup?</h2>
+
+      <p>Schema markup is structured data you add to your website's HTML that tells search engines and AI systems exactly what your content <em>is</em> — not just what it says, but what kind of thing it represents.</p>
+
+      <p>Without schema, Google reads your homepage and sees words. With schema, Google reads your homepage and knows: "This is a person named Bisyri, they're a web designer, they're based in Vienna, their contact email is X, they offer these specific services."</p>
+
+      <p>That distinction matters because:</p>
+      <ul>
+        <li>Google uses it to power enhanced results — FAQ dropdowns, review stars, event listings, sitelinks — that appear directly in search results and increase click-through rates.</li>
+        <li>AI engines (ChatGPT, Perplexity, Google AI Overviews) use it as a primary signal when deciding what content to extract and cite in their answers.</li>
+        <li>It disambiguates your entity — making it clear to both Google and AI that "Bisyri" is specifically this business, not a different entity with a similar name.</li>
+      </ul>
+
+      <h2>The Schema Vocabulary: Schema.org</h2>
+
+      <p>All schema markup uses types and properties defined at <a href="https://schema.org" rel="noopener noreferrer" target="_blank">Schema.org</a> — a shared vocabulary maintained by Google, Microsoft, Yahoo, and Yandex. The vocabulary covers hundreds of types: <code>Person</code>, <code>Organization</code>, <code>LocalBusiness</code>, <code>Article</code>, <code>FAQPage</code>, <code>Product</code>, <code>Event</code>, <code>Recipe</code>, and many more.</p>
+
+      <p>You don't need to know the full vocabulary. For most business websites, five types cover 90% of the use cases.</p>
+
+      <h2>JSON-LD: The Format You Should Use</h2>
+
+      <p>Schema markup can be written in several formats. Google recommends — and the industry has converged on — <strong>JSON-LD</strong> (JavaScript Object Notation for Linked Data).</p>
+
+      <p>JSON-LD lives in a <code>&lt;script&gt;</code> tag in your page's <code>&lt;head&gt;</code> section. It doesn't touch your visible HTML at all — it's a separate block of structured data that search engines and AI engines read, but users never see.</p>
+
+      <p>Here's what a minimal <code>Person</code> schema looks like in JSON-LD:</p>
+
+      <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bisyri",
+  "url": "https://bisyri.co",
+  "jobTitle": "Web Designer &amp; SEO Specialist",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vienna",
+    "addressCountry": "AT"
+  }
+}
+&lt;/script&gt;</code></pre>
+
+      <p>That's it. Paste that into your <code>&lt;head&gt;</code> and Google can now understand your business as an entity, not just a web page.</p>
+
+      <div class="article-callout"><strong>Don't want to write JSON-LD by hand?</strong> Use the <a href="/tools/schema-generator/">free Schema Markup Generator</a> to fill in a form and get the code ready to paste — for LocalBusiness, Person, Organization, FAQPage, and Article schema.</div>
+
+      <h2>The 5 Schema Types to Add First</h2>
+
+      <p>These are the types with the highest impact for most business websites, in priority order.</p>
+
+      <h3>1. Person or Organization (Homepage)</h3>
+
+      <p>This is the entity foundation for your entire site. It tells Google and AI engines who you are — your name, what you do, your location, your contact details, and your online presence. Add it to your homepage's <code>&lt;head&gt;</code>.</p>
+
+      <p>Use <code>Person</code> if you're a solo professional (freelancer, consultant, practitioner). Use <code>Organization</code> if you're representing a company or team.</p>
+
+      <p>Key properties to include: <code>name</code>, <code>url</code>, <code>description</code>, <code>email</code>, <code>address</code>, <code>sameAs</code> (link to your LinkedIn, Google Business Profile, and other profiles).</p>
+
+      <h3>2. FAQPage (Service pages, About page, any page with a Q&amp;A)</h3>
+
+      <p><code>FAQPage</code> schema is the single most impactful schema type for appearing in AI-generated answers. When an AI engine is answering a question, FAQPage schema tells it: here's the exact question, here's the exact answer — no extraction needed.</p>
+
+      <p>Add it to any page where you answer common questions: your services page, your about page, a dedicated FAQ page. You don't need a visible FAQ section on the page — the schema can stand alone in the <code>&lt;head&gt;</code>.</p>
+
+      <p>The format is a list of question/answer pairs. Every question should be phrased exactly as a user would ask it. Every answer should be a complete, standalone paragraph that makes sense without the question as context.</p>
+
+      <h3>3. Article (Every blog post)</h3>
+
+      <p><code>Article</code> schema belongs on every blog post, guide, or news article you publish. It tells Google the headline, description, author (with a URL link), publication date, and modification date.</p>
+
+      <p>The <code>author</code> property is especially important — linking to your <code>Person</code> entity URL on your homepage connects your articles to your established identity, which builds authorship authority over time.</p>
+
+      <h3>4. LocalBusiness (If you serve a local area)</h3>
+
+      <p>If your business serves customers in a specific city, region, or country, <code>LocalBusiness</code> schema is essential. It provides Google with your address, phone number, opening hours, geographic coordinates, and service area.</p>
+
+      <p>This schema is the foundation of local SEO — it's what enables your business to appear in "near me" searches, Google Maps, and local knowledge panels.</p>
+
+      <h3>5. Service (Service pages)</h3>
+
+      <p><code>Service</code> schema describes a specific service you offer: what it is, who provides it, what area it covers, and what it costs. Add it to each of your individual service pages.</p>
+
+      <p>This is particularly useful for AI engines when a user asks "who offers [specific service] in [location]?" — the schema tells the AI exactly what you offer and where.</p>
+
+      <h2>How to Add Schema to Your Site</h2>
+
+      <h3>Step 1: Generate the code</h3>
+
+      <p>Use the <a href="/tools/schema-generator/">free Schema Markup Generator</a> to create your JSON-LD. Select the schema type, fill in the form fields, and copy the generated code.</p>
+
+      <h3>Step 2: Add it to your page's &lt;head&gt; section</h3>
+
+      <p>Paste the <code>&lt;script type="application/ld+json"&gt;...&lt;/script&gt;</code> block inside the <code>&lt;head&gt;</code> tag of the page. You can have multiple schema blocks on the same page — for example, a blog post can have both <code>Article</code> schema and <code>FAQPage</code> schema.</p>
+
+      <p><strong>If you're on WordPress:</strong> use a plugin like Yoast SEO or Rank Math — both add basic schema automatically. For custom schema types (FAQPage, Service), add the JSON-LD manually using a plugin like "Head &amp; Footer Code" or a custom functions.php snippet.</p>
+
+      <p><strong>If you're on Squarespace or Wix:</strong> both platforms add basic Organization/Person schema automatically. For advanced schema, add JSON-LD via the Code Injection feature in your site settings.</p>
+
+      <p><strong>If you're on a custom HTML site:</strong> paste directly into the <code>&lt;head&gt;</code> of each relevant page.</p>
+
+      <h3>Step 3: Verify with Google's Rich Results Test</h3>
+
+      <p>After adding schema, validate it at <a href="https://search.google.com/test/rich-results" rel="noopener noreferrer" target="_blank">Google's Rich Results Test</a>. Paste your URL and it will show you exactly which schema types it detected, whether they're valid, and whether they qualify for enhanced results in Google Search.</p>
+
+      <p>Common errors to fix:</p>
+      <ul>
+        <li><strong>Missing required properties</strong> — some schema types have required fields. The Rich Results Test will flag which ones are missing.</li>
+        <li><strong>Type mismatch</strong> — a field that expects a URL but gets a plain string, for example.</li>
+        <li><strong>Invalid JSON</strong> — a missing comma or bracket breaks the whole block. Use a JSON validator if the test flags a parse error.</li>
+      </ul>
+
+      <h2>Schema and AI Search</h2>
+
+      <p>Traditional SEO benefits from schema are well-documented. What's newer — and increasingly important — is schema's role in AEO.</p>
+
+      <p>When an AI engine like Perplexity or Google AI Overviews processes your site, schema markup is one of the clearest signals it uses to:</p>
+      <ul>
+        <li>Understand what your business is and what it does</li>
+        <li>Extract structured answers to specific questions (via <code>FAQPage</code>)</li>
+        <li>Assess whether you're an authoritative source on a topic (via <code>Article</code> authorship)</li>
+        <li>Determine geographic relevance for local queries (via <code>LocalBusiness</code>)</li>
+      </ul>
+
+      <p>A site with thorough, accurate schema markup is giving AI engines a machine-readable summary of everything it would take a human minutes to understand. That's a meaningful citation advantage over competitors without it.</p>
+
+      <p>For the full picture on getting cited by AI engines, read <a href="/blog/how-to-get-cited-by-ai-2026.html">How to Get Cited by ChatGPT, Perplexity &amp; Google AI Overviews</a>. For the overlap between AEO and SEO more broadly, see <a href="/blog/aeo-vs-seo-2026.html">AEO vs SEO: What's the Difference</a>.</p>
+
+      <h2>A Practical Starting Point</h2>
+
+      <p>If you're adding schema to a site from scratch, here's the sequence that gets you the most coverage in the least time:</p>
+
+      <ol>
+        <li><strong>Homepage:</strong> Add <code>Person</code> or <code>Organization</code> schema with your name, URL, description, address, email, and links to your LinkedIn and Google Business Profile.</li>
+        <li><strong>Homepage or Services page:</strong> Add <code>FAQPage</code> schema with 3–5 questions your ideal customers commonly ask.</li>
+        <li><strong>Every blog post:</strong> Add <code>Article</code> schema with headline, author (linked to your Person URL), and dates.</li>
+        <li><strong>Service pages:</strong> Add <code>Service</code> schema describing each service individually.</li>
+        <li><strong>Verify the lot</strong> with Google's Rich Results Test before considering it done.</li>
+      </ol>
+
+      <p>The whole process — using a generator and pasting the code — takes about 30 minutes for a five-page site. The results (better AI citation potential, possible rich snippets, stronger entity signals) are worth far more than 30 minutes of SEO effort from almost anything else you could do in that time.</p>
+
+    </div>
+
+    <aside class="author-bio reveal">
+      <div class="avatar">B</div>
+      <div class="au-info">
+        <div class="au-name">Bisyri</div>
+        <div class="au-role">Web Designer · SEO · AEO Specialist</div>
+        <p class="au-bio">I add schema markup to every site I build and every site I audit. It's the most consistently under-implemented, high-impact improvement available on most business websites.</p>
+      </div>
+    </aside>
+    </article>
+
+    <div class="article-cta reveal">
+      <div class="eyebrow">Want schema markup on your site without the technical work?</div>
+      <h2>I'll implement it properly across your entire site.</h2>
+      <p>The right schema types, correctly structured, verified — and connected to your AEO and SEO strategy as a whole.</p>
+      <div class="cta">
+        <a class="btn primary" href="/#contact">Get in touch →</a>
+        <a class="btn ghost" style="background:transparent;border-color:rgba(255,255,255,.2);color:#EDEef2" href="/tools/schema-generator/">Generate your own schema →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/blog/" style="color:inherit;text-decoration:none">← Back to blog</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../script.js"></script>
+</body></html>

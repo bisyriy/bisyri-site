@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Core Web Vitals: How to Improve LCP, CLS, and INP (2026 Guide) — Bisyri Blog</title>
+<meta name="description" content="A practical guide to improving Core Web Vitals — LCP, CLS, and INP — on any website. What each metric measures, what causes failures, and the specific fixes that move the needle.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/blog/core-web-vitals-guide-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Core Web Vitals: How to Improve LCP, CLS, and INP (2026 Guide)">
+<meta property="og:description" content="A practical guide to improving Core Web Vitals — LCP, CLS, and INP — on any website. What each metric measures, what causes failures, and the specific fixes that move the needle.">
+<meta property="og:url" content="https://bisyri.co/blog/core-web-vitals-guide-2026.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Core Web Vitals: How to Improve LCP, CLS, and INP (2026 Guide)">
+<meta name="twitter:description" content="A practical guide to improving Core Web Vitals — LCP, CLS, and INP — on any website. What each metric measures, what causes failures, and the specific fixes that move the needle.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Core Web Vitals: How to Improve LCP, CLS, and INP (2026 Guide)",
+  "description": "A practical guide to improving Core Web Vitals — LCP, CLS, and INP — on any website. What each metric measures, what causes failures, and the specific fixes that move the needle.",
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"},
+  "publisher": {"@type": "Person", "name": "Bisyri"},
+  "datePublished": "2026-08-03",
+  "dateModified": "2026-08-03",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bisyri.co/blog/core-web-vitals-guide-2026.html"},
+  "url": "https://bisyri.co/blog/core-web-vitals-guide-2026.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Core Web Vitals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Core Web Vitals are a set of metrics defined by Google to measure the user experience of loading, interactivity, and visual stability on a webpage. The three current metrics are LCP (Largest Contentful Paint, measuring loading speed), CLS (Cumulative Layout Shift, measuring visual stability), and INP (Interaction to Next Paint, measuring responsiveness to user input). Google uses these metrics as ranking signals in search."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Core Web Vitals directly affect Google rankings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Core Web Vitals are a confirmed Google ranking signal as part of the Page Experience update. Their impact is most significant as a tiebreaker when other ranking factors are equal — a site with excellent Core Web Vitals will rank above an otherwise equivalent site with poor scores. For highly competitive queries, the difference can be meaningful. They also directly affect conversion rates: even a 100ms improvement in load time can increase conversions by 1–2%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good LCP score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google's target for LCP is under 2.5 seconds (green). Between 2.5 and 4 seconds is needs improvement (yellow). Over 4 seconds is poor (red). Measure LCP using PageSpeed Insights, Google Search Console's Core Web Vitals report, or Chrome DevTools. Always test on mobile — Google uses mobile-first indexing, so mobile LCP matters more for rankings than desktop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What causes Cumulative Layout Shift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cumulative Layout Shift is caused by content moving unexpectedly after the page has started rendering. The most common causes are images or videos without explicit width and height attributes (so the browser does not reserve space before they load), web fonts that cause a flash of unstyled text pushing content around, and dynamically injected content (banners, ads, cookie notices) that appears above existing page content and shifts everything down."
+      }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+</head>
+<body id="top">
+<div class="read-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/" class="active">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <div class="article-wrap">
+
+    <a class="article-back" href="/blog/">← All posts</a>
+
+    <article>
+    <header class="article-header">
+      <div class="post-cat">SEO · Performance</div>
+      <h1>Core Web Vitals: How to Improve LCP, CLS, and INP (2026 Guide)</h1>
+      <div class="post-meta">
+        <span>Bisyri</span><span class="dot">·</span><span>3 Aug 2026</span><span class="dot">·</span><span>11 min read</span>
+      </div>
+    </header>
+
+    <hr class="article-divider">
+
+    <div class="article-body" id="article">
+
+      <p>Your site might have great content, good backlinks, and solid on-page SEO — and still rank lower than a technically mediocre competitor because it loads slowly, jumps around while rendering, or feels sluggish when users click.</p>
+
+      <p>That's what Core Web Vitals measure. And since Google incorporated them as a ranking signal in 2021 — and has been strengthening that signal ever since — poor scores are a real competitive disadvantage.</p>
+
+      <p>This guide explains what each metric measures, what scores to aim for, what causes failures, and the specific fixes that actually move the numbers. No vague advice — just what works.</p>
+
+      <div class="article-callout"><strong>How to measure your current scores:</strong> Go to <a href="https://pagespeed.web.dev" rel="noopener noreferrer" target="_blank">PageSpeed Insights</a>, enter your URL, and run the test. The results show both field data (real user experience) and lab data (simulated). Google Search Console also has a Core Web Vitals report under Experience — this shows real-world data for your entire site.</div>
+
+      <h2>LCP — Largest Contentful Paint</h2>
+
+      <p><strong>What it measures:</strong> How long it takes for the largest visible element on the page to load. This is usually your hero image, a large heading, or a video poster.</p>
+
+      <p><strong>Target:</strong> Under 2.5 seconds (green). 2.5–4s is needs improvement. Over 4s is poor.</p>
+
+      <p>LCP is the metric most sites struggle with most. A slow LCP feels like a slow page — it's what users experience as "this site is taking forever to load."</p>
+
+      <h3>Common LCP causes and fixes</h3>
+
+      <h4>Slow server response time (TTFB)</h4>
+      <p>If the server takes more than 600ms to respond to the initial request, your LCP will almost certainly be poor regardless of anything else you do. Check your Time to First Byte in PageSpeed Insights.</p>
+      <p><strong>Fix:</strong> Upgrade to a faster host (shared hosting on budget providers is often the culprit), enable server-side caching, or use a CDN. For WordPress, a caching plugin (WP Rocket, LiteSpeed Cache) dramatically improves TTFB.</p>
+
+      <h4>Unoptimised hero image</h4>
+      <p>The hero image is the LCP element on most websites. If it's a large JPEG uploaded at 4000px wide and 3MB — your LCP is that image's download time.</p>
+      <p><strong>Fix:</strong></p>
+      <ul>
+        <li>Convert to <strong>WebP format</strong> (typically 30–50% smaller than JPEG at same quality). Use Squoosh.app (free, browser-based) or ImageOptim to convert.</li>
+        <li><strong>Resize to the display size</strong> — don't serve a 4000px image in a 1200px container. A 1400px wide WebP at 85% quality is the sweet spot for most hero images.</li>
+        <li>Add <code>fetchpriority="high"</code> to the LCP image tag. This tells the browser to load this image before anything else.</li>
+        <li>Add <code>loading="eager"</code> (or remove <code>loading="lazy"</code>) from the LCP image — lazy loading defers it, which directly harms LCP.</li>
+        <li>Preload the LCP image: add <code>&lt;link rel="preload" as="image" href="hero.webp"&gt;</code> to your <code>&lt;head&gt;</code>.</li>
+      </ul>
+
+      <h4>Render-blocking resources</h4>
+      <p>CSS and JavaScript files that load in the <code>&lt;head&gt;</code> block the browser from rendering anything until they finish downloading. If you have 5 CSS files and 8 JS scripts loading before your content, your LCP is delayed by all of them.</p>
+      <p><strong>Fix:</strong></p>
+      <ul>
+        <li>Add <code>defer</code> or <code>async</code> to non-critical JavaScript tags.</li>
+        <li>Inline critical CSS (the styles needed to render above-the-fold content) directly in the <code>&lt;head&gt;</code>, and defer the rest.</li>
+        <li>Remove unused CSS and JS — on WordPress, deactivate plugins you don't use.</li>
+      </ul>
+
+      <h4>No CDN for static assets</h4>
+      <p>If all your images, CSS, and JS serve from a single origin server, users far from that server experience higher latency. A CDN (Content Delivery Network) caches assets on servers close to the user.</p>
+      <p><strong>Fix:</strong> Cloudflare (free tier is excellent for most sites) or a host-level CDN. For static sites on Vercel or Netlify, CDN delivery is built in.</p>
+
+      <h2>CLS — Cumulative Layout Shift</h2>
+
+      <p><strong>What it measures:</strong> How much visible page content shifts unexpectedly after it starts rendering. Every time something moves — a button that jumps, text that reflows, content that gets pushed down — it adds to the CLS score.</p>
+
+      <p><strong>Target:</strong> Under 0.1 (green). 0.1–0.25 is needs improvement. Over 0.25 is poor.</p>
+
+      <p>CLS is the metric that makes users click the wrong button because the page shifted at the last moment. It's both a ranking signal and a direct UX and conversion problem.</p>
+
+      <h3>Common CLS causes and fixes</h3>
+
+      <h4>Images without width and height attributes</h4>
+      <p>When an image has no explicit dimensions, the browser doesn't know how much space to reserve before it loads. The image loads, the browser measures it, and everything below it shifts down.</p>
+      <p><strong>Fix:</strong> Add <code>width</code> and <code>height</code> attributes to every <code>&lt;img&gt;</code> tag, matching the image's intrinsic dimensions. The browser uses the aspect ratio to reserve the correct space before the image loads.</p>
+
+      <pre><code>&lt;!-- Before: causes layout shift --&gt;
+&lt;img src="hero.webp" alt="Hero"&gt;
+
+&lt;!-- After: reserves correct space --&gt;
+&lt;img src="hero.webp" alt="Hero" width="1400" height="600"&gt;</code></pre>
+
+      <h4>Web fonts causing FOUT / FOIT</h4>
+      <p>When a web font loads, the browser may switch from a fallback font to the loaded font — and if the metrics differ (line height, letter spacing, character width), the layout reflows and shifts.</p>
+      <p><strong>Fix:</strong></p>
+      <ul>
+        <li>Add <code>font-display: swap</code> to your <code>@font-face</code> declarations (or use Google Fonts with <code>&amp;display=swap</code> in the URL).</li>
+        <li>Preload your primary font: <code>&lt;link rel="preload" as="font" type="font/woff2" href="font.woff2" crossorigin&gt;</code>.</li>
+        <li>Use <code>size-adjust</code>, <code>ascent-override</code>, and <code>descent-override</code> to match your fallback font's metrics to the loaded font — this minimises reflow when the font swaps in.</li>
+      </ul>
+
+      <h4>Dynamically injected content above existing content</h4>
+      <p>Cookie banners, notification bars, newsletter pop-ins, and ad slots that load after the initial render and push existing content downwards are among the most common CLS culprits.</p>
+      <p><strong>Fix:</strong> Reserve space for late-loading elements before they appear. A cookie banner that slides in from the bottom doesn't cause layout shift; one that appears at the top and pushes the page down does. Set a minimum height on ad containers so they don't expand from zero.</p>
+
+      <h4>Animations using top, left, margin, or width</h4>
+      <p>CSS animations that change properties like <code>top</code>, <code>margin</code>, <code>width</code>, or <code>height</code> trigger layout recalculations and can cause CLS.</p>
+      <p><strong>Fix:</strong> Use <code>transform</code> and <code>opacity</code> for animations. These run on the GPU compositing layer and don't trigger layout. <code>transform: translateY(-10px)</code> instead of <code>top: -10px</code>.</p>
+
+      <h2>INP — Interaction to Next Paint</h2>
+
+      <p><strong>What it measures:</strong> How quickly the browser responds to user interactions — clicks, taps, key presses. INP replaced FID (First Input Delay) in March 2024 as a Core Web Vital. It measures the full interaction latency, not just the initial delay.</p>
+
+      <p><strong>Target:</strong> Under 200ms (green). 200–500ms is needs improvement. Over 500ms is poor.</p>
+
+      <p>Poor INP feels like an unresponsive interface. Click a button — nothing happens for half a second. Tap a menu — it hesitates. These delays erode trust and increase bounce rates.</p>
+
+      <h3>Common INP causes and fixes</h3>
+
+      <h4>Long tasks blocking the main thread</h4>
+      <p>JavaScript runs on the browser's main thread. When a long JavaScript task is running (anything over 50ms is a "long task"), the browser can't respond to user input until it finishes. The user clicks — the click event queues — and INP is the time from click to when the browser can finally process it.</p>
+      <p><strong>Fix:</strong></p>
+      <ul>
+        <li>Identify long tasks in Chrome DevTools Performance panel — they appear as red blocks in the main thread.</li>
+        <li>Break long tasks into smaller ones using <code>setTimeout(fn, 0)</code> or the <code>scheduler.yield()</code> API to yield to the browser between chunks.</li>
+        <li>Defer non-critical JavaScript until after the page is interactive.</li>
+        <li>Remove unused JavaScript — every byte of JS that loads is JS that has to be parsed and compiled.</li>
+      </ul>
+
+      <h4>Excessive event listeners</h4>
+      <p>Attaching event listeners to many elements individually (especially in frameworks that re-render frequently) can cause input delay.</p>
+      <p><strong>Fix:</strong> Use event delegation — attach one listener to a parent element and check which child triggered the event — rather than attaching listeners to each child.</p>
+
+      <h4>Heavy third-party scripts</h4>
+      <p>Chat widgets, marketing automation scripts, A/B testing tools, and some analytics scripts can consume significant main thread time and directly harm INP.</p>
+      <p><strong>Fix:</strong> Audit your third-party scripts. Load non-critical ones with <code>defer</code> or after a <code>setTimeout</code> delay. Consider removing tools you don't actively use — a chat widget that nobody uses is a pure performance tax.</p>
+
+      <h4>Slow DOM</h4>
+      <p>Rendering and updating a very large DOM (thousands of nodes) is expensive. Every time something changes in a large DOM, the browser has to recalculate styles and layout for more elements.</p>
+      <p><strong>Fix:</strong> For content-heavy pages, virtualise long lists (only render what's in the viewport). Avoid deeply nested DOM structures. Use <code>content-visibility: auto</code> on off-screen sections to defer their rendering.</p>
+
+      <h2>A Practical Improvement Priority Order</h2>
+
+      <p>If your scores are red across the board, this is the order that typically delivers the most improvement per hour of effort:</p>
+
+      <ol>
+        <li><strong>Fix your server response time</strong> — if TTFB is over 600ms, everything else is fighting uphill.</li>
+        <li><strong>Optimise your LCP image</strong> — convert to WebP, resize, add fetchpriority and preload.</li>
+        <li><strong>Add explicit dimensions to all images</strong> — this alone often fixes CLS on image-heavy sites.</li>
+        <li><strong>Defer non-critical JavaScript</strong> — add <code>defer</code> to scripts that don't need to run before render.</li>
+        <li><strong>Audit and remove heavy third-party scripts</strong> — check the Opportunities section in PageSpeed Insights for which third parties are adding load time.</li>
+        <li><strong>Fix cookie banner / notification bar CLS</strong> — if you have one that pushes content down.</li>
+      </ol>
+
+      <p>Run PageSpeed Insights before and after each change. The "Opportunities" and "Diagnostics" sections tell you exactly which issues are on your site and how much improvement each fix is estimated to provide — work through them in order of estimated impact.</p>
+
+      <h2>Core Web Vitals and SEO</h2>
+
+      <p>Google confirmed Core Web Vitals as a ranking factor in its Page Experience update. In practice, their direct impact on rankings is moderate — content relevance and backlinks still matter more for most queries. But the indirect impact is substantial:</p>
+
+      <ul>
+        <li>Faster sites have lower bounce rates, which keeps users on your content longer — a positive engagement signal</li>
+        <li>Better CLS reduces accidental clicks and frustration, improving time-on-page</li>
+        <li>Good INP scores make interactions feel responsive, increasing form completions and conversions</li>
+        <li>For highly competitive queries where other signals are equal, Core Web Vitals can be the deciding factor</li>
+      </ul>
+
+      <p>For the full SEO picture — including how Core Web Vitals fit into the broader technical SEO checklist — read <a href="/blog/seo-checklist-2026.html">The SEO Checklist I Use on Every Client Website</a>.</p>
+
+    </div>
+
+    <aside class="author-bio reveal">
+      <div class="avatar">B</div>
+      <div class="au-info">
+        <div class="au-name">Bisyri</div>
+        <div class="au-role">Web Designer · SEO · Performance Specialist</div>
+        <p class="au-bio">Every site I build targets green Core Web Vitals on mobile. Performance isn't an afterthought — it's built in from the first design decision to the final deployment.</p>
+      </div>
+    </aside>
+    </article>
+
+    <div class="article-cta reveal">
+      <div class="eyebrow">Is poor performance holding your site back?</div>
+      <h2>I'll fix your Core Web Vitals and make your site fast.</h2>
+      <p>PageSpeed audit, image optimisation, render-blocking fixes, CLS diagnosis — targeted performance improvements that move your scores from red to green.</p>
+      <div class="cta">
+        <a class="btn primary" href="/#contact">Get in touch →</a>
+        <a class="btn ghost" style="background:transparent;border-color:rgba(255,255,255,.2);color:#EDEef2" href="/tools/aeo-check/">Take the free AEO check</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/blog/" style="color:inherit;text-decoration:none">← Back to blog</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../script.js"></script>
+</body></html>

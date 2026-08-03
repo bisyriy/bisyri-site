@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free AEO Readiness Check — Is Your Site Ready for AI Search? | Bisyri</title>
+<meta name="description" content="10-question quiz that scores your AEO readiness — find out if ChatGPT, Google AI Overviews and Perplexity can cite your business. Free, instant, no email required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/aeo-check/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free AEO Readiness Check — Is Your Site Ready for AI Search?">
+<meta property="og:description" content="10 questions. Instant score. Personalised action plan. Find out if AI search engines can find and cite your business — free, no email required.">
+<meta property="og:url" content="https://bisyri.co/tools/aeo-check/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free AEO Readiness Check — Is Your Site Ready for AI Search?">
+<meta name="twitter:description" content="10 questions. Instant score. Personalised action plan. Find out if AI search engines can find and cite your business.">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+/* ── AEO Quiz tool ─────────────────────────────────────── */
+.quiz-outer{padding-bottom:80px}
+.quiz-wrap{max-width:640px;margin:0 auto;padding:0 28px}
+.quiz-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,5vw,44px);animation:qfade .25s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* intro */
+.quiz-intro-icon{font-size:36px;line-height:1;margin-bottom:16px}
+.quiz-intro h2{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.5vw,28px);letter-spacing:-.025em;line-height:1.1;margin-bottom:12px}
+.quiz-intro>p{font-size:15.5px;color:var(--sub);line-height:1.65;margin-bottom:24px}
+.quiz-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.quiz-meta-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+.quiz-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo);flex-shrink:0}
+
+/* progress */
+.quiz-prog{margin-bottom:26px}
+.quiz-prog-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.quiz-prog-fill{height:100%;background:var(--indigo);border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.quiz-prog-lbl{font-family:var(--mono);font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+
+/* question */
+.quiz-qnum{font-family:var(--mono);font-size:11.5px;color:var(--indigo);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:14px}
+.quiz-qtext{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
+.quiz-ctx{font-size:13.5px;color:var(--sub);line-height:1.6;padding:11px 15px 11px 14px;background:var(--indigo-soft);border-radius:10px;border-left:3px solid var(--indigo);margin-bottom:26px}
+.quiz-btns{display:flex;flex-direction:column;gap:10px}
+.quiz-btn{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);font-family:var(--body);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:border-color .15s,background .15s,transform .12s;display:flex;align-items:center;gap:12px}
+.quiz-btn:hover{border-color:var(--indigo);background:var(--indigo-soft);transform:translateX(4px)}
+.quiz-btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.quiz-btn-em{font-size:17px;flex-shrink:0;width:24px;text-align:center}
+
+/* results */
+.quiz-result-top{text-align:center;margin-bottom:26px}
+.quiz-ring{width:128px;height:128px;margin:0 auto 16px;position:relative}
+.quiz-ring svg{transform:rotate(-90deg)}
+.q-track{fill:none;stroke:var(--line);stroke-width:9}
+.q-fill{fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)}
+.quiz-ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.quiz-score-big{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:-.04em;line-height:1.05}
+.quiz-score-den{font-family:var(--mono);font-size:11px;color:var(--sub)}
+.quiz-grade{display:inline-block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:999px;margin-bottom:12px}
+.quiz-grade.high{color:#1A8F4C;background:#EDF7F1;border:1px solid #C0E8CE}
+.quiz-grade.mid{color:#92400E;background:#FFFBEB;border:1px solid #FCD34D}
+.quiz-grade.low{color:#C53030;background:#FFF5F5;border:1px solid #FEB2B2}
+.quiz-result-title{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.5vw,23px);letter-spacing:-.02em;margin-bottom:8px}
+.quiz-result-sub{font-size:15px;color:var(--sub);line-height:1.65;max-width:44ch;margin-inline:auto}
+.quiz-recs{border-top:1px solid var(--line);padding-top:22px;margin:22px 0}
+.quiz-recs-h{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);margin-bottom:14px}
+.quiz-rec{display:flex;gap:12px;margin-bottom:10px;padding:13px 15px;background:var(--paper);border-radius:10px;align-items:flex-start}
+.quiz-rec-num{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--indigo);flex-shrink:0;background:var(--indigo-soft);border-radius:5px;padding:2px 7px;margin-top:2px;white-space:nowrap}
+.quiz-rec-text{font-size:14px;color:var(--ink);line-height:1.55}
+.quiz-cta{text-align:center;padding-top:22px;border-top:1px solid var(--line)}
+.quiz-cta>p{font-size:14.5px;color:var(--sub);margin-bottom:16px;line-height:1.6}
+.quiz-cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.quiz-restart{background:none;border:0;font-family:var(--mono);font-size:12px;color:var(--sub);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:16px;display:block;margin-inline:auto;padding:4px}
+.quiz-restart:hover{color:var(--ink)}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <section class="blog-hero wrap">
+    <a class="article-back" href="/blog/">← Back to blog</a>
+    <div class="eyebrow">Free Tool · AEO · 2 min</div>
+    <h1 class="blog-headline">Is your site <em>ready</em> for AI search?</h1>
+    <p class="blog-lede">10 questions. Instant score. Personalised action plan. Find out if ChatGPT, Google AI Overviews, and Perplexity can cite your business — free, no email required.</p>
+  </section>
+
+  <div class="quiz-outer">
+    <div class="quiz-wrap">
+      <div id="quiz-root"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/" style="color:inherit;text-decoration:none">← Back to portfolio</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+'use strict';
+var CIRC = 314.159;
+
+var QS = [
+  {
+    q: 'Does your website have FAQPage schema markup (structured data)?',
+    ctx: 'FAQ schema directly tells AI systems which questions your page answers — it\'s the single fastest AEO signal you can add.',
+    rec: 'Add FAQPage schema to your homepage and main service pages. Use Google\'s free Rich Results Test to verify it\'s working.'
+  },
+  {
+    q: 'Does your homepage clearly state who you are, what you do, and who you serve — in plain language?',
+    ctx: 'AI extracts a clear entity description to cite you. Vague language ("delivering innovative solutions") won\'t get cited. Specific, direct language will.',
+    rec: 'Rewrite your opening paragraph to answer in plain English: who are you, what exactly do you do, and who is your ideal client — in one or two sentences.'
+  },
+  {
+    q: 'Does your content lead with the direct answer rather than building up to it?',
+    ctx: 'AI prefers "The minimum stay is 3 nights" over "Our property offers flexible options for guests considering extended visits." Front-load the answer.',
+    rec: 'Audit your main pages: does each open with a direct answer to a specific question? Restructure any page that buries the answer below the fold.'
+  },
+  {
+    q: 'Is your business listed consistently on Google Business Profile, LinkedIn, and major directories?',
+    ctx: 'Consistent name, contact details, and descriptions across the web build entity trust — AI systems cross-reference these to verify who you are.',
+    rec: 'Create or claim your Google Business Profile. Ensure your business name and contact info match exactly across LinkedIn, your site, and any directories.'
+  },
+  {
+    q: 'Do your key pages have a dedicated FAQ or Q&A section?',
+    ctx: 'Pages with Q&A sections get cited far more often in ChatGPT, Google AI Overviews, and Perplexity than pages without them.',
+    rec: 'Add a 5–8 question FAQ to your homepage and each main service page. Target the questions real clients actually ask you.'
+  },
+  {
+    q: 'Is your business mentioned or cited on external websites, blogs, or news sites?',
+    ctx: 'AI systems trust businesses that other authoritative sources reference. External mentions act as credibility votes.',
+    rec: 'Pursue 3–5 guest posts or press mentions in your industry. Even niche publications count — being referenced externally builds the signal AI needs.'
+  },
+  {
+    q: 'Do you have separate pages for each of your main services?',
+    ctx: 'A single "Services" catch-all rarely gets cited for specific queries. Dedicated pages — each with their own FAQ — rank far better in AI answers.',
+    rec: 'Create individual pages for each service, each clearly stating what it is, who it\'s for, what\'s included, and what results clients can expect.'
+  },
+  {
+    q: 'Does your content show author credentials and expertise signals?',
+    ctx: 'Google\'s E-E-A-T (Experience, Expertise, Authoritativeness, Trust) is a major input for which content AI systems choose to cite.',
+    rec: 'Add author bios with credentials and past results to your blog posts and key pages. Link to your LinkedIn or portfolio as supporting proof.'
+  },
+  {
+    q: 'Does your site load in under 3 seconds on mobile?',
+    ctx: 'Core Web Vitals directly affect which pages Google prioritises for AI Overviews. A slow site is a liability even if the content is excellent.',
+    rec: 'Test free at pagespeed.web.dev — it flags the top issues in 30 seconds. Typical wins: compress images, remove unused JavaScript, add cache headers.'
+  },
+  {
+    q: 'Is your site verified on Google Search Console with a sitemap submitted?',
+    ctx: 'Search Console is how Google discovers and indexes your pages. Without it, you may have indexing gaps limiting AI visibility — and you won\'t know.',
+    rec: 'Set up Google Search Console (free), verify your domain, and submit your sitemap.xml. Check the Coverage report for indexing errors.'
+  }
+];
+
+var GRADES = {
+  high: {
+    label: 'Strong foundations',
+    cls: 'high',
+    color: '#25C66F',
+    title: 'Your site is well-positioned for AI search.',
+    sub: "You've ticked most of the key boxes. A few targeted optimisations and you'll be competing strongly for AI citations."
+  },
+  mid: {
+    label: 'Partial coverage',
+    cls: 'mid',
+    color: '#D69E2E',
+    title: 'Some foundations in place — significant gaps remain.',
+    sub: "You have the basics, but AI search engines are still missing the signals they need to cite you with confidence."
+  },
+  low: {
+    label: 'Low AI visibility',
+    cls: 'low',
+    color: '#E53E3E',
+    title: 'Your site is mostly invisible to AI search right now.',
+    sub: "The good news: most of these fixes are straightforward. The earlier you start, the bigger the first-mover advantage."
+  }
+};
+
+var state = { screen: 'intro', current: 0, answers: [] };
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function render() {
+  var root = document.getElementById('quiz-root');
+  if (!root) return;
+  if (state.screen === 'intro') root.innerHTML = introHTML();
+  else if (state.screen === 'question') root.innerHTML = questionHTML();
+  else { root.innerHTML = resultHTML(); animateResult(); }
+}
+
+function introHTML() {
+  return '<div class="quiz-card">' +
+    '<div class="quiz-intro">' +
+      '<div class="quiz-intro-icon">🔍</div>' +
+      '<h2>How visible is your business to AI search?</h2>' +
+      '<p>Answer 10 questions about your current website setup and get an AEO score out of 10 plus a personalised action plan — no email, no sign-up, completely free.</p>' +
+      '<div class="quiz-meta">' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>10 questions</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>~2 minutes</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>Instant results</span>' +
+      '</div>' +
+      '<button class="btn" onclick="quizStart()" style="font-size:15px;padding:14px 28px">Start the check →</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function questionHTML() {
+  var i = state.current;
+  var q = QS[i];
+  var pct = Math.round((i / QS.length) * 100);
+  return '<div class="quiz-card">' +
+    '<div class="quiz-prog">' +
+      '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:' + pct + '%"></div></div>' +
+      '<span class="quiz-prog-lbl">Question ' + (i + 1) + ' of ' + QS.length + '</span>' +
+    '</div>' +
+    '<div class="quiz-qnum">AEO Signal #' + (i + 1) + '</div>' +
+    '<div class="quiz-qtext">' + esc(q.q) + '</div>' +
+    '<div class="quiz-ctx">' + esc(q.ctx) + '</div>' +
+    '<div class="quiz-btns">' +
+      '<button class="quiz-btn" onclick="quizAnswer(1)"><span class="quiz-btn-em">✓</span>Yes — this is in place</button>' +
+      '<button class="quiz-btn" onclick="quizAnswer(0)"><span class="quiz-btn-em">✗</span>No — not yet</button>' +
+      '<button class="quiz-btn" onclick="quizAnswer(0.5)"><span class="quiz-btn-em">?</span>Not sure / partially</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function resultHTML() {
+  var score = state.answers.reduce(function(a, b) { return a + b; }, 0);
+  var pct = score / QS.length;
+  var g = pct >= 0.7 ? GRADES.high : pct >= 0.4 ? GRADES.mid : GRADES.low;
+
+  var negatives = [];
+  state.answers.forEach(function(ans, i) {
+    if (ans < 1) negatives.push({ score: ans, rec: QS[i].rec });
+  });
+  negatives.sort(function(a, b) { return a.score - b.score; });
+  var topRecs = negatives.slice(0, 3);
+
+  var recsHTML = '<div class="quiz-recs"><div class="quiz-recs-h">Your top priorit' + (topRecs.length === 1 ? 'y' : 'ies') + '</div>';
+  if (topRecs.length > 0) {
+    topRecs.forEach(function(r, i) {
+      recsHTML += '<div class="quiz-rec"><span class="quiz-rec-num">' + (i + 1) + '</span><div class="quiz-rec-text">' + esc(r.rec) + '</div></div>';
+    });
+  } else {
+    recsHTML += '<div class="quiz-rec"><span class="quiz-rec-num">✓</span><div class="quiz-rec-text">You\'ve covered all 10 signals — focus on depth and ongoing content optimisation rather than new foundations.</div></div>';
+  }
+  recsHTML += '</div>';
+
+  return '<div class="quiz-card">' +
+    '<div class="quiz-result-top">' +
+      '<div class="quiz-ring">' +
+        '<svg viewBox="0 0 120 120" width="128" height="128" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle class="q-track" cx="60" cy="60" r="50"/>' +
+          '<circle class="q-fill" id="q-arc" cx="60" cy="60" r="50" stroke="' + g.color + '" stroke-dasharray="' + CIRC + '" stroke-dashoffset="' + CIRC + '"/>' +
+        '</svg>' +
+        '<div class="quiz-ring-inner"><div class="quiz-score-big" id="q-num">0</div><div class="quiz-score-den">/ 10</div></div>' +
+      '</div>' +
+      '<div class="quiz-grade ' + g.cls + '">' + g.label + '</div>' +
+      '<div class="quiz-result-title">' + g.title + '</div>' +
+      '<p class="quiz-result-sub">' + g.sub + '</p>' +
+    '</div>' +
+    recsHTML +
+    '<div class="quiz-cta">' +
+      '<p>Want help fixing this? I can review your site and put together an AEO action plan — usually within 24 hours.</p>' +
+      '<div class="quiz-cta-btns">' +
+        '<a class="btn wa" href="https://wa.me/60175897831" target="_blank" rel="noopener" style="font-size:14px;padding:12px 22px">WhatsApp me →</a>' +
+        '<a class="btn" href="/#contact" style="background:transparent;border:1.5px solid var(--line);color:var(--ink);font-size:14px;padding:12px 22px">Use contact form</a>' +
+      '</div>' +
+    '</div>' +
+    '<button class="quiz-restart" onclick="quizRestart()">↺ Retake the quiz</button>' +
+  '</div>';
+}
+
+function animateResult() {
+  var score = state.answers.reduce(function(a, b) { return a + b; }, 0);
+  var arc = document.getElementById('q-arc');
+  var numEl = document.getElementById('q-num');
+  if (!arc || !numEl) return;
+
+  var targetOffset = CIRC * (1 - score / QS.length);
+  setTimeout(function() { arc.style.strokeDashoffset = targetOffset; }, 80);
+
+  var start = performance.now();
+  var dur = 900;
+  (function tick(now) {
+    var t = Math.min((now - start) / dur, 1);
+    var ease = 1 - Math.pow(1 - t, 3);
+    var cur = Math.round(score * ease * 10) / 10;
+    numEl.textContent = (cur % 1 === 0) ? cur.toFixed(0) : cur.toFixed(1);
+    if (t < 1) requestAnimationFrame(tick);
+    else numEl.textContent = (score % 1 === 0) ? score.toFixed(0) : score.toFixed(1);
+  })(start);
+}
+
+window.quizStart = function() {
+  state.screen = 'question';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+window.quizAnswer = function(val) {
+  state.answers[state.current] = val;
+  if (state.current < QS.length - 1) {
+    state.current++;
+    render();
+  } else {
+    state.screen = 'result';
+    render();
+  }
+};
+
+window.quizRestart = function() {
+  state.screen = 'intro';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+render();
+})();
+</script>
+</body></html>

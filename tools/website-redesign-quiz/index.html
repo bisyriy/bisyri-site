@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Should I Redesign My Website? Take the 2-Minute Quiz | Bisyri</title>
+<meta name="description" content="8 yes/no questions about your current website. Get a scored recommendation: keep it, fix specific issues, or redesign. Free, instant, no email required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/website-redesign-quiz/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Should I Redesign My Website? Take the 2-Minute Quiz">
+<meta property="og:description" content="8 yes/no questions about your current website. Get a scored recommendation: keep it, fix specific issues, or redesign. Free, instant, no email required.">
+<meta property="og:url" content="https://bisyri.co/tools/website-redesign-quiz/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Should I Redesign My Website? Take the 2-Minute Quiz">
+<meta name="twitter:description" content="8 yes/no questions about your current website. Get a scored recommendation: keep it, fix specific issues, or redesign. Free, instant, no email required.">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Should I Redesign My Website? Quiz",
+  "description": "8 yes/no questions that score your website and tell you whether to keep it, fix it, or redesign it.",
+  "url": "https://bisyri.co/tools/website-redesign-quiz/",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co"}
+}
+</script>
+<style>
+/* ── Website Redesign Quiz tool ────────────────────────── */
+.quiz-outer{padding-bottom:80px}
+.quiz-wrap{max-width:640px;margin:0 auto;padding:0 28px}
+.quiz-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,5vw,44px);animation:qfade .25s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* intro */
+.quiz-intro-icon{font-size:36px;line-height:1;margin-bottom:16px}
+.quiz-intro h2{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.5vw,28px);letter-spacing:-.025em;line-height:1.1;margin-bottom:12px}
+.quiz-intro>p{font-size:15.5px;color:var(--sub);line-height:1.65;margin-bottom:24px}
+.quiz-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.quiz-meta-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+.quiz-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo);flex-shrink:0}
+
+/* progress */
+.quiz-prog{margin-bottom:26px}
+.quiz-prog-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.quiz-prog-fill{height:100%;background:var(--indigo);border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.quiz-prog-lbl{font-family:var(--mono);font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+
+/* question */
+.quiz-qnum{font-family:var(--mono);font-size:11.5px;color:var(--indigo);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:14px}
+.quiz-qtext{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
+.quiz-ctx{font-size:13.5px;color:var(--sub);line-height:1.6;padding:11px 15px 11px 14px;background:var(--indigo-soft);border-radius:10px;border-left:3px solid var(--indigo);margin-bottom:26px}
+.quiz-btns{display:flex;flex-direction:column;gap:10px}
+.quiz-btn{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);font-family:var(--body);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:border-color .15s,background .15s,transform .12s;display:flex;align-items:center;gap:12px}
+.quiz-btn:hover{border-color:var(--indigo);background:var(--indigo-soft);transform:translateX(4px)}
+.quiz-btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.quiz-btn-em{font-size:17px;flex-shrink:0;width:24px;text-align:center}
+
+/* results */
+.quiz-result-top{text-align:center;margin-bottom:26px}
+.quiz-ring{width:128px;height:128px;margin:0 auto 16px;position:relative}
+.quiz-ring svg{transform:rotate(-90deg)}
+.q-track{fill:none;stroke:var(--line);stroke-width:9}
+.q-fill{fill:none;stroke-width:9;stroke-linecap:round;transition:stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)}
+.quiz-ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.quiz-score-big{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:-.04em;line-height:1.05}
+.quiz-score-den{font-family:var(--mono);font-size:11px;color:var(--sub)}
+.quiz-grade{display:inline-block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:999px;margin-bottom:12px}
+.quiz-grade.keep{color:#1A8F4C;background:#EDF7F1;border:1px solid #C0E8CE}
+.quiz-grade.fix{color:#92400E;background:#FFFBEB;border:1px solid #FCD34D}
+.quiz-grade.redesign{color:#C05621;background:#FFFAF0;border:1px solid #F6AD55}
+.quiz-grade.urgent{color:#7B2EBE;background:#FAF5FF;border:1px solid #D6BCFA}
+.quiz-result-title{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.5vw,23px);letter-spacing:-.02em;margin-bottom:8px}
+.quiz-result-sub{font-size:15px;color:var(--sub);line-height:1.65;max-width:44ch;margin-inline:auto}
+.quiz-issues{border-top:1px solid var(--line);padding-top:22px;margin:22px 0}
+.quiz-issues-h{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);margin-bottom:14px}
+.quiz-issue{display:flex;gap:12px;margin-bottom:10px;padding:13px 15px;background:var(--paper, var(--indigo-soft));border-radius:10px;align-items:flex-start}
+.quiz-issue-dot{width:7px;height:7px;border-radius:50%;background:var(--indigo);flex-shrink:0;margin-top:5px}
+.quiz-issue-text{font-size:14px;color:var(--ink);line-height:1.55}
+.quiz-issue-label{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--sub);display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.quiz-cta{text-align:center;padding-top:22px;border-top:1px solid var(--line)}
+.quiz-cta>p{font-size:14.5px;color:var(--sub);margin-bottom:16px;line-height:1.6}
+.quiz-restart{background:none;border:0;font-family:var(--mono);font-size:12px;color:var(--sub);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:16px;display:block;margin-inline:auto;padding:4px}
+.quiz-restart:hover{color:var(--ink)}
+.quiz-allgood{display:flex;gap:12px;padding:13px 15px;background:var(--indigo-soft);border-radius:10px;align-items:flex-start;font-size:14px;color:var(--ink);line-height:1.55}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <section class="blog-hero wrap">
+    <a class="article-back" href="/tools/">← Back to tools</a>
+    <div class="eyebrow">Free Tool · Web Design · 2 min</div>
+    <h1 class="blog-headline">Should you <em>redesign</em> your website?</h1>
+    <p class="blog-lede">8 honest yes/no questions about your current site. Get a scored recommendation — keep it, fix specific issues, or redesign. Free, instant, no email required.</p>
+  </section>
+
+  <div class="quiz-outer">
+    <div class="quiz-wrap">
+      <div id="quiz-root"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/" style="color:inherit;text-decoration:none">← Back to portfolio</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+'use strict';
+var CIRC = 314.159;
+var TOTAL = 8;
+
+var QS = [
+  {
+    label: 'Age',
+    q: 'Is your website more than 3 years old?',
+    hint: 'Design trends and technical standards move fast. A 3+ year old site often has outdated code, slow loading, and a look that signals "old company".'
+  },
+  {
+    label: 'Mobile',
+    q: 'Does your website look or feel broken on mobile?',
+    hint: 'More than 60% of web traffic is mobile. A broken mobile experience directly loses customers.'
+  },
+  {
+    label: 'Speed',
+    q: 'Does your website take more than 3 seconds to load?',
+    hint: 'Google penalises slow sites. Visitors abandon pages that take more than 3 seconds — even 1 extra second costs conversion.'
+  },
+  {
+    label: 'Conversions',
+    q: 'Are visitors leaving without contacting you or buying?',
+    hint: 'If you\'re getting traffic but no leads or sales, the website isn\'t doing its job. This is a conversion problem, not a traffic problem.'
+  },
+  {
+    label: 'Brand fit',
+    q: 'Does your website no longer reflect your brand or services?',
+    hint: 'If your business has evolved but your website hasn\'t, you\'re losing trust with every visit.'
+  },
+  {
+    label: 'Competitors',
+    q: 'Do your competitors\' websites make yours look dated?',
+    hint: 'Customers compare. If competitors look significantly more professional, it affects your credibility.'
+  },
+  {
+    label: 'Editing ease',
+    q: 'Is it difficult or expensive to update your website content?',
+    hint: 'If updating a page requires a developer or takes hours, that\'s a technical debt problem that holds your business back.'
+  },
+  {
+    label: 'Gut check',
+    q: 'Do you hesitate to share your website URL?',
+    hint: 'This is the most honest signal. If you\'re not proud of it, your customers notice too.'
+  }
+];
+
+var OUTCOMES = [
+  {
+    min: 0, max: 2,
+    cls: 'keep',
+    color: '#25C66F',
+    label: 'Keep it — with minor fixes',
+    title: 'Your website is in reasonable shape.',
+    sub: 'Focus on targeted improvements rather than a full rebuild. Small, focused fixes will give you the best return right now.'
+  },
+  {
+    min: 3, max: 4,
+    cls: 'fix',
+    color: '#D69E2E',
+    label: 'Fix, don\'t redesign',
+    title: 'There are specific problems worth fixing.',
+    sub: 'A targeted refresh or a handful of specific fixes may be all you need. No need to throw out everything and start from scratch.'
+  },
+  {
+    min: 5, max: 6,
+    cls: 'redesign',
+    color: '#ED8936',
+    label: 'Time to redesign',
+    title: 'Multiple signals point to a redesign.',
+    sub: 'The investment in a redesign is likely to pay for itself in leads and conversions you\'re currently missing.'
+  },
+  {
+    min: 7, max: 8,
+    cls: 'urgent',
+    color: '#7B2EBE',
+    label: 'Redesign urgently',
+    title: 'Your website is actively costing you business.',
+    sub: 'Every day you wait, potential customers are choosing competitors with more credible-looking sites. The cost of waiting is real.'
+  }
+];
+
+function getOutcome(yesCount) {
+  for (var i = 0; i < OUTCOMES.length; i++) {
+    var o = OUTCOMES[i];
+    if (yesCount >= o.min && yesCount <= o.max) return o;
+  }
+  return OUTCOMES[OUTCOMES.length - 1];
+}
+
+var state = { screen: 'intro', current: 0, answers: [] };
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function render() {
+  var root = document.getElementById('quiz-root');
+  if (!root) return;
+  if (state.screen === 'intro') root.innerHTML = introHTML();
+  else if (state.screen === 'question') root.innerHTML = questionHTML();
+  else { root.innerHTML = resultHTML(); animateResult(); }
+}
+
+function introHTML() {
+  return '<div class="quiz-card">' +
+    '<div class="quiz-intro">' +
+      '<div class="quiz-intro-icon">🖥️</div>' +
+      '<h2>Should you redesign your website?</h2>' +
+      '<p>Answer 8 honest questions about your current site and get a scored recommendation: keep it, fix specific issues, or invest in a redesign — no email, no sign-up, completely free.</p>' +
+      '<div class="quiz-meta">' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>8 questions</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>~2 minutes</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>Instant results</span>' +
+      '</div>' +
+      '<button class="btn" onclick="quizStart()" style="font-size:15px;padding:14px 28px">Take the quiz →</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function questionHTML() {
+  var i = state.current;
+  var q = QS[i];
+  var pct = Math.round((i / TOTAL) * 100);
+  return '<div class="quiz-card">' +
+    '<div class="quiz-prog">' +
+      '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:' + pct + '%"></div></div>' +
+      '<span class="quiz-prog-lbl">Question ' + (i + 1) + ' of ' + TOTAL + '</span>' +
+    '</div>' +
+    '<div class="quiz-qnum">' + esc(q.label) + ' · Question ' + (i + 1) + '</div>' +
+    '<div class="quiz-qtext">' + esc(q.q) + '</div>' +
+    '<div class="quiz-ctx">' + esc(q.hint) + '</div>' +
+    '<div class="quiz-btns">' +
+      '<button class="quiz-btn" onclick="quizAnswer(true)"><span class="quiz-btn-em">✓</span>Yes</button>' +
+      '<button class="quiz-btn" onclick="quizAnswer(false)"><span class="quiz-btn-em">✗</span>No</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function resultHTML() {
+  var yesCount = state.answers.filter(function(a) { return a === true; }).length;
+  var o = getOutcome(yesCount);
+
+  var issuesHTML = '<div class="quiz-issues"><div class="quiz-issues-h">Issues we found</div>';
+  var triggered = [];
+  state.answers.forEach(function(a, i) { if (a === true) triggered.push(QS[i]); });
+
+  if (triggered.length === 0) {
+    issuesHTML += '<div class="quiz-allgood">No major issues flagged — your website is holding up well across all 8 areas.</div>';
+  } else {
+    triggered.forEach(function(q) {
+      issuesHTML += '<div class="quiz-issue"><div class="quiz-issue-dot"></div><div class="quiz-issue-text"><span class="quiz-issue-label">' + esc(q.label) + '</span>' + esc(q.q) + '</div></div>';
+    });
+  }
+  issuesHTML += '</div>';
+
+  var scorePct = Math.round((yesCount / TOTAL) * 100);
+
+  return '<div class="quiz-card">' +
+    '<div class="quiz-result-top">' +
+      '<div class="quiz-ring">' +
+        '<svg viewBox="0 0 120 120" width="128" height="128" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle class="q-track" cx="60" cy="60" r="50"/>' +
+          '<circle class="q-fill" id="q-arc" cx="60" cy="60" r="50" stroke="' + o.color + '" stroke-dasharray="' + CIRC + '" stroke-dashoffset="' + CIRC + '"/>' +
+        '</svg>' +
+        '<div class="quiz-ring-inner"><div class="quiz-score-big" id="q-num">0</div><div class="quiz-score-den">/ 8 yes</div></div>' +
+      '</div>' +
+      '<div class="quiz-grade ' + o.cls + '">' + esc(o.label) + '</div>' +
+      '<div class="quiz-result-title">' + esc(o.title) + '</div>' +
+      '<p class="quiz-result-sub">' + esc(o.sub) + '</p>' +
+    '</div>' +
+    issuesHTML +
+    '<div class="quiz-cta">' +
+      '<p>Want an expert eye on your site? I offer a free website review — usually back within 24 hours.</p>' +
+      '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">' +
+        '<a class="btn" href="/#contact" style="font-size:14px;padding:12px 22px">Get a free website review from Bisyri →</a>' +
+      '</div>' +
+    '</div>' +
+    '<button class="quiz-restart" onclick="quizRestart()">↺ Take the quiz again</button>' +
+  '</div>';
+}
+
+function animateResult() {
+  var yesCount = state.answers.filter(function(a) { return a === true; }).length;
+  var arc = document.getElementById('q-arc');
+  var numEl = document.getElementById('q-num');
+  if (!arc || !numEl) return;
+
+  var targetOffset = CIRC * (1 - yesCount / TOTAL);
+  setTimeout(function() { arc.style.strokeDashoffset = targetOffset; }, 80);
+
+  var start = performance.now();
+  var dur = 900;
+  (function tick(now) {
+    var t = Math.min((now - start) / dur, 1);
+    var ease = 1 - Math.pow(1 - t, 3);
+    var cur = Math.round(yesCount * ease);
+    numEl.textContent = cur;
+    if (t < 1) requestAnimationFrame(tick);
+    else numEl.textContent = yesCount;
+  })(start);
+}
+
+window.quizStart = function() {
+  state.screen = 'question';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+window.quizAnswer = function(val) {
+  state.answers[state.current] = val;
+  if (state.current < TOTAL - 1) {
+    state.current++;
+    render();
+  } else {
+    state.screen = 'result';
+    render();
+  }
+};
+
+window.quizRestart = function() {
+  state.screen = 'intro';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+render();
+})();
+</script>
+</body></html>

@@ -1,1 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#4F46E5"/><text x="16" y="22.5" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">B</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="140 140 400 400">
+  <rect x="140" y="140" width="400" height="400" rx="60" fill="#1a1a1a"/>
+  <path fill-rule="evenodd" fill="#fff" d="M215,195 L215,485 L390,485 Q460,485 460,415 Q460,368 422,348 Q455,328 455,270 Q455,195 385,195 Z M275,240 L275,318 L378,318 Q408,318 408,270 Q408,240 378,240 Z M275,362 L275,440 L385,440 Q415,440 415,400 Q415,362 385,362 Z"/>
+</svg>

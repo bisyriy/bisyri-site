@@ -70,7 +70,7 @@
 .roi-scenario{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;position:relative;overflow:hidden;transition:border-color .2s}
 .roi-scenario.best{border-color:var(--indigo)}
 .roi-scenario-bar{position:absolute;inset:0;background:var(--indigo-soft);transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.4,0,.2,1);z-index:0}
-.roi-scenario>*{position:relative;z-index:1}
+.roi-scenario>:not(.roi-scenario-bar){position:relative;z-index:1}
 .roi-scenario-label{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px}
 .roi-scenario-desc{font-size:13px;color:var(--sub)}
 .roi-scenario-badge{display:inline-block;background:var(--indigo);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px;margin-bottom:8px}

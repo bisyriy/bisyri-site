@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free XML Sitemap Generator — Create Your sitemap.xml | Bisyri</title>
+<meta name="description" content="Generate a valid XML sitemap for your website in seconds. Enter your URLs, set priorities and change frequencies, and download your sitemap.xml ready to upload. Free, no sign-up.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/sitemap-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free XML Sitemap Generator">
+<meta property="og:description" content="Generate a valid XML sitemap for your website in seconds. Enter your URLs, download your sitemap.xml. Free, no sign-up.">
+<meta property="og:url" content="https://bisyri.co/tools/sitemap-generator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free XML Sitemap Generator">
+<meta name="twitter:description" content="Generate a valid XML sitemap in seconds. Enter URLs, set priorities, download sitemap.xml. Free, no sign-up.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "XML Sitemap Generator",
+  "description": "Generate a valid XML sitemap for your website in seconds. Enter your URLs, set priorities and change frequencies, and download your sitemap.xml ready to upload.",
+  "url": "https://bisyri.co/tools/sitemap-generator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+.sg-wrap { max-width: 720px; margin: 0 auto; padding: 0 0 64px; }
+.sg-hero { padding: 56px 0 40px; }
+.sg-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 8px 0 12px; }
+.sg-hero p { color: var(--sub); max-width: 560px; }
+
+.sg-form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.sg-section { margin-bottom: 24px; }
+.sg-section:last-child { margin-bottom: 0; }
+.sg-label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+.sg-input, .sg-select, .sg-textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 0.95rem; outline: none; transition: border-color .15s; box-sizing: border-box; }
+.sg-textarea { font-family: var(--mono); font-size: 0.85rem; resize: vertical; min-height: 160px; line-height: 1.6; }
+.sg-input:focus, .sg-select:focus, .sg-textarea:focus { border-color: var(--indigo); }
+.sg-hint { font-size: 0.8rem; color: var(--sub); margin-top: 6px; line-height: 1.5; }
+
+.sg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 540px) { .sg-row { grid-template-columns: 1fr; } }
+
+.sg-divider { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
+
+.sg-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.sg-generate { flex: 1; min-width: 160px; padding: 13px 20px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-family: var(--sans); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.sg-generate:hover { opacity: .88; }
+.sg-clear { padding: 13px 20px; background: var(--bg); color: var(--sub); border: 1.5px solid var(--line); border-radius: 8px; font-family: var(--sans); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: border-color .15s, color .15s; }
+.sg-clear:hover { border-color: var(--indigo); color: var(--body); }
+
+.sg-url-count { font-size: 0.8rem; color: var(--sub); margin-top: 6px; }
+.sg-url-count span { color: var(--indigo); font-weight: 600; }
+
+.sg-output { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; margin-bottom: 24px; display: none; }
+.sg-output.visible { display: block; }
+.sg-output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.sg-output-title { font-size: 1rem; font-weight: 700; }
+.sg-output-meta { font-size: 0.82rem; color: var(--sub); }
+.sg-btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+.sg-action-btn { font-size: 0.82rem; font-weight: 600; padding: 7px 14px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--bg); color: var(--sub); cursor: pointer; transition: border-color .15s, color .15s; font-family: var(--sans); }
+.sg-action-btn:hover { border-color: var(--indigo); color: var(--indigo); }
+.sg-action-btn.copied, .sg-action-btn.downloaded { border-color: #10b981; color: #10b981; }
+.sg-download-btn { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.sg-download-btn:hover { opacity: .88; color: #fff; border-color: var(--indigo); }
+.sg-code { font-family: var(--mono); font-size: 0.8rem; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 16px; white-space: pre; overflow-x: auto; line-height: 1.65; color: var(--body); max-height: 400px; overflow-y: auto; }
+
+.sg-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
+@media (max-width: 540px) { .sg-info-grid { grid-template-columns: 1fr; } }
+.sg-info-card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+.sg-info-card h3 { font-size: 0.85rem; font-weight: 700; margin: 0 0 8px; }
+.sg-info-card p { font-size: 0.82rem; color: var(--sub); margin: 0; line-height: 1.55; }
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+<div class="wrap">
+<div class="sg-wrap">
+
+  <div class="sg-hero">
+    <div class="eyebrow">Free Tool</div>
+    <h1>XML Sitemap Generator</h1>
+    <p>Enter your URLs and generate a valid sitemap.xml in seconds — ready to upload to your site and submit to Google Search Console. Free, instant, no sign-up.</p>
+  </div>
+
+  <div class="sg-form">
+
+    <div class="sg-section">
+      <label class="sg-label" for="sg-domain">Your domain</label>
+      <input id="sg-domain" class="sg-input" type="url" placeholder="https://yourdomain.com" autocomplete="off" />
+      <p class="sg-hint">Used to validate that all URLs start with your domain. Optional but recommended.</p>
+    </div>
+
+    <div class="sg-section">
+      <label class="sg-label" for="sg-urls">Your URLs <span style="font-weight:400;text-transform:none;letter-spacing:0">(one per line)</span></label>
+      <textarea id="sg-urls" class="sg-textarea" placeholder="https://yourdomain.com/
+https://yourdomain.com/about/
+https://yourdomain.com/services/
+https://yourdomain.com/contact/
+https://yourdomain.com/blog/"></textarea>
+      <div class="sg-url-count" id="sg-url-count">Enter your URLs above — <span>0</span> detected</div>
+    </div>
+
+    <hr class="sg-divider">
+
+    <div class="sg-row">
+      <div class="sg-section">
+        <label class="sg-label" for="sg-changefreq">Default change frequency</label>
+        <select id="sg-changefreq" class="sg-select">
+          <option value="monthly" selected>monthly (recommended)</option>
+          <option value="weekly">weekly (active blogs)</option>
+          <option value="daily">daily (news sites)</option>
+          <option value="yearly">yearly (stable pages)</option>
+          <option value="never">never (archived content)</option>
+        </select>
+      </div>
+      <div class="sg-section">
+        <label class="sg-label" for="sg-priority-home">Homepage priority</label>
+        <select id="sg-priority-home" class="sg-select">
+          <option value="1.0" selected>1.0 (highest)</option>
+          <option value="0.9">0.9</option>
+          <option value="0.8">0.8</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="sg-row">
+      <div class="sg-section">
+        <label class="sg-label" for="sg-priority-main">Main pages priority</label>
+        <select id="sg-priority-main" class="sg-select">
+          <option value="0.9">0.9</option>
+          <option value="0.8" selected>0.8 (recommended)</option>
+          <option value="0.7">0.7</option>
+          <option value="0.6">0.6</option>
+        </select>
+      </div>
+      <div class="sg-section">
+        <label class="sg-label" for="sg-priority-blog">Blog/content pages priority</label>
+        <select id="sg-priority-blog" class="sg-select">
+          <option value="0.8">0.8</option>
+          <option value="0.7" selected>0.7 (recommended)</option>
+          <option value="0.6">0.6</option>
+          <option value="0.5">0.5</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="sg-section">
+      <label class="sg-label" for="sg-lastmod">Include last modified date</label>
+      <select id="sg-lastmod" class="sg-select">
+        <option value="today">Today's date</option>
+        <option value="none">No date (omit lastmod)</option>
+      </select>
+      <p class="sg-hint">Adding a lastmod date tells Google when pages were last updated. Only use "Today" if you're actually updating your site today — otherwise leave it out.</p>
+    </div>
+
+    <div class="sg-actions">
+      <button class="sg-generate" id="sg-btn" type="button">Generate sitemap.xml →</button>
+      <button class="sg-clear" id="sg-clear-btn" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div class="sg-output" id="sg-output">
+    <div class="sg-output-header">
+      <div>
+        <div class="sg-output-title">Your sitemap.xml</div>
+        <div class="sg-output-meta" id="sg-output-meta"></div>
+      </div>
+      <div class="sg-btn-group">
+        <button class="sg-action-btn" id="sg-copy-btn" type="button">Copy</button>
+        <button class="sg-action-btn sg-download-btn" id="sg-download-btn" type="button">Download sitemap.xml</button>
+      </div>
+    </div>
+    <pre class="sg-code" id="sg-code-block" aria-label="Generated sitemap.xml"></pre>
+  </div>
+
+  <div class="sg-info-grid">
+    <div class="sg-info-card">
+      <h3>Where to put your sitemap.xml</h3>
+      <p>Upload sitemap.xml to the root of your domain — it must be accessible at <strong>yourdomain.com/sitemap.xml</strong>. Then submit the URL in Google Search Console under Indexing → Sitemaps. Also add a <code>Sitemap:</code> line to your robots.txt. See the <a href="/blog/google-search-console-setup-2026.html" style="color:var(--indigo)">Google Search Console guide</a>.</p>
+    </div>
+    <div class="sg-info-card">
+      <h3>What pages to include</h3>
+      <p>Include every page you want Google to index: homepage, service pages, location pages, blog posts, about, contact. Exclude: admin pages, thank-you pages, login pages, duplicate content URLs, and any page with a <code>noindex</code> meta tag. See the <a href="/blog/robots-txt-guide-2026.html" style="color:var(--indigo)">robots.txt guide</a> for the crawling side.</p>
+    </div>
+    <div class="sg-info-card">
+      <h3>Does sitemap priority affect rankings?</h3>
+      <p>Priority is a hint to crawlers about relative importance within your own site — not a ranking signal Google uses to rank you against other sites. Setting every page to 1.0 doesn't help; it makes the signal meaningless. Use 1.0 for your homepage, 0.8 for key pages, 0.7 for blog posts.</p>
+    </div>
+    <div class="sg-info-card">
+      <h3>Sitemap size limits</h3>
+      <p>A single sitemap.xml file can contain up to 50,000 URLs and must be under 50MB uncompressed. If your site exceeds this, use a sitemap index file that references multiple sitemaps. For most small business sites (under 200 pages), a single sitemap is all you need.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← All tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function() {
+  var TODAY = (function() {
+    var d = new Date();
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  })();
+
+  function el(id) { return document.getElementById(id); }
+
+  function parseURLs(raw) {
+    return raw.split('\n')
+      .map(function(l) { return l.trim(); })
+      .filter(function(l) { return l.length > 0 && (l.startsWith('http://') || l.startsWith('https://')); });
+  }
+
+  function classifyURL(url, domain) {
+    var path = url.replace(/^https?:\/\/[^\/]+/, '') || '/';
+    if (path === '/' || path === '') return 'home';
+    var segments = path.replace(/^\/|\/$/g, '').split('/');
+    if (segments.length >= 2) return 'blog';
+    return 'main';
+  }
+
+  function updateCount() {
+    var urls = parseURLs(el('sg-urls').value);
+    el('sg-url-count').innerHTML = 'Enter your URLs above — <span>' + urls.length + '</span> detected';
+  }
+
+  el('sg-urls').addEventListener('input', updateCount);
+
+  function escapeXml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+  }
+
+  function buildSitemap() {
+    var urls = parseURLs(el('sg-urls').value);
+    var changefreq = el('sg-changefreq').value;
+    var priorityHome = el('sg-priority-home').value;
+    var priorityMain = el('sg-priority-main').value;
+    var priorityBlog = el('sg-priority-blog').value;
+    var lastmodMode = el('sg-lastmod').value;
+
+    if (urls.length === 0) return null;
+
+    var lines = ['<?xml version="1.0" encoding="UTF-8"?>'];
+    lines.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+
+    urls.forEach(function(url) {
+      var type = classifyURL(url);
+      var priority = type === 'home' ? priorityHome : (type === 'blog' ? priorityBlog : priorityMain);
+      lines.push('  <url>');
+      lines.push('    <loc>' + escapeXml(url) + '</loc>');
+      if (lastmodMode === 'today') lines.push('    <lastmod>' + TODAY + '</lastmod>');
+      lines.push('    <changefreq>' + changefreq + '</changefreq>');
+      lines.push('    <priority>' + priority + '</priority>');
+      lines.push('  </url>');
+    });
+
+    lines.push('</urlset>');
+    return { xml: lines.join('\n'), count: urls.length };
+  }
+
+  el('sg-btn').addEventListener('click', function() {
+    var result = buildSitemap();
+    if (!result) {
+      el('sg-urls').focus();
+      el('sg-urls').style.borderColor = 'var(--indigo)';
+      return;
+    }
+
+    el('sg-code-block').textContent = result.xml;
+    el('sg-output-meta').textContent = result.count + ' URL' + (result.count === 1 ? '' : 's');
+    var output = el('sg-output');
+    output.classList.add('visible');
+    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  el('sg-clear-btn').addEventListener('click', function() {
+    el('sg-urls').value = '';
+    el('sg-domain').value = '';
+    el('sg-output').classList.remove('visible');
+    updateCount();
+  });
+
+  el('sg-copy-btn').addEventListener('click', function() {
+    var text = el('sg-code-block').textContent;
+    var btn = this;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      btn.textContent = 'Copied!'; btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+
+  el('sg-download-btn').addEventListener('click', function() {
+    var text = el('sg-code-block').textContent;
+    if (!text) return;
+    var blob = new Blob([text], { type: 'application/xml' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'sitemap.xml';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+    var btn = this;
+    btn.textContent = 'Downloaded!'; btn.classList.add('downloaded');
+    setTimeout(function() { btn.textContent = 'Download sitemap.xml'; btn.classList.remove('downloaded'); }, 2500);
+  });
+})();
+</script>
+</body></html>

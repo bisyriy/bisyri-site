@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Website ROI Calculator — How Much Is Your Website Worth? | Bisyri</title>
+<meta name="description" content="Free calculator: find out how much revenue your website generates now — and how much more it could generate with better traffic and conversion. No email required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/website-roi-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Website ROI Calculator — How Much Is Your Website Worth?">
+<meta property="og:description" content="Enter your monthly visitors, conversion rate, and average client value. Instantly see what your website earns — and how much more it could earn.">
+<meta property="og:url" content="https://bisyri.co/tools/website-roi-calculator/">
+<meta property="og:image" content="https://bisyri.co/images/work-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website ROI Calculator — How Much Is Your Website Worth?">
+<meta name="twitter:description" content="Free. Instant. No email. Find out what your website earns — and what it's leaving on the table.">
+<meta name="twitter:image" content="https://bisyri.co/images/work-01.jpg">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+/* ── ROI Calculator ───────────────────────────────────────── */
+.roi-outer{padding:0 0 80px}
+.roi-wrap{max-width:740px;margin:0 auto;padding:0 28px}
+
+/* inputs card */
+.roi-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(26px,5vw,44px);margin-bottom:24px}
+.roi-card-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.roi-card-title span{width:28px;height:28px;background:var(--indigo-soft);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+.roi-fields{display:grid;gap:20px}
+.roi-field{display:flex;flex-direction:column;gap:8px}
+.roi-label{font-weight:600;font-size:14.5px;color:var(--ink)}
+.roi-hint{font-size:13px;color:var(--sub);line-height:1.5;margin-top:2px}
+.roi-input-wrap{position:relative}
+.roi-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:14px;color:var(--sub);pointer-events:none}
+.roi-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:14px;color:var(--sub);pointer-events:none}
+.roi-input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg);font-family:var(--mono);font-size:15px;font-weight:500;color:var(--ink);transition:border-color .15s;box-sizing:border-box;-moz-appearance:textfield}
+.roi-input::-webkit-inner-spin-button,.roi-input::-webkit-outer-spin-button{-webkit-appearance:none}
+.roi-input:focus{outline:none;border-color:var(--indigo)}
+.has-prefix .roi-input{padding-left:32px}
+.has-suffix .roi-input{padding-right:36px}
+
+.roi-calc-btn{width:100%;padding:15px 24px;background:var(--indigo);color:#fff;border:none;border-radius:12px;font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:-.01em;cursor:pointer;transition:opacity .15s,transform .12s;margin-top:6px}
+.roi-calc-btn:hover{opacity:.9;transform:translateY(-1px)}
+.roi-calc-btn:active{transform:translateY(0)}
+
+/* results */
+.roi-results{display:none;animation:rfade .3s ease}
+@keyframes rfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.roi-results.visible{display:block}
+
+/* current value headline */
+.roi-current{text-align:center;padding:clamp(28px,5vw,44px);background:var(--card);border:1px solid var(--line);border-radius:20px;margin-bottom:24px}
+.roi-current-label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:10px}
+.roi-current-value{font-family:var(--display);font-weight:700;font-size:clamp(40px,8vw,64px);letter-spacing:-.04em;color:var(--indigo);line-height:1}
+.roi-current-period{font-family:var(--mono);font-size:13px;color:var(--sub);margin-top:6px}
+.roi-current-annual{font-size:15px;color:var(--sub);margin-top:12px}
+.roi-current-annual strong{color:var(--ink)}
+
+/* scenarios */
+.roi-scenarios-title{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;margin-bottom:16px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+
+.roi-scenarios{display:grid;gap:14px}
+.roi-scenario{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;position:relative;overflow:hidden;transition:border-color .2s}
+.roi-scenario.best{border-color:var(--indigo)}
+.roi-scenario-bar{position:absolute;inset:0;background:var(--indigo-soft);transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.4,0,.2,1);z-index:0}
+.roi-scenario>*{position:relative;z-index:1}
+.roi-scenario-label{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px}
+.roi-scenario-desc{font-size:13px;color:var(--sub)}
+.roi-scenario-badge{display:inline-block;background:var(--indigo);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+.roi-scenario-right{text-align:right}
+.roi-scenario-val{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;color:var(--ink)}
+.roi-scenario-uplift{font-family:var(--mono);font-size:12px;color:var(--indigo);font-weight:700;margin-top:3px}
+
+/* bar chart */
+.roi-chart{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,36px)}
+.roi-chart-title{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.02em;margin-bottom:22px}
+.roi-bars{display:flex;align-items:flex-end;gap:10px;height:160px}
+.roi-bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%}
+.roi-bar-track{flex:1;width:100%;display:flex;align-items:flex-end}
+.roi-bar-fill{width:100%;background:var(--indigo);border-radius:7px 7px 0 0;transition:height .9s cubic-bezier(.4,0,.2,1);min-height:4px}
+.roi-bar-fill.current{background:var(--line);border:1.5px solid var(--sub)}
+.roi-bar-val{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap}
+.roi-bar-lbl{font-size:11px;color:var(--sub);text-align:center;line-height:1.3}
+
+/* insights */
+.roi-insights{margin-top:24px;display:grid;gap:12px}
+.roi-insight{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.roi-insight-icon{font-size:20px;flex-shrink:0;line-height:1;margin-top:1px}
+.roi-insight-text{font-size:14px;color:var(--sub);line-height:1.6}
+.roi-insight-text strong{color:var(--ink)}
+
+/* CTA */
+.roi-cta{margin-top:28px;background:var(--indigo);border-radius:20px;padding:clamp(28px,5vw,44px);text-align:center;color:#fff}
+.roi-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,4vw,30px);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.roi-cta p{font-size:15px;opacity:.85;line-height:1.65;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.roi-cta-btn{display:inline-block;background:#fff;color:var(--indigo);font-family:var(--display);font-weight:700;font-size:15px;padding:13px 28px;border-radius:11px;text-decoration:none;transition:opacity .15s,transform .12s;letter-spacing:-.01em}
+.roi-cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+
+/* reset link */
+.roi-reset{text-align:center;margin-top:16px}
+.roi-reset a{font-size:13.5px;color:var(--sub);text-decoration:none;cursor:pointer;border-bottom:1px dashed var(--line)}
+.roi-reset a:hover{color:var(--ink)}
+
+@media(max-width:540px){
+  .roi-bars{gap:6px}
+  .roi-bar-val{font-size:10px}
+  .roi-bar-lbl{font-size:10px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+
+  <section class="blog-hero wrap">
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Is your website <em>making you money?</em></h1>
+    <p class="blog-lede">Enter three numbers about your business. See what your website currently earns — and how much more it could earn with better SEO and conversion.</p>
+  </section>
+
+  <div class="roi-outer">
+  <div class="roi-wrap">
+
+    <!-- INPUT CARD -->
+    <div class="roi-card" id="roi-form">
+      <div class="roi-card-title"><span>📊</span> Your numbers</div>
+      <div class="roi-fields">
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-visitors">Monthly website visitors</label>
+          <p class="roi-hint">Visitors per month. Check Google Analytics or Search Console — or estimate based on your gut feeling.</p>
+          <div class="roi-input-wrap">
+            <input class="roi-input" id="inp-visitors" type="number" min="0" placeholder="e.g. 500" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-conversion">Conversion rate (%)</label>
+          <p class="roi-hint">What percentage of visitors become a lead or customer? Industry average is 1–3%. If you're unsure, start with 2.</p>
+          <div class="roi-input-wrap has-suffix">
+            <input class="roi-input" id="inp-conversion" type="number" min="0" max="100" step="0.1" placeholder="e.g. 2" inputmode="decimal">
+            <span class="roi-suffix">%</span>
+          </div>
+        </div>
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-value">Average value per client / sale</label>
+          <p class="roi-hint">How much does a typical client or order bring in? For service businesses, think of your average project size. For products, your average order value.</p>
+          <div class="roi-input-wrap has-prefix">
+            <span class="roi-prefix">$</span>
+            <input class="roi-input" id="inp-value" type="number" min="0" placeholder="e.g. 1500" inputmode="numeric">
+          </div>
+        </div>
+
+      </div>
+
+      <button class="roi-calc-btn" id="calc-btn" onclick="calculate()">Calculate my website ROI →</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="roi-results" id="roi-results">
+
+      <!-- Current value -->
+      <div class="roi-current" id="res-current">
+        <div class="roi-current-label">Your website currently generates</div>
+        <div class="roi-current-value" id="res-monthly">$0</div>
+        <div class="roi-current-period">per month</div>
+        <div class="roi-current-annual">That's <strong id="res-annual">$0</strong> per year.</div>
+      </div>
+
+      <!-- Scenarios -->
+      <p class="roi-scenarios-title">What if you improved it?</p>
+      <div class="roi-scenarios">
+
+        <div class="roi-scenario" id="sc-traffic">
+          <div class="roi-scenario-bar" id="sc-traffic-bar"></div>
+          <div>
+            <div class="roi-scenario-label">More traffic (+50%)</div>
+            <div class="roi-scenario-desc">Improve your SEO and get 50% more visitors to your site.</div>
+          </div>
+          <div class="roi-scenario-right">
+            <div class="roi-scenario-val" id="sc-traffic-val">$0/mo</div>
+            <div class="roi-scenario-uplift" id="sc-traffic-up">+$0/yr</div>
+          </div>
+        </div>
+
+        <div class="roi-scenario" id="sc-conv">
+          <div class="roi-scenario-bar" id="sc-conv-bar"></div>
+          <div>
+            <div class="roi-scenario-label">Better conversion (+50%)</div>
+            <div class="roi-scenario-desc">Improve your website so more visitors become customers.</div>
+          </div>
+          <div class="roi-scenario-right">
+            <div class="roi-scenario-val" id="sc-conv-val">$0/mo</div>
+            <div class="roi-scenario-uplift" id="sc-conv-up">+$0/yr</div>
+          </div>
+        </div>
+
+        <div class="roi-scenario best" id="sc-both">
+          <div class="roi-scenario-bar" id="sc-both-bar"></div>
+          <div>
+            <div class="roi-scenario-badge">Best case</div>
+            <div class="roi-scenario-label">Both improved</div>
+            <div class="roi-scenario-desc">More traffic AND better conversion — the compound effect.</div>
+          </div>
+          <div class="roi-scenario-right">
+            <div class="roi-scenario-val" id="sc-both-val">$0/mo</div>
+            <div class="roi-scenario-uplift" id="sc-both-up">+$0/yr</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bar chart -->
+      <div class="roi-chart">
+        <div class="roi-chart-title">Monthly revenue comparison</div>
+        <div class="roi-bars">
+          <div class="roi-bar-group">
+            <div class="roi-bar-val" id="chart-v0">$0</div>
+            <div class="roi-bar-track"><div class="roi-bar-fill current" id="chart-b0" style="height:0%"></div></div>
+            <div class="roi-bar-lbl">Now</div>
+          </div>
+          <div class="roi-bar-group">
+            <div class="roi-bar-val" id="chart-v1">$0</div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" id="chart-b1" style="height:0%"></div></div>
+            <div class="roi-bar-lbl">+Traffic</div>
+          </div>
+          <div class="roi-bar-group">
+            <div class="roi-bar-val" id="chart-v2">$0</div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" id="chart-b2" style="height:0%"></div></div>
+            <div class="roi-bar-lbl">+Conv.</div>
+          </div>
+          <div class="roi-bar-group">
+            <div class="roi-bar-val" id="chart-v3">$0</div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" id="chart-b3" style="height:0%"></div></div>
+            <div class="roi-bar-lbl">Both</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insights -->
+      <div class="roi-insights" id="roi-insights"></div>
+
+      <!-- CTA -->
+      <div class="roi-cta" id="roi-cta">
+        <h2 id="cta-headline">Ready to capture that extra revenue?</h2>
+        <p id="cta-body">A better website — faster, optimised for search, designed to convert — is one of the highest-ROI investments a business can make. Let's see if we're a fit.</p>
+        <a class="roi-cta-btn" href="/#contact">Talk to Bisyri — it's free →</a>
+      </div>
+
+      <div class="roi-reset"><a onclick="reset()">← Recalculate with different numbers</a></div>
+
+    </div>
+
+  </div>
+  </div>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← Back to tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+
+  function fmt(n){
+    if(n>=1000000) return '$'+(n/1000000).toFixed(1)+'M';
+    if(n>=1000) return '$'+(n/1000).toFixed(n>=10000?0:1)+'k';
+    return '$'+Math.round(n).toLocaleString();
+  }
+  function fmtFull(n){
+    return '$'+Math.round(n).toLocaleString();
+  }
+  function fmtUplift(diff){
+    if(diff<=0) return '';
+    return '+'+fmt(diff*12)+'/yr';
+  }
+
+  window.calculate = function(){
+    var visitors = parseFloat(document.getElementById('inp-visitors').value)||0;
+    var cr = parseFloat(document.getElementById('inp-conversion').value)||0;
+    var val = parseFloat(document.getElementById('inp-value').value)||0;
+
+    if(!visitors||!cr||!val){
+      var first = !visitors?'inp-visitors':(!cr?'inp-conversion':'inp-value');
+      document.getElementById(first).focus();
+      document.getElementById(first).style.borderColor='#ef4444';
+      setTimeout(function(){document.getElementById(first).style.borderColor='';},1500);
+      return;
+    }
+
+    var current = visitors*(cr/100)*val;
+    var s1 = visitors*1.5*(cr/100)*val;
+    var s2 = visitors*((cr*1.5)/100)*val;
+    var s3 = visitors*1.5*((cr*1.5)/100)*val;
+    var maxVal = Math.max(current,s1,s2,s3,1);
+
+    // Current
+    document.getElementById('res-monthly').textContent = fmtFull(current);
+    document.getElementById('res-annual').textContent = fmtFull(current*12);
+
+    // Scenario cards
+    document.getElementById('sc-traffic-val').textContent = fmt(s1)+'/mo';
+    document.getElementById('sc-traffic-up').textContent = fmtUplift(s1-current);
+    document.getElementById('sc-conv-val').textContent = fmt(s2)+'/mo';
+    document.getElementById('sc-conv-up').textContent = fmtUplift(s2-current);
+    document.getElementById('sc-both-val').textContent = fmt(s3)+'/mo';
+    document.getElementById('sc-both-up').textContent = fmtUplift(s3-current);
+
+    // Bar chart
+    var bars = [current,s1,s2,s3];
+    var labels = ['chart-b0','chart-b1','chart-b2','chart-b3'];
+    var vals = ['chart-v0','chart-v1','chart-v2','chart-v3'];
+    bars.forEach(function(v,i){
+      var pct = Math.max((v/maxVal)*100,2);
+      document.getElementById(vals[i]).textContent = fmt(v);
+      setTimeout(function(){
+        document.getElementById(labels[i]).style.height = pct+'%';
+      },120+i*80);
+    });
+
+    // Scenario bar fills (proportional background)
+    var scBars = [
+      {bar:'sc-traffic-bar',val:s1},
+      {bar:'sc-conv-bar',val:s2},
+      {bar:'sc-both-bar',val:s3}
+    ];
+    scBars.forEach(function(s){
+      var pct = Math.min((s.val/s3)*100,100);
+      setTimeout(function(){
+        document.getElementById(s.bar).style.transform='scaleX('+(pct/100)+')';
+      },300);
+    });
+
+    // Insights
+    var insights = [];
+    var annualUplift = Math.round((s3-current)*12);
+    if(current<500){
+      insights.push({icon:'⚠️',text:'<strong>Your website is under-performing.</strong> With '+visitors.toLocaleString()+' monthly visitors and a '+cr+'% conversion rate, most of your traffic isn\'t turning into business. Even small improvements to your site design and SEO could make a significant difference.'});
+    } else {
+      insights.push({icon:'✅',text:'<strong>Your website is generating real value</strong> — '+fmtFull(current*12)+' per year. The question is whether it could be generating more. The scenarios above show the compounding effect of improving both traffic and conversion.'});
+    }
+    if(cr<2){
+      insights.push({icon:'💡',text:'<strong>Your conversion rate is below average.</strong> Most industries average 2–3%. Common causes: unclear calls to action, slow loading speed, weak trust signals, or a page design that doesn\'t match what visitors expect. Improving conversion has no ongoing cost — it multiplies the value of every visitor you already have.'});
+    }
+    if(s3-current>0){
+      insights.push({icon:'📈',text:'<strong>The compound effect is significant.</strong> Improving both traffic and conversion doesn\'t add results — it multiplies them. The gap between "now" and "both improved" represents <strong>'+fmtFull(annualUplift)+' per year</strong> in additional revenue potential.'});
+    }
+    var insightsEl = document.getElementById('roi-insights');
+    insightsEl.innerHTML = insights.map(function(ins){
+      return '<div class="roi-insight"><div class="roi-insight-icon">'+ins.icon+'</div><div class="roi-insight-text">'+ins.text+'</div></div>';
+    }).join('');
+
+    // CTA personalisation
+    if(annualUplift>50000){
+      document.getElementById('cta-headline').textContent = fmtFull(annualUplift)+' per year is sitting on the table.';
+      document.getElementById('cta-body').textContent = 'That\'s the difference between your website as it is today and what it could generate with the right improvements. Let\'s talk about whether Bisyri can help you capture it.';
+    } else if(annualUplift>10000){
+      document.getElementById('cta-headline').textContent = 'An extra '+fmtFull(annualUplift)+'/year from the same traffic.';
+      document.getElementById('cta-body').textContent = 'A better website — faster, clearer, optimised for search — turns more visitors into customers. Let\'s see what that looks like for your business.';
+    } else {
+      document.getElementById('cta-headline').textContent = 'Ready to make your website work harder?';
+      document.getElementById('cta-body').textContent = 'Even modest improvements to traffic and conversion compound over time into meaningful revenue. Let\'s see if Bisyri can help.';
+    }
+
+    // Show results
+    document.getElementById('roi-results').classList.add('visible');
+    setTimeout(function(){
+      document.getElementById('roi-results').scrollIntoView({behavior:'smooth',block:'start'});
+    },100);
+  };
+
+  window.reset = function(){
+    document.getElementById('roi-results').classList.remove('visible');
+    document.getElementById('roi-results').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){
+      document.getElementById('roi-form').scrollIntoView({behavior:'smooth',block:'center'});
+    },300);
+    // reset bars
+    ['chart-b0','chart-b1','chart-b2','chart-b3'].forEach(function(id){
+      document.getElementById(id).style.height='0%';
+    });
+    ['sc-traffic-bar','sc-conv-bar','sc-both-bar'].forEach(function(id){
+      document.getElementById(id).style.transform='scaleX(0)';
+    });
+  };
+
+  // Allow Enter key to trigger calculate
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&(e.target.id==='inp-visitors'||e.target.id==='inp-conversion'||e.target.id==='inp-value')){
+      calculate();
+    }
+  });
+
+})();
+</script>
+</body></html>

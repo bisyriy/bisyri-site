@@ -39,7 +39,7 @@ const AUTO_REPLIES = {
   aeo: {
     subject: "Got your message — let's get you cited by AI",
     intro:   "AEO is exactly what I focus on. I'll review your site's current AI-search visibility and come back to you with specific steps we can take.",
-    tip:     'In the meantime, my guide on <a href="https://bisyri-site.vercel.app/blog/what-is-aeo-2026.html" style="color:#4F46E5">What Is AEO and Why It Matters in 2026</a> covers the five main levers — might be useful context before we talk.',
+    tip:     'In the meantime, my guide on <a href="https://bisyri.co/blog/what-is-aeo-2026.html" style="color:#4F46E5">What Is AEO and Why It Matters in 2026</a> covers the five main levers — might be useful context before we talk.',
   },
   seo: {
     subject: "Got your message — SEO audit incoming",
@@ -59,7 +59,7 @@ const AUTO_REPLIES = {
   general: {
     subject: "Got your message",
     intro:   "I've received your message and I'll get back to you soon — usually within 24 hours.",
-    tip:     'You can browse my <a href="https://bisyri-site.vercel.app/#services" style="color:#4F46E5">services</a> or read the <a href="https://bisyri-site.vercel.app/blog/" style="color:#4F46E5">blog</a> for a feel for how I work.',
+    tip:     'You can browse my <a href="https://bisyri.co/#services" style="color:#4F46E5">services</a> or read the <a href="https://bisyri.co/blog/" style="color:#4F46E5">blog</a> for a feel for how I work.',
   },
 };
 
@@ -81,7 +81,7 @@ function buildAutoReply(name, category) {
   <p style="font-size:16px;line-height:1.65;margin:0 0 28px">${r.tip}</p>
   <p style="font-size:16px;line-height:1.65;margin:0 0 28px">Talk soon,<br><strong>Bisyri</strong></p>
   <hr style="border:0;border-top:1px solid #DDE0E7;margin:0 0 20px">
-  <p style="font-size:12px;color:#5B6270;margin:0">You're receiving this because you submitted the contact form at <a href="https://bisyri-site.vercel.app" style="color:#4F46E5;text-decoration:none">bisyri-site.vercel.app</a>.</p>
+  <p style="font-size:12px;color:#5B6270;margin:0">You're receiving this because you submitted the contact form at <a href="https://bisyri.co" style="color:#4F46E5;text-decoration:none">bisyri.co</a>.</p>
 </div>`,
     text: `Hi ${name},\n\n${r.intro}\n\n${tipText}\n\nTalk soon,\nBisyri`,
   };

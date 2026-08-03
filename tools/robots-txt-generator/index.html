@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Free Robots.txt Generator — Create Your robots.txt File | Bisyri</title>
+<meta name="description" content="Generate a robots.txt file for your website instantly. Choose your site type, block problem bots, set your sitemap URL, and get ready-to-paste code. Free, no sign-up.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/robots-txt-generator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Free Robots.txt Generator">
+<meta property="og:description" content="Generate a robots.txt file for your website instantly. Choose your site type, block problem bots, set your sitemap URL. Free, no sign-up.">
+<meta property="og:url" content="https://bisyri.co/tools/robots-txt-generator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Robots.txt Generator">
+<meta name="twitter:description" content="Generate a robots.txt file for your website instantly. Free, no sign-up.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots.txt Generator",
+  "description": "Generate a robots.txt file for your website instantly. Choose your site type, block problem bots, set your sitemap URL, and get ready-to-paste code.",
+  "url": "https://bisyri.co/tools/robots-txt-generator/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co/"}
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+.rg-wrap { max-width: 720px; margin: 0 auto; padding: 0 0 64px; }
+.rg-hero { padding: 56px 0 40px; }
+.rg-hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 8px 0 12px; }
+.rg-hero p { color: var(--sub); max-width: 560px; }
+
+.rg-form { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+.rg-section { margin-bottom: 28px; }
+.rg-section:last-child { margin-bottom: 0; }
+.rg-label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--sub); margin-bottom: 8px; }
+.rg-input, .rg-select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--body); font-family: var(--sans); font-size: 0.95rem; outline: none; transition: border-color .15s; box-sizing: border-box; }
+.rg-input:focus, .rg-select:focus { border-color: var(--indigo); }
+.rg-hint { font-size: 0.8rem; color: var(--sub); margin-top: 6px; }
+
+.rg-checkgroup { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 540px) { .rg-checkgroup { grid-template-columns: 1fr; } }
+.rg-check { display: flex; align-items: flex-start; gap: 10px; padding: 12px; border: 1.5px solid var(--line); border-radius: 8px; cursor: pointer; transition: border-color .15s; }
+.rg-check:hover { border-color: var(--indigo); }
+.rg-check input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--indigo); width: 16px; height: 16px; cursor: pointer; }
+.rg-check-label { font-size: 0.88rem; font-weight: 600; color: var(--body); line-height: 1.3; }
+.rg-check-desc { font-size: 0.78rem; color: var(--sub); margin-top: 2px; line-height: 1.4; }
+
+.rg-divider { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+
+.rg-generate { display: block; width: 100%; padding: 14px 24px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-family: var(--sans); font-size: 1rem; font-weight: 600; cursor: pointer; transition: opacity .15s; }
+.rg-generate:hover { opacity: .88; }
+
+.rg-output { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 28px; margin-bottom: 24px; display: none; }
+.rg-output.visible { display: block; }
+.rg-output-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+.rg-output-title { font-size: 1rem; font-weight: 700; }
+.rg-copy-all { font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 6px; border: 1.5px solid var(--line); background: var(--bg); color: var(--sub); cursor: pointer; transition: border-color .15s, color .15s; font-family: var(--sans); }
+.rg-copy-all:hover { border-color: var(--indigo); color: var(--indigo); }
+.rg-copy-all.copied { border-color: #10b981; color: #10b981; }
+.rg-code { font-family: var(--mono); font-size: 0.85rem; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 20px; white-space: pre; overflow-x: auto; line-height: 1.7; color: var(--body); }
+.rg-code .c { color: var(--sub); font-style: italic; }
+.rg-code .k { color: var(--indigo); }
+
+.rg-explain { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 28px; margin-bottom: 24px; display: none; }
+.rg-explain.visible { display: block; }
+.rg-explain h3 { font-size: 0.9rem; font-weight: 700; margin: 0 0 14px; }
+.rg-explain-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.rg-explain-list li { font-size: 0.85rem; color: var(--sub); padding-left: 20px; position: relative; line-height: 1.5; }
+.rg-explain-list li::before { content: '→'; position: absolute; left: 0; color: var(--indigo); font-size: 0.8rem; }
+.rg-explain-list strong { color: var(--body); font-family: var(--mono); font-size: 0.82rem; }
+
+.rg-info { margin-top: 12px; }
+.rg-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+@media (max-width: 540px) { .rg-info-grid { grid-template-columns: 1fr; } }
+.rg-info-card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; }
+.rg-info-card h3 { font-size: 0.85rem; font-weight: 700; margin: 0 0 8px; }
+.rg-info-card p { font-size: 0.82rem; color: var(--sub); margin: 0; line-height: 1.55; }
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+<div class="wrap">
+<div class="rg-wrap">
+
+  <div class="rg-hero">
+    <div class="eyebrow">Free Tool</div>
+    <h1>Robots.txt Generator</h1>
+    <p>Generate a robots.txt file for your website in seconds. Control which pages search engines can crawl, block AI scrapers, and declare your sitemap. Free, instant, no sign-up.</p>
+  </div>
+
+  <div class="rg-form">
+
+    <div class="rg-section">
+      <label class="rg-label" for="rg-domain">Your domain (for sitemap URL)</label>
+      <input id="rg-domain" class="rg-input" type="url" placeholder="https://yourdomain.com" autocomplete="off" />
+      <p class="rg-hint">Used to build the Sitemap: line — e.g. https://yourdomain.com/sitemap.xml</p>
+    </div>
+
+    <div class="rg-section">
+      <label class="rg-label" for="rg-site-type">Site type / template</label>
+      <select id="rg-site-type" class="rg-select">
+        <option value="standard">Standard website (allow all Googlebot)</option>
+        <option value="wordpress">WordPress site</option>
+        <option value="ecommerce">E-commerce store (Shopify / WooCommerce)</option>
+        <option value="blog">Blog / content site</option>
+        <option value="portfolio">Portfolio / agency site</option>
+        <option value="saas">SaaS / web app (block /app and /dashboard)</option>
+        <option value="custom">Custom (configure manually below)</option>
+      </select>
+      <p class="rg-hint">Choose a template to pre-fill common rules, then customise as needed</p>
+    </div>
+
+    <hr class="rg-divider">
+
+    <div class="rg-section">
+      <span class="rg-label">Block these bots</span>
+      <div class="rg-checkgroup">
+        <label class="rg-check">
+          <input type="checkbox" id="rg-block-ai" />
+          <div>
+            <div class="rg-check-label">AI training scrapers</div>
+            <div class="rg-check-desc">GPTBot, CCBot, anthropic-ai, Claude-Web, Bytespider, cohere-ai</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-block-mj" />
+          <div>
+            <div class="rg-check-label">Majestic / SEO crawlers</div>
+            <div class="rg-check-desc">MJ12bot, DotBot, AhrefsBot, SemrushBot</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-block-email" />
+          <div>
+            <div class="rg-check-label">Email harvesters</div>
+            <div class="rg-check-desc">EmailCollector, EmailSiphon, WebEMailExtrac</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-block-bad" />
+          <div>
+            <div class="rg-check-label">Known bad bots</div>
+            <div class="rg-check-desc">SiteSnagger, WebCopier, WebStripper, Offline Explorer</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <hr class="rg-divider">
+
+    <div class="rg-section">
+      <span class="rg-label">Disallow these paths (optional)</span>
+      <div class="rg-checkgroup" id="rg-disallow-group">
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-admin" />
+          <div>
+            <div class="rg-check-label">/admin/</div>
+            <div class="rg-check-desc">Admin panel — never needs indexing</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-search" />
+          <div>
+            <div class="rg-check-label">/search/</div>
+            <div class="rg-check-desc">Search result pages (duplicate content)</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-cart" />
+          <div>
+            <div class="rg-check-label">/cart/ &amp; /checkout/</div>
+            <div class="rg-check-desc">Shopping cart / checkout flows</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-account" />
+          <div>
+            <div class="rg-check-label">/account/ &amp; /login/</div>
+            <div class="rg-check-desc">User account pages</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-tag" />
+          <div>
+            <div class="rg-check-label">/tag/ &amp; /category/</div>
+            <div class="rg-check-desc">WordPress taxonomy pages</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-api" />
+          <div>
+            <div class="rg-check-label">/api/</div>
+            <div class="rg-check-desc">API endpoints</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-staging" />
+          <div>
+            <div class="rg-check-label">/staging/ &amp; /dev/</div>
+            <div class="rg-check-desc">Development / staging paths</div>
+          </div>
+        </label>
+        <label class="rg-check">
+          <input type="checkbox" id="rg-dis-private" />
+          <div>
+            <div class="rg-check-label">/private/ &amp; /internal/</div>
+            <div class="rg-check-desc">Private or internal sections</div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <hr class="rg-divider">
+
+    <div class="rg-section">
+      <label class="rg-label" for="rg-crawl-delay">Crawl-delay (optional)</label>
+      <select id="rg-crawl-delay" class="rg-select">
+        <option value="">None (recommended for most sites)</option>
+        <option value="1">1 second</option>
+        <option value="2">2 seconds</option>
+        <option value="5">5 seconds (low-resource servers)</option>
+        <option value="10">10 seconds (very small / shared hosting)</option>
+      </select>
+      <p class="rg-hint">Only set a crawl delay if your server struggles under crawl load. Googlebot ignores it — it uses Search Console's crawl rate settings instead.</p>
+    </div>
+
+    <button class="rg-generate" id="rg-btn" type="button">Generate robots.txt →</button>
+  </div>
+
+  <div class="rg-output" id="rg-output">
+    <div class="rg-output-header">
+      <div class="rg-output-title">Your robots.txt</div>
+      <button class="rg-copy-all" id="rg-copy-btn" type="button">Copy to clipboard</button>
+    </div>
+    <pre class="rg-code" id="rg-code-block" aria-label="Generated robots.txt"></pre>
+  </div>
+
+  <div class="rg-explain" id="rg-explain">
+    <h3>What this file does</h3>
+    <ul class="rg-explain-list" id="rg-explain-list"></ul>
+  </div>
+
+  <div class="rg-info">
+    <div class="rg-info-grid">
+      <div class="rg-info-card">
+        <h3>Where to put your robots.txt</h3>
+        <p>Upload the file to the root of your domain — it must be accessible at <strong>yourdomain.com/robots.txt</strong> (not in a subfolder). Most hosting panels let you upload directly to the public_html or www folder.</p>
+      </div>
+      <div class="rg-info-card">
+        <h3>Does robots.txt affect Google rankings?</h3>
+        <p>Indirectly, yes. Blocking unnecessary pages keeps your crawl budget focused on important content. But robots.txt controls crawling, not indexing — pages can still appear in Google if other sites link to them. Use <code>noindex</code> meta tags to block indexing.</p>
+      </div>
+      <div class="rg-info-card">
+        <h3>Should I block AI scrapers?</h3>
+        <p>Blocking AI training bots (GPTBot, CCBot) prevents your content being used to train AI models without your consent. However, it won't prevent AI answer engines like Perplexity from citing your site in answers — those use different mechanisms. See our <a href="/blog/what-is-aeo-2026.html" style="color:var(--indigo)">AEO guide</a>.</p>
+      </div>
+      <div class="rg-info-card">
+        <h3>Robots.txt vs meta robots</h3>
+        <p>robots.txt controls whether a bot can visit a page at all. The <code>robots</code> meta tag (<code>noindex</code>, <code>nofollow</code>) controls whether an already-visited page appears in search results. Use both — robots.txt alone can't prevent indexing via external links. Use our <a href="/blog/seo-checklist-2026.html" style="color:var(--indigo)">SEO checklist</a> to cover both.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← All tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function() {
+  var TEMPLATES = {
+    standard: {
+      disallow: [],
+      notes: []
+    },
+    wordpress: {
+      disallow: ['/wp-admin/', '/wp-includes/', '/wp-content/plugins/', '/xmlrpc.php', '/wp-login.php'],
+      notes: ['/wp-admin/ — WordPress admin panel', '/wp-includes/ — WordPress core files', '/wp-content/plugins/ — Plugin files (no SEO value)', '/xmlrpc.php — XML-RPC endpoint (security risk)', '/wp-login.php — Login page']
+    },
+    ecommerce: {
+      disallow: ['/cart/', '/checkout/', '/account/', '/my-account/', '/order/', '/wishlist/'],
+      notes: ['/cart/ — Shopping cart (duplicate content risk)', '/checkout/ — Checkout flow', '/account/ — Customer accounts', '/order/ — Order confirmation pages']
+    },
+    blog: {
+      disallow: ['/search/', '/tag/', '/author/'],
+      notes: ['/search/ — Search result pages (thin content)', '/tag/ — Tag archive pages', '/author/ — Author archives']
+    },
+    portfolio: {
+      disallow: ['/admin/', '/api/'],
+      notes: ['/admin/ — Admin panel', '/api/ — API endpoints']
+    },
+    saas: {
+      disallow: ['/app/', '/dashboard/', '/admin/', '/api/', '/account/', '/settings/'],
+      notes: ['/app/ — Application UI (not for search)', '/dashboard/ — User dashboards', '/admin/ — Admin panel', '/api/ — API endpoints', '/settings/ — User settings']
+    },
+    custom: {
+      disallow: [],
+      notes: []
+    }
+  };
+
+  var CHECKBOX_PATHS = {
+    'rg-dis-admin': ['/admin/'],
+    'rg-dis-search': ['/search/'],
+    'rg-dis-cart': ['/cart/', '/checkout/'],
+    'rg-dis-account': ['/account/', '/login/'],
+    'rg-dis-tag': ['/tag/', '/category/'],
+    'rg-dis-api': ['/api/'],
+    'rg-dis-staging': ['/staging/', '/dev/'],
+    'rg-dis-private': ['/private/', '/internal/']
+  };
+
+  var AI_BOTS = ['GPTBot', 'CCBot', 'anthropic-ai', 'Claude-Web', 'Bytespider', 'cohere-ai', 'omgili', 'omgilibot', 'FacebookBot', 'ImagesiftBot'];
+  var MJ_BOTS = ['MJ12bot', 'DotBot', 'AhrefsBot', 'SemrushBot', 'DataForSeoBot', 'BLEXBot'];
+  var EMAIL_BOTS = ['EmailCollector', 'EmailSiphon', 'WebEMailExtrac', 'ExtractorPro'];
+  var BAD_BOTS = ['SiteSnagger', 'WebCopier', 'WebStripper', 'Offline Explorer', 'TeleportPro', 'WebAutomate'];
+
+  function el(id) { return document.getElementById(id); }
+
+  function setTemplateDefaults(type) {
+    var tpl = TEMPLATES[type] || TEMPLATES.standard;
+    var paths = tpl.disallow;
+    // Set checkboxes based on template
+    el('rg-dis-admin').checked  = paths.indexOf('/admin/') > -1 || paths.indexOf('/wp-admin/') > -1;
+    el('rg-dis-search').checked = paths.indexOf('/search/') > -1;
+    el('rg-dis-cart').checked   = paths.indexOf('/cart/') > -1;
+    el('rg-dis-account').checked = paths.indexOf('/account/') > -1;
+    el('rg-dis-tag').checked    = paths.indexOf('/tag/') > -1;
+    el('rg-dis-api').checked    = paths.indexOf('/api/') > -1;
+    el('rg-dis-staging').checked = false;
+    el('rg-dis-private').checked = false;
+    // Block AI scrapers on by default for all
+    el('rg-block-ai').checked = true;
+  }
+
+  el('rg-site-type').addEventListener('change', function() {
+    setTemplateDefaults(this.value);
+  });
+
+  // Init defaults
+  setTemplateDefaults('standard');
+  el('rg-block-ai').checked = true;
+
+  function buildRobots() {
+    var domain = (el('rg-domain').value || '').trim().replace(/\/$/, '');
+    var siteType = el('rg-site-type').value;
+    var crawlDelay = el('rg-crawl-delay').value;
+    var blockAI = el('rg-block-ai').checked;
+    var blockMJ = el('rg-block-mj').checked;
+    var blockEmail = el('rg-block-email').checked;
+    var blockBad = el('rg-block-bad').checked;
+
+    // Collect disallowed paths
+    var disallowPaths = [];
+    var tplPaths = TEMPLATES[siteType] ? TEMPLATES[siteType].disallow : [];
+    // Add template-specific paths that aren't covered by checkboxes
+    if (siteType === 'wordpress') {
+      disallowPaths.push('/wp-includes/', '/wp-content/plugins/', '/xmlrpc.php', '/wp-login.php');
+    }
+
+    Object.keys(CHECKBOX_PATHS).forEach(function(id) {
+      if (el(id) && el(id).checked) {
+        CHECKBOX_PATHS[id].forEach(function(p) {
+          if (disallowPaths.indexOf(p) === -1) disallowPaths.push(p);
+        });
+      }
+    });
+
+    if (siteType === 'wordpress' && el('rg-dis-admin').checked) {
+      if (disallowPaths.indexOf('/wp-admin/') === -1) disallowPaths.unshift('/wp-admin/');
+    }
+
+    var lines = [];
+    var explanations = [];
+
+    lines.push('# robots.txt for ' + (domain || 'your website'));
+    lines.push('# Generated by bisyri.co/tools/robots-txt-generator/');
+    lines.push('');
+
+    // Main rule block
+    lines.push('User-agent: *');
+    if (disallowPaths.length === 0) {
+      lines.push('Disallow:');
+      explanations.push('<strong>Disallow: (empty)</strong> — all bots can crawl the entire site');
+    } else {
+      disallowPaths.forEach(function(p) {
+        lines.push('Disallow: ' + p);
+      });
+      explanations.push('<strong>' + disallowPaths.length + ' path(s) blocked</strong> from all crawlers');
+    }
+
+    if (crawlDelay) {
+      lines.push('Crawl-delay: ' + crawlDelay);
+      explanations.push('<strong>Crawl-delay: ' + crawlDelay + '</strong> — bots wait ' + crawlDelay + 's between requests (Googlebot ignores this)');
+    }
+
+    lines.push('');
+
+    // AI bots
+    if (blockAI) {
+      AI_BOTS.forEach(function(bot) {
+        lines.push('User-agent: ' + bot);
+      });
+      lines.push('Disallow: /');
+      lines.push('');
+      explanations.push('<strong>AI training bots blocked</strong> — GPTBot, CCBot, anthropic-ai, Claude-Web and others cannot crawl your site');
+    }
+
+    // SEO crawlers
+    if (blockMJ) {
+      MJ_BOTS.forEach(function(bot) {
+        lines.push('User-agent: ' + bot);
+      });
+      lines.push('Disallow: /');
+      lines.push('');
+      explanations.push('<strong>Third-party SEO crawlers blocked</strong> — MJ12bot, DotBot, AhrefsBot, SemrushBot');
+    }
+
+    // Email harvesters
+    if (blockEmail) {
+      EMAIL_BOTS.forEach(function(bot) {
+        lines.push('User-agent: ' + bot);
+      });
+      lines.push('Disallow: /');
+      lines.push('');
+      explanations.push('<strong>Email harvesters blocked</strong> — prevents automated email address collection');
+    }
+
+    // Bad bots
+    if (blockBad) {
+      BAD_BOTS.forEach(function(bot) {
+        lines.push('User-agent: ' + bot);
+      });
+      lines.push('Disallow: /');
+      lines.push('');
+      explanations.push('<strong>Known bad bots blocked</strong> — SiteSnagger, WebCopier, WebStripper and similar tools');
+    }
+
+    // Sitemap
+    if (domain) {
+      lines.push('Sitemap: ' + domain + '/sitemap.xml');
+      explanations.push('<strong>Sitemap: ' + domain + '/sitemap.xml</strong> — tells crawlers where to find your sitemap');
+    } else {
+      lines.push('# Sitemap: https://yourdomain.com/sitemap.xml');
+      explanations.push('No sitemap URL added — replace the commented line with your sitemap URL');
+    }
+
+    return { text: lines.join('\n'), explanations: explanations };
+  }
+
+  el('rg-btn').addEventListener('click', function() {
+    var result = buildRobots();
+    var codeBlock = el('rg-code-block');
+    codeBlock.textContent = result.text;
+
+    var output = el('rg-output');
+    output.classList.add('visible');
+
+    var explainEl = el('rg-explain');
+    var listEl = el('rg-explain-list');
+    listEl.innerHTML = '';
+    result.explanations.forEach(function(exp) {
+      var li = document.createElement('li');
+      li.innerHTML = exp;
+      listEl.appendChild(li);
+    });
+    explainEl.classList.add('visible');
+
+    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  el('rg-copy-btn').addEventListener('click', function() {
+    var text = el('rg-code-block').textContent;
+    var btn = this;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Copy to clipboard'; btn.classList.remove('copied'); }, 2000);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copy to clipboard'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+})();
+</script>
+</body></html>

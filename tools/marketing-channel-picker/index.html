@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Which Marketing Channel Should I Focus On? | Free Tool | Bisyri</title>
+<meta name="description" content="6 questions about your business. Get one clear marketing channel recommendation — based on your budget, timeline, and stage. Stop wasting money on the wrong channels.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/marketing-channel-picker/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Which Marketing Channel Should I Focus On? | Free Tool">
+<meta property="og:description" content="6 questions about your business. Get one clear marketing channel recommendation — based on your budget, timeline, and stage. Stop wasting money on the wrong channels.">
+<meta property="og:url" content="https://bisyri.co/tools/marketing-channel-picker/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Which Marketing Channel Should I Focus On? | Free Tool">
+<meta name="twitter:description" content="6 questions. One clear channel recommendation — the one worth your time and money right now. Stop spreading yourself thin.">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Which Marketing Channel Should I Focus On?",
+  "description": "6 questions about your business. Get one prioritised marketing channel recommendation — the one worth your time and money right now.",
+  "url": "https://bisyri.co/tools/marketing-channel-picker/",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co"}
+}
+</script>
+<style>
+/* ── Marketing Channel Picker ──────────────────────────────── */
+.quiz-outer{padding-bottom:80px}
+.quiz-wrap{max-width:640px;margin:0 auto;padding:0 28px}
+.quiz-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,5vw,44px);animation:qfade .25s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* intro */
+.quiz-intro-icon{font-size:36px;line-height:1;margin-bottom:16px}
+.quiz-intro h2{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.5vw,28px);letter-spacing:-.025em;line-height:1.1;margin-bottom:12px}
+.quiz-intro>p{font-size:15.5px;color:var(--sub);line-height:1.65;margin-bottom:24px}
+.quiz-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.quiz-meta-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+.quiz-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo);flex-shrink:0}
+
+/* progress */
+.quiz-prog{margin-bottom:26px}
+.quiz-prog-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.quiz-prog-fill{height:100%;background:var(--indigo);border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.quiz-prog-lbl{font-family:var(--mono);font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+
+/* question */
+.quiz-qnum{font-family:var(--mono);font-size:11.5px;color:var(--indigo);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:14px}
+.quiz-qtext{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
+.quiz-ctx{font-size:13.5px;color:var(--sub);line-height:1.6;padding:11px 15px 11px 14px;background:var(--indigo-soft);border-radius:10px;border-left:3px solid var(--indigo);margin-bottom:26px}
+.quiz-btns{display:flex;flex-direction:column;gap:10px}
+.quiz-btn{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);font-family:var(--body);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:border-color .15s,background .15s,transform .12s;display:flex;align-items:flex-start;gap:12px}
+.quiz-btn:hover{border-color:var(--indigo);background:var(--indigo-soft);transform:translateX(4px)}
+.quiz-btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.quiz-btn-letter{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--indigo);flex-shrink:0;width:22px;height:22px;border-radius:6px;background:var(--indigo-soft);display:flex;align-items:center;justify-content:center;margin-top:1px;line-height:1}
+
+/* result */
+.mcp-result-intro{margin-bottom:28px}
+.mcp-result-eyebrow{font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.mcp-result-headline{font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,26px);letter-spacing:-.025em;line-height:1.15;margin-bottom:10px}
+.mcp-result-sub{font-size:15px;color:var(--sub);line-height:1.7}
+
+/* channel cards */
+.mcp-section-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin:22px 0 10px}
+.mcp-channel{border-radius:14px;padding:20px;margin-bottom:10px;transition:box-shadow .15s}
+.mcp-channel.primary{border:2px solid var(--indigo);background:var(--card)}
+.mcp-channel.secondary{border:1px solid var(--line);background:var(--card)}
+.mcp-channel.ignore{border:1px solid var(--line);background:var(--bg);opacity:.6}
+.mcp-ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.mcp-ch-name{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;color:var(--ink)}
+.mcp-channel.ignore .mcp-ch-name{color:var(--sub)}
+.mcp-ch-badge{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:6px;flex-shrink:0}
+.mcp-ch-badge.primary{background:var(--indigo);color:#fff}
+.mcp-ch-badge.secondary{background:var(--indigo-soft);color:var(--indigo)}
+.mcp-ch-badge.ignore{background:var(--line);color:var(--sub)}
+.mcp-ch-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.mcp-ch-stat{background:var(--bg);border-radius:8px;padding:9px 11px}
+.mcp-ch-stat-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);margin-bottom:3px}
+.mcp-ch-stat-val{font-size:13px;font-weight:600;color:var(--ink)}
+.mcp-ch-works{font-size:13px;color:var(--sub);line-height:1.6}
+.mcp-ch-works span{display:block;padding:5px 0;border-top:1px solid var(--line)}
+.mcp-ch-works span:first-child{border-top:none;padding-top:0}
+.mcp-ch-works strong{color:var(--ink)}
+.mcp-ch-ignore-reason{font-size:13px;color:var(--sub);font-style:italic;line-height:1.55}
+
+.mcp-cta-block{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);text-align:center}
+.mcp-cta-block p{font-size:14.5px;color:var(--sub);margin-bottom:16px;line-height:1.6}
+.quiz-restart{background:none;border:0;font-family:var(--mono);font-size:12px;color:var(--sub);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:16px;display:block;margin-inline:auto;padding:4px}
+.quiz-restart:hover{color:var(--ink)}
+
+@media(max-width:480px){
+  .mcp-ch-stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <section class="blog-hero wrap">
+    <a class="article-back" href="/tools/">← Back to tools</a>
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Stop spreading yourself thin.<br><em>Pick one channel.</em></h1>
+    <p class="blog-lede">6 questions about your business. One prioritised recommendation — plus why the others can wait.</p>
+  </section>
+
+  <div class="quiz-outer">
+    <div class="quiz-wrap">
+      <div id="quiz-root"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← Back to tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+'use strict';
+
+var TOTAL = 6;
+
+var QS = [
+  {
+    label: 'Business age',
+    q: 'How long has your business been operating?',
+    hint: 'Newer businesses have fewer proof points and less trust built up — this affects which channels will work for you right now.',
+    opts: [
+      {letter:'A', text:'Less than 6 months'},
+      {letter:'B', text:'6 months – 2 years'},
+      {letter:'C', text:'2+ years'}
+    ]
+  },
+  {
+    label: 'Website quality',
+    q: "Do you have a working website that you're happy with?",
+    hint: 'Every other channel sends traffic somewhere. If that somewhere is broken or embarrassing, you\'re paying for clicks that go nowhere.',
+    opts: [
+      {letter:'A', text:'No website or embarrassing one'},
+      {letter:'B', text:'Basic website, nothing special'},
+      {letter:'C', text:'Good website that converts'}
+    ]
+  },
+  {
+    label: 'Monthly budget',
+    q: "What's your monthly budget for marketing?",
+    hint: 'Be honest about what you can sustain for 6+ months, not just what you can afford once.',
+    opts: [
+      {letter:'A', text:'Under $200'},
+      {letter:'B', text:'$200–$1,000'},
+      {letter:'C', text:'$1,000+'}
+    ]
+  },
+  {
+    label: 'Speed of need',
+    q: 'How fast do you need clients?',
+    hint: 'Some channels generate clients in weeks. Others take 6+ months to pay off. Match the channel to your urgency.',
+    opts: [
+      {letter:'A', text:'I need one this month'},
+      {letter:'B', text:'Within 3 months is fine'},
+      {letter:'C', text:'Building for 12 months out'}
+    ]
+  },
+  {
+    label: 'Existing clients',
+    q: "Do you have existing happy clients you haven't asked for referrals?",
+    hint: 'This is the single most underused channel in small business. A warm referral closes faster than any ad.',
+    opts: [
+      {letter:'A', text:'Yes, several'},
+      {letter:'B', text:'A couple'},
+      {letter:'C', text:"No, I'm new"}
+    ]
+  },
+  {
+    label: 'Search demand',
+    q: 'Is your service/product something people search for on Google?',
+    hint: 'High-intent search demand means SEO and Ads will work. No search demand means you need to create it — a different strategy entirely.',
+    opts: [
+      {letter:'A', text:'Yes — people actively look for what I do'},
+      {letter:'B', text:'Sometimes'},
+      {letter:'C', text:'Not really — I need to create demand'}
+    ]
+  }
+];
+
+var CHANNELS = {
+  referrals: {
+    name: 'Referrals',
+    time: '1–4 weeks',
+    cost: '$0',
+    worksWhen: 'You have happy clients who haven\'t been asked',
+    failsWhen: 'You haven\'t delivered results worth talking about'
+  },
+  website: {
+    name: 'Fix the website first',
+    time: '1–3 months (after fixing)',
+    cost: '$500–$3,000 one-time',
+    worksWhen: 'Every other channel is sending traffic somewhere broken',
+    failsWhen: 'Traffic is so low it doesn\'t matter yet'
+  },
+  seo: {
+    name: 'SEO',
+    time: '3–9 months',
+    cost: '$0–$1,500/month',
+    worksWhen: 'You\'re patient and your service has search volume',
+    failsWhen: 'You need clients this month'
+  },
+  ads: {
+    name: 'Google Ads',
+    time: '1–2 weeks',
+    cost: '$300–$2,000/month ongoing',
+    worksWhen: 'You have budget, a converting website, and a searchable offer',
+    failsWhen: 'Your website doesn\'t convert — you\'re paying for clicks that go nowhere'
+  },
+  social: {
+    name: 'Social Media',
+    time: '3–12 months',
+    cost: '$0 (your time is the cost)',
+    worksWhen: 'Your audience hangs out there AND you can produce consistently',
+    failsWhen: 'You post 3 times and give up'
+  },
+  content: {
+    name: 'Content Marketing',
+    time: '6–18 months',
+    cost: '$0 (your time) or $500–$2,000/month outsourced',
+    worksWhen: 'You can commit 12+ months and your service has search demand',
+    failsWhen: 'You want quick wins'
+  }
+};
+
+function scoreChannels(answers) {
+  // answers[i] = index of chosen option (0=A, 1=B, 2=C)
+  var q1 = answers[0]; // business age: 0=new, 1=mid, 2=mature
+  var q2 = answers[1]; // website: 0=bad, 1=basic, 2=good
+  var q3 = answers[2]; // budget: 0=low, 1=mid, 2=high
+  var q4 = answers[3]; // speed: 0=now, 1=3mo, 2=12mo
+  var q5 = answers[4]; // existing clients: 0=several, 1=couple, 2=none
+  var q6 = answers[5]; // search demand: 0=yes, 1=sometimes, 2=no
+
+  var s = {referrals:0, website:0, seo:0, ads:0, social:0, content:0};
+
+  // Referrals
+  if (q5 === 0) s.referrals += 5;
+  if (q5 === 1) s.referrals += 3;
+  if (q4 === 0) s.referrals += 3; // need clients now
+  if (q1 === 0 || q1 === 1) s.referrals += 1; // newer business
+  if (q3 === 0) s.referrals += 1; // low budget favours free channels
+
+  // Fix the website — strong override when site is bad
+  if (q2 === 0) s.website += 8; // bad/no site is a blocker
+  if (q2 === 1) s.website += 3;
+  if (q2 === 2) s.website -= 5; // good site = don't need to fix it
+
+  // Google Ads
+  if (q3 === 2) s.ads += 4; // high budget
+  if (q4 === 0) s.ads += 3; // need clients now
+  if (q6 === 0) s.ads += 3; // searchable
+  if (q2 === 2) s.ads += 2; // good site
+  if (q2 === 0) s.ads -= 4; // bad site kills ads
+
+  // SEO
+  if (q1 === 2) s.seo += 4; // mature business
+  if (q2 === 2) s.seo += 3; // good site
+  if (q6 === 0) s.seo += 3; // searchable
+  if (q4 === 2) s.seo += 2; // patient
+  if (q4 === 0) s.seo -= 3; // needs clients now — SEO won't help
+  if (q2 === 0) s.seo -= 3; // bad site
+
+  // Social Media
+  if (q6 === 2) s.social += 3; // need to create demand
+  if (q3 === 0) s.social += 2; // low budget
+  if (q1 === 0) s.social += 2; // new business, building brand
+  if (q4 === 1 || q4 === 2) s.social += 1; // some patience
+
+  // Content Marketing
+  if (q4 === 2) s.content += 4; // patient — building for 12 months
+  if (q3 === 0) s.content += 2; // low budget
+  if (q6 === 0) s.content += 2; // searchable
+  if (q4 === 0) s.content -= 3; // needs clients now
+  if (q1 === 0) s.content -= 1; // too new
+
+  return s;
+}
+
+function rankChannels(scores) {
+  var keys = Object.keys(scores);
+  return keys.slice().sort(function(a, b) { return scores[b] - scores[a]; });
+}
+
+var state = {screen:'intro', current:0, answers:[]};
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function render() {
+  var root = document.getElementById('quiz-root');
+  if (!root) return;
+  if (state.screen === 'intro') root.innerHTML = introHTML();
+  else if (state.screen === 'question') root.innerHTML = questionHTML();
+  else root.innerHTML = resultHTML();
+}
+
+function introHTML() {
+  return '<div class="quiz-card">' +
+    '<div class="quiz-intro">' +
+      '<div class="quiz-intro-icon">📣</div>' +
+      '<h2>Which marketing channel first?</h2>' +
+      '<p>Answer 6 honest questions about your business. Get one clear recommendation — the channel worth your time and money right now — plus why the others can wait. Free, instant, no sign-up.</p>' +
+      '<div class="quiz-meta">' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>6 questions</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>~2 minutes</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>Instant result</span>' +
+      '</div>' +
+      '<button class="btn" onclick="mcpStart()" style="font-size:15px;padding:14px 28px">Pick my channel →</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function questionHTML() {
+  var i = state.current;
+  var q = QS[i];
+  var pct = Math.round((i / TOTAL) * 100);
+  var btns = q.opts.map(function(o, idx) {
+    return '<button class="quiz-btn" onclick="mcpAnswer(' + idx + ')">' +
+      '<span class="quiz-btn-letter">' + esc(o.letter) + '</span>' +
+      esc(o.text) +
+    '</button>';
+  }).join('');
+  return '<div class="quiz-card">' +
+    '<div class="quiz-prog">' +
+      '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:' + pct + '%"></div></div>' +
+      '<span class="quiz-prog-lbl">Question ' + (i + 1) + ' of ' + TOTAL + '</span>' +
+    '</div>' +
+    '<div class="quiz-qnum">' + esc(q.label) + ' \xb7 Question ' + (i + 1) + '</div>' +
+    '<div class="quiz-qtext">' + esc(q.q) + '</div>' +
+    '<div class="quiz-ctx">' + esc(q.hint) + '</div>' +
+    '<div class="quiz-btns">' + btns + '</div>' +
+  '</div>';
+}
+
+function channelCardHTML(key, tier) {
+  var ch = CHANNELS[key];
+  var badgeLabel = tier === 'primary' ? 'Primary pick' : tier === 'secondary' ? 'Also consider' : 'Not yet';
+  var ignoreReasons = {
+    referrals: "You said you don't have existing happy clients to draw on yet.",
+    website: 'Your website is already in good shape — this one is done.',
+    seo: 'SEO takes 3–9 months. Your situation calls for faster results first.',
+    ads: "Ads need budget and a converting website. You're not there yet.",
+    social: "Social media is a long game. Focus on faster wins first.",
+    content: "Content marketing takes 6–18 months to pay off. Come back to this later."
+  };
+  if (tier === 'ignore') {
+    return '<div class="mcp-channel ignore">' +
+      '<div class="mcp-ch-header">' +
+        '<div class="mcp-ch-name">' + esc(ch.name) + '</div>' +
+        '<div class="mcp-ch-badge ignore">' + esc(badgeLabel) + '</div>' +
+      '</div>' +
+      '<div class="mcp-ch-ignore-reason">' + esc(ignoreReasons[key]) + '</div>' +
+    '</div>';
+  }
+  return '<div class="mcp-channel ' + tier + '">' +
+    '<div class="mcp-ch-header">' +
+      '<div class="mcp-ch-name">' + esc(ch.name) + '</div>' +
+      '<div class="mcp-ch-badge ' + tier + '">' + esc(badgeLabel) + '</div>' +
+    '</div>' +
+    '<div class="mcp-ch-stats">' +
+      '<div class="mcp-ch-stat"><div class="mcp-ch-stat-label">Time to results</div><div class="mcp-ch-stat-val">' + esc(ch.time) + '</div></div>' +
+      '<div class="mcp-ch-stat"><div class="mcp-ch-stat-label">Monthly cost</div><div class="mcp-ch-stat-val">' + esc(ch.cost) + '</div></div>' +
+    '</div>' +
+    '<div class="mcp-ch-works">' +
+      '<span><strong>Works when:</strong> ' + esc(ch.worksWhen) + '</span>' +
+      '<span><strong>Fails when:</strong> ' + esc(ch.failsWhen) + '</span>' +
+    '</div>' +
+  '</div>';
+}
+
+function resultHTML() {
+  var scores = scoreChannels(state.answers);
+  var ranked = rankChannels(scores);
+  var primary = ranked[0];
+  var secondary = [ranked[1], ranked[2]];
+  var ignoreList = ranked.slice(3);
+
+  var primaryCh = CHANNELS[primary];
+
+  var html = '<div class="quiz-card">' +
+    '<div class="mcp-result-intro">' +
+      '<div class="mcp-result-eyebrow">Your #1 channel right now</div>' +
+      '<div class="mcp-result-headline">' + esc(primaryCh.name) + '</div>' +
+      '<div class="mcp-result-sub">This is where your time and money will go furthest based on your answers. The cards below break down why — and which channels to park for later.</div>' +
+    '</div>';
+
+  html += channelCardHTML(primary, 'primary');
+
+  if (secondary.length) {
+    html += '<div class="mcp-section-label">Worth building toward</div>';
+    secondary.forEach(function(k) { html += channelCardHTML(k, 'secondary'); });
+  }
+
+  if (ignoreList.length) {
+    html += '<div class="mcp-section-label">Not yet — here\'s why</div>';
+    ignoreList.forEach(function(k) { html += channelCardHTML(k, 'ignore'); });
+  }
+
+  html += '<div class="mcp-cta-block">' +
+    '<p>Not sure how to execute? That\'s what we do.</p>' +
+    '<a class="btn" href="/#contact" style="font-size:14px;padding:12px 22px">Talk to Bisyri — it\'s free →</a>' +
+  '</div>' +
+  '<button class="quiz-restart" onclick="mcpRestart()">↺ Start over</button>' +
+  '</div>';
+
+  return html;
+}
+
+window.mcpStart = function() {
+  state.screen = 'question';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+window.mcpAnswer = function(optIdx) {
+  state.answers[state.current] = optIdx;
+  if (state.current < TOTAL - 1) {
+    state.current++;
+    render();
+  } else {
+    state.screen = 'result';
+    render();
+  }
+};
+
+window.mcpRestart = function() {
+  state.screen = 'intro';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+render();
+})();
+</script>
+</body></html>

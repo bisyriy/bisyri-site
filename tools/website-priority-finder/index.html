@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>What Should I Fix on My Website First? | Priority Finder | Bisyri</title>
+<meta name="description" content="Score 8 areas of your website. Get a ranked list of the 3 highest-impact improvements. Free, instant, no technical knowledge needed.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/website-priority-finder/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="What Should I Fix on My Website First? | Priority Finder">
+<meta property="og:description" content="Score 8 areas of your website. Get a ranked list of the 3 highest-impact improvements. Free, instant, no technical knowledge needed.">
+<meta property="og:url" content="https://bisyri.co/tools/website-priority-finder/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Should I Fix on My Website First? | Priority Finder">
+<meta name="twitter:description" content="Score 8 areas of your website. Get a ranked list of the 3 highest-impact improvements. Free, instant.">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "What Should I Fix on My Website First?",
+  "description": "Score 8 areas of your website. Get a ranked list of the 3 highest-impact improvements — so you stop guessing and start working on what actually makes you more money.",
+  "url": "https://bisyri.co/tools/website-priority-finder/",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co"}
+}
+</script>
+<style>
+/* ── Website Priority Finder ───────────────────────────────── */
+.wpf-outer{padding-bottom:80px}
+.wpf-wrap{max-width:700px;margin:0 auto;padding:0 28px}
+
+/* form card */
+.wpf-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,5vw,44px);margin-bottom:24px}
+.wpf-card-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;margin-bottom:6px}
+.wpf-card-sub{font-size:14px;color:var(--sub);line-height:1.6;margin-bottom:28px}
+
+/* scoring rows */
+.wpf-rows{display:flex;flex-direction:column;gap:20px}
+.wpf-row{padding-bottom:20px;border-bottom:1px solid var(--line)}
+.wpf-row:last-child{border-bottom:none;padding-bottom:0}
+.wpf-row-header{margin-bottom:12px}
+.wpf-row-title{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:3px}
+.wpf-row-desc{font-size:13.5px;color:var(--sub);line-height:1.55}
+
+/* radio group */
+.wpf-radios{display:flex;gap:8px}
+.wpf-radio-label{flex:1;cursor:pointer}
+.wpf-radio-label input{position:absolute;opacity:0;pointer-events:none}
+.wpf-radio-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 8px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);transition:border-color .15s,background .15s;text-align:center}
+.wpf-radio-label:hover .wpf-radio-btn{border-color:var(--indigo);background:var(--indigo-soft)}
+.wpf-radio-label input:checked + .wpf-radio-btn{border-color:var(--indigo);background:var(--indigo-soft)}
+.wpf-radio-label input:focus-visible + .wpf-radio-btn{outline:2px solid var(--indigo);outline-offset:2px}
+.wpf-radio-num{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--indigo);line-height:1}
+.wpf-radio-text{font-size:11px;color:var(--sub);line-height:1.3;font-family:var(--mono);text-transform:uppercase;letter-spacing:.03em}
+
+/* submit */
+.wpf-submit{width:100%;padding:15px 24px;background:var(--indigo);color:#fff;border:none;border-radius:12px;font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:-.01em;cursor:pointer;transition:opacity .15s,transform .12s;margin-top:28px}
+.wpf-submit:hover{opacity:.9;transform:translateY(-1px)}
+.wpf-submit:active{transform:translateY(0)}
+.wpf-error{font-size:13px;color:#DC2626;margin-top:8px;display:none}
+
+/* results */
+.wpf-results{display:none;animation:rfade .3s ease}
+@keyframes rfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.wpf-results.visible{display:block}
+
+.wpf-results-intro{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,4vw,40px);margin-bottom:20px;text-align:center}
+.wpf-results-intro-label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:10px}
+.wpf-results-intro-hl{font-family:var(--display);font-weight:700;font-size:clamp(20px,3.5vw,27px);letter-spacing:-.025em;line-height:1.15;margin-bottom:8px}
+.wpf-results-intro-sub{font-size:14.5px;color:var(--sub);line-height:1.65;max-width:44ch;margin-inline:auto}
+
+/* priority cards */
+.wpf-priority-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin:24px 0 12px}
+.wpf-priority-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:14px;position:relative;overflow:hidden}
+.wpf-priority-card:first-of-type{border-color:var(--indigo)}
+.wpf-priority-num{position:absolute;top:18px;right:20px;font-family:var(--mono);font-size:28px;font-weight:700;color:var(--line);line-height:1}
+.wpf-priority-title{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.02em;margin-bottom:8px;color:var(--ink)}
+.wpf-priority-why{font-size:14px;color:var(--sub);line-height:1.65;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.wpf-priority-fixes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.wpf-fix{background:var(--bg);border-radius:9px;padding:11px 13px}
+.wpf-fix-label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub);margin-bottom:5px}
+.wpf-fix-text{font-size:13px;color:var(--ink);line-height:1.55}
+
+/* score summary */
+.wpf-score-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.wpf-score-row:last-child{border-bottom:none}
+.wpf-score-name{font-size:14px;font-weight:500;color:var(--ink);flex:1}
+.wpf-score-track{flex:2;height:6px;background:var(--line);border-radius:4px;overflow:hidden}
+.wpf-score-fill{height:100%;border-radius:4px;background:var(--indigo);transition:width .8s cubic-bezier(.4,0,.2,1)}
+.wpf-score-val{font-family:var(--mono);font-size:12px;color:var(--sub);width:20px;text-align:right;flex-shrink:0}
+
+/* cta */
+.wpf-cta{background:var(--indigo);border-radius:18px;padding:clamp(26px,5vw,44px);text-align:center;color:#fff;margin-top:8px}
+.wpf-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(20px,3.5vw,28px);letter-spacing:-.03em;line-height:1.1;margin-bottom:10px}
+.wpf-cta p{font-size:15px;opacity:.85;line-height:1.65;margin-bottom:22px;max-width:400px;margin-left:auto;margin-right:auto}
+.wpf-cta-btn{display:inline-block;background:#fff;color:var(--indigo);font-family:var(--display);font-weight:700;font-size:15px;padding:13px 28px;border-radius:11px;text-decoration:none;transition:opacity .15s,transform .12s;letter-spacing:-.01em}
+.wpf-cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+.wpf-reset{text-align:center;margin-top:14px}
+.wpf-reset a{font-size:13px;color:rgba(255,255,255,.6);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.wpf-reset a:hover{color:#fff}
+
+@media(max-width:480px){
+  .wpf-priority-fixes{grid-template-columns:1fr}
+  .wpf-radios{gap:5px}
+  .wpf-radio-btn{padding:8px 4px}
+  .wpf-radio-num{font-size:14px}
+  .wpf-radio-text{font-size:10px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <section class="blog-hero wrap">
+    <a class="article-back" href="/tools/">← Back to tools</a>
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Stop guessing what to fix.<br><em>Here's your priority list.</em></h1>
+    <p class="blog-lede">Answer 8 quick questions. Get a ranked list of the 3 highest-impact improvements — so you spend time on what actually moves the needle.</p>
+  </section>
+
+  <div class="wpf-outer">
+  <div class="wpf-wrap">
+
+    <div class="wpf-card" id="wpf-form">
+      <div class="wpf-card-title">Rate each area of your website</div>
+      <div class="wpf-card-sub">Score honestly: 1 = Problem, 2 = OK, 3 = Good. The lowest scores become your top priorities.</div>
+
+      <div class="wpf-rows" id="wpf-rows"></div>
+
+      <button class="wpf-submit" onclick="wpfSubmit()">Show my priority list →</button>
+      <div class="wpf-error" id="wpf-error">Please score all 8 areas before continuing.</div>
+    </div>
+
+    <div class="wpf-results" id="wpf-results">
+      <div class="wpf-results-intro">
+        <div class="wpf-results-intro-label">Your top priorities</div>
+        <div class="wpf-results-intro-hl" id="wpf-hl">Here's where to focus first.</div>
+        <div class="wpf-results-intro-sub" id="wpf-sub">The areas with the lowest scores have the highest impact. Start at #1 and work down.</div>
+      </div>
+
+      <div id="wpf-priority-cards"></div>
+
+      <div class="wpf-card" style="margin-top:20px">
+        <div class="wpf-card-title" style="margin-bottom:16px">Full score breakdown</div>
+        <div id="wpf-score-breakdown"></div>
+      </div>
+
+      <div class="wpf-cta">
+        <h2>Want us to do this audit for your actual site — properly?</h2>
+        <p>We review real sites, find the real problems, and tell you exactly what to fix and in what order.</p>
+        <a class="wpf-cta-btn" href="/#contact">Talk to Bisyri — it's free →</a>
+        <div class="wpf-reset"><a onclick="wpfReset()">↺ Score your site again</a></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← Back to tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+'use strict';
+
+var AREAS = [
+  {
+    key: 'speed',
+    title: 'Speed',
+    desc: 'Pages load fast on mobile',
+    labels: ['Slow','Acceptable','Fast'],
+    why: 'A 1-second delay in page load costs an average of 7% in conversions. At your traffic level, that\'s real money walking out the door.',
+    quickWin: 'Compress images with TinyPNG.',
+    fullFix: 'Professional speed audit + hosting review.'
+  },
+  {
+    key: 'mobile',
+    title: 'Mobile',
+    desc: 'Looks great on a phone',
+    labels: ['Broken','Functional','Great'],
+    why: '60% of web traffic is mobile. If your site breaks on a phone, you\'re invisible to the majority of your potential clients.',
+    quickWin: 'Test on a real phone, identify the worst-broken element.',
+    fullFix: 'Mobile-first redesign.'
+  },
+  {
+    key: 'headline',
+    title: 'Headline',
+    desc: 'Your homepage headline clearly says who you help and what result they get',
+    labels: ['Vague','OK','Crystal clear'],
+    why: 'You have 3 seconds to tell a visitor they\'re in the right place. A vague headline is the fastest way to lose them to a competitor.',
+    quickWin: 'Rewrite it as "[Result] for [Who] — [How]".',
+    fullFix: 'Copy and conversion consultation.'
+  },
+  {
+    key: 'cta',
+    title: 'CTA',
+    desc: "There's an obvious next step on every page",
+    labels: ['Missing','Weak','Clear'],
+    why: 'Every page without a clear next step is a leak in your sales funnel. Visitors who don\'t know what to do next leave.',
+    quickWin: 'Add a "Get a free quote" button to every page header.',
+    fullFix: 'Conversion rate optimisation.'
+  },
+  {
+    key: 'trust',
+    title: 'Trust signals',
+    desc: 'You have reviews, case studies, or client logos visible',
+    labels: ['None','Some','Strong'],
+    why: 'People buy from people they trust. Reviews and case studies can increase conversion rates by 20–50%.',
+    quickWin: 'Email 3 happy clients today, ask for a Google review.',
+    fullFix: 'Case studies + testimonials section.'
+  },
+  {
+    key: 'seo',
+    title: 'SEO',
+    desc: 'Your pages appear when people search for your service',
+    labels: ['Not ranking','Some visibility','Ranking well'],
+    why: 'Organic search is the only marketing channel where your investment keeps paying after you stop. A site that doesn\'t rank is invisible to buyers who are ready to hire.',
+    quickWin: 'Submit to Google Search Console, check indexing.',
+    fullFix: 'Full SEO audit + content strategy.'
+  },
+  {
+    key: 'content',
+    title: 'Content clarity',
+    desc: 'Your service pages explain what you do clearly enough that a stranger would understand',
+    labels: ['Confusing','OK','Clear'],
+    why: 'Confusion kills conversions. If visitors can\'t immediately understand what you offer and whether it\'s for them, they leave without contacting you.',
+    quickWin: 'Read your service page aloud to a non-industry friend — note every question they have.',
+    fullFix: 'Content rewrite with copywriter.'
+  },
+  {
+    key: 'analytics',
+    title: 'Analytics',
+    desc: 'You know how many visitors you get and where they come from',
+    labels: ['No idea','Basic data','Full visibility'],
+    why: "You can't improve what you don't measure. Flying blind means you're making decisions about your biggest marketing asset without data.",
+    quickWin: 'Install Google Analytics 4 (free, 20 minutes).',
+    fullFix: 'Full tracking setup with goals + conversion events.'
+  }
+];
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildForm() {
+  var container = document.getElementById('wpf-rows');
+  if (!container) return;
+  container.innerHTML = AREAS.map(function(a, i) {
+    var radios = [1,2,3].map(function(val, ri) {
+      return '<label class="wpf-radio-label">' +
+        '<input type="radio" name="wpf-' + a.key + '" value="' + val + '">' +
+        '<div class="wpf-radio-btn">' +
+          '<div class="wpf-radio-num">' + val + '</div>' +
+          '<div class="wpf-radio-text">' + esc(a.labels[ri]) + '</div>' +
+        '</div>' +
+      '</label>';
+    }).join('');
+    return '<div class="wpf-row" id="wpf-row-' + a.key + '">' +
+      '<div class="wpf-row-header">' +
+        '<div class="wpf-row-title">' + esc(a.title) + '</div>' +
+        '<div class="wpf-row-desc">' + esc(a.desc) + '</div>' +
+      '</div>' +
+      '<div class="wpf-radios">' + radios + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+window.wpfSubmit = function() {
+  var scores = [];
+  var allFilled = true;
+  AREAS.forEach(function(a) {
+    var sel = document.querySelector('input[name="wpf-' + a.key + '"]:checked');
+    if (!sel) { allFilled = false; scores.push(null); }
+    else scores.push(parseInt(sel.value, 10));
+  });
+
+  var errEl = document.getElementById('wpf-error');
+  if (!allFilled) {
+    errEl.style.display = 'block';
+    // highlight unfilled
+    AREAS.forEach(function(a, i) {
+      var row = document.getElementById('wpf-row-' + a.key);
+      if (scores[i] === null) row.style.outline = '2px solid #EF4444';
+      else row.style.outline = 'none';
+    });
+    return;
+  }
+  errEl.style.display = 'none';
+  AREAS.forEach(function(a) {
+    document.getElementById('wpf-row-' + a.key).style.outline = 'none';
+  });
+
+  showResults(scores);
+};
+
+function showResults(scores) {
+  // sort areas by score ascending (lowest = highest priority)
+  var indexed = AREAS.map(function(a, i) { return {area: a, score: scores[i], idx: i}; });
+  indexed.sort(function(a, b) { return a.score - b.score; });
+
+  var top3 = indexed.slice(0, 3);
+  var rest = indexed.slice(3);
+
+  // headline
+  var worstScore = top3[0].score;
+  var hlEl = document.getElementById('wpf-hl');
+  var subEl = document.getElementById('wpf-sub');
+  if (worstScore === 1) {
+    hlEl.textContent = 'You have 3 critical issues to fix.';
+    subEl.textContent = 'These are costing you money right now. Start with #1 this week.';
+  } else if (worstScore === 2) {
+    hlEl.textContent = 'Good foundation — 3 areas worth improving.';
+    subEl.textContent = 'No critical failures, but these improvements will move the needle.';
+  } else {
+    hlEl.textContent = 'Your site is in strong shape.';
+    subEl.textContent = 'No major gaps. These are polish items that could compound your results.';
+  }
+
+  // priority cards
+  var cardsEl = document.getElementById('wpf-priority-cards');
+  cardsEl.innerHTML = top3.map(function(item, rank) {
+    var a = item.area;
+    var scoreLabel = item.score === 1 ? 'Problem' : item.score === 2 ? 'Needs work' : 'OK';
+    var badgeColor = item.score === 1 ? '#DC2626' : item.score === 2 ? '#D97706' : '#4F46E5';
+    return '<div class="wpf-priority-card" style="' + (rank === 0 ? 'border-color:var(--indigo)' : '') + '">' +
+      '<div class="wpf-priority-num">#' + (rank + 1) + '</div>' +
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">' +
+        '<div class="wpf-priority-title" style="margin-bottom:0">' + esc(a.title) + '</div>' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:' + badgeColor + '1A;color:' + badgeColor + ';flex-shrink:0">' + scoreLabel + '</span>' +
+      '</div>' +
+      '<div class="wpf-priority-why">' + esc(a.why) + '</div>' +
+      '<div class="wpf-priority-fixes">' +
+        '<div class="wpf-fix">' +
+          '<div class="wpf-fix-label">Quick win this week</div>' +
+          '<div class="wpf-fix-text">' + esc(a.quickWin) + '</div>' +
+        '</div>' +
+        '<div class="wpf-fix">' +
+          '<div class="wpf-fix-label">Proper solution</div>' +
+          '<div class="wpf-fix-text">' + esc(a.fullFix) + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  // score breakdown bar chart
+  var breakdownEl = document.getElementById('wpf-score-breakdown');
+  var sorted = indexed.slice().sort(function(a,b){ return a.score - b.score; });
+  breakdownEl.innerHTML = sorted.map(function(item) {
+    var pct = (item.score / 3) * 100;
+    return '<div class="wpf-score-row">' +
+      '<div class="wpf-score-name">' + esc(item.area.title) + '</div>' +
+      '<div class="wpf-score-track"><div class="wpf-score-fill" style="width:' + pct + '%"></div></div>' +
+      '<div class="wpf-score-val">' + item.score + '/3</div>' +
+    '</div>';
+  }).join('');
+
+  // show results
+  var resultsEl = document.getElementById('wpf-results');
+  resultsEl.classList.add('visible');
+  setTimeout(function() {
+    resultsEl.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+};
+
+window.wpfReset = function() {
+  document.getElementById('wpf-results').classList.remove('visible');
+  // clear all radio selections
+  document.querySelectorAll('input[type="radio"]').forEach(function(r) { r.checked = false; });
+  document.getElementById('wpf-error').style.display = 'none';
+  AREAS.forEach(function(a) {
+    var row = document.getElementById('wpf-row-' + a.key);
+    if (row) row.style.outline = 'none';
+  });
+  setTimeout(function() {
+    document.getElementById('wpf-form').scrollIntoView({behavior:'smooth', block:'start'});
+  }, 200);
+};
+
+buildForm();
+})();
+</script>
+</body></html>

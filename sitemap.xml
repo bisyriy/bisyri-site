@@ -255,4 +255,37 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://bisyri.co/tools/ads-vs-seo-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bisyri.co/blog/website-costing-you-money-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bisyri.co/blog/seo-vs-google-ads-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bisyri.co/blog/how-to-get-leads-from-website-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bisyri.co/blog/website-redesign-roi-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bisyri.co/free-toolkit/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://bisyri.co/tools/diy-or-hire/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bisyri.co/tools/marketing-channel-picker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://bisyri.co/tools/website-priority-finder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

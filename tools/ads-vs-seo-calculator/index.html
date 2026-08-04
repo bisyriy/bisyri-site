@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Google Ads vs. SEO Calculator — When Does SEO Pay for Itself? | Bisyri</title>
+<meta name="description" content="Free calculator: enter your monthly ad spend and CPC, see exactly when SEO investment breaks even and how much you save long-term. No email required.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/ads-vs-seo-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Google Ads vs. SEO: When Does SEO Pay for Itself?">
+<meta property="og:description" content="Enter your monthly ad spend and CPC, see exactly when SEO investment breaks even and how much you save long-term. No email required.">
+<meta property="og:url" content="https://bisyri.co/tools/ads-vs-seo-calculator/">
+<meta property="og:image" content="https://bisyri.co/images/work-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google Ads vs. SEO: When Does SEO Pay for Itself?">
+<meta name="twitter:description" content="Free. Instant. No email. See exactly when SEO investment beats ongoing ad spend — month by month.">
+<meta name="twitter:image" content="https://bisyri.co/images/work-01.jpg">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Google Ads vs. SEO Break-Even Calculator",
+  "description": "Calculate when SEO investment breaks even against ongoing Google Ads spend and how much you save long-term.",
+  "url": "https://bisyri.co/tools/ads-vs-seo-calculator/",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "author": {"@type":"Person","name":"Bisyri","url":"https://bisyri.co"}
+}
+</script>
+<style>
+/* ── Ads vs SEO Calculator ────────────────────────────────── */
+.roi-outer{padding:0 0 80px}
+.roi-wrap{max-width:740px;margin:0 auto;padding:0 28px}
+
+/* inputs card */
+.roi-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(26px,5vw,44px);margin-bottom:24px}
+.roi-card-title{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.roi-card-title span{width:28px;height:28px;background:var(--indigo-soft);border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+
+.roi-fields{display:grid;gap:20px}
+.roi-field{display:flex;flex-direction:column;gap:8px}
+.roi-label{font-weight:600;font-size:14.5px;color:var(--ink)}
+.roi-hint{font-size:13px;color:var(--sub);line-height:1.5;margin-top:2px}
+.roi-input-wrap{position:relative}
+.roi-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:14px;color:var(--sub);pointer-events:none}
+.roi-input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;background:var(--bg);font-family:var(--mono);font-size:15px;font-weight:500;color:var(--ink);transition:border-color .15s;box-sizing:border-box;-moz-appearance:textfield}
+.roi-input::-webkit-inner-spin-button,.roi-input::-webkit-outer-spin-button{-webkit-appearance:none}
+.roi-input:focus{outline:none;border-color:var(--indigo)}
+.has-prefix .roi-input{padding-left:32px}
+
+.roi-calc-btn{width:100%;padding:15px 24px;background:var(--indigo);color:#fff;border:none;border-radius:12px;font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:-.01em;cursor:pointer;transition:opacity .15s,transform .12s;margin-top:6px}
+.roi-calc-btn:hover{opacity:.9;transform:translateY(-1px)}
+.roi-calc-btn:active{transform:translateY(0)}
+
+/* results */
+.roi-results{display:none;animation:rfade .3s ease}
+@keyframes rfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.roi-results.visible{display:block}
+
+/* headline result */
+.roi-current{text-align:center;padding:clamp(28px,5vw,44px);background:var(--card);border:1px solid var(--line);border-radius:20px;margin-bottom:24px}
+.roi-current-label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:10px}
+.roi-current-value{font-family:var(--display);font-weight:700;font-size:clamp(36px,7vw,58px);letter-spacing:-.04em;color:var(--indigo);line-height:1.1}
+.roi-current-sub{font-size:15px;color:var(--sub);margin-top:12px;line-height:1.6}
+.roi-current-sub strong{color:var(--ink)}
+
+/* stat panels */
+.roi-scenarios-title{font-family:var(--display);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:16px}
+.roi-scenarios{display:grid;gap:14px}
+.roi-scenario{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;position:relative;overflow:hidden;transition:border-color .2s}
+.roi-scenario.highlight{border-color:var(--indigo)}
+.roi-scenario-bar{position:absolute;inset:0;background:var(--indigo-soft);transform-origin:left;transform:scaleX(0);transition:transform .8s cubic-bezier(.4,0,.2,1);z-index:0}
+.roi-scenario>:not(.roi-scenario-bar){position:relative;z-index:1}
+.roi-scenario-label{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:4px}
+.roi-scenario-desc{font-size:13px;color:var(--sub)}
+.roi-scenario-badge{display:inline-block;background:var(--indigo);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+.roi-scenario-right{text-align:right}
+.roi-scenario-val{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.03em;color:var(--ink)}
+.roi-scenario-sub{font-family:var(--mono);font-size:12px;color:var(--sub);margin-top:3px}
+.roi-scenario-uplift{font-family:var(--mono);font-size:12px;color:var(--indigo);font-weight:700;margin-top:3px}
+
+/* 24-month chart */
+.roi-chart{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,36px)}
+.roi-chart-title{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.02em;margin-bottom:8px}
+.roi-chart-sub{font-size:13px;color:var(--sub);margin-bottom:22px;line-height:1.5}
+.roi-chart-legend{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.roi-legend-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;color:var(--sub)}
+.roi-legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.roi-legend-dot.ads{background:var(--sub);opacity:.45}
+.roi-legend-dot.seo{background:var(--indigo)}
+
+.roi-bars{display:flex;align-items:flex-end;gap:10px;height:160px}
+.roi-bar-group{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%}
+.roi-bar-track{flex:1;width:100%;display:flex;align-items:flex-end;gap:3px}
+.roi-bar-pair{flex:1;height:100%;display:flex;align-items:flex-end;gap:3px}
+.roi-bar-fill{flex:1;border-radius:5px 5px 0 0;transition:height .9s cubic-bezier(.4,0,.2,1);min-height:4px}
+.roi-bar-fill.ads-bar{background:var(--sub);opacity:.4}
+.roi-bar-fill.seo-bar{background:var(--indigo)}
+.roi-bar-val{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink);white-space:nowrap;text-align:center}
+.roi-bar-lbl{font-size:11px;color:var(--sub);text-align:center;line-height:1.3}
+.roi-bar-lbl.breakeven{color:var(--indigo);font-weight:600}
+
+/* crossover callout */
+.roi-crossover{margin-top:16px;background:var(--indigo-soft);border-radius:12px;padding:12px 16px;font-size:13.5px;color:var(--ink);line-height:1.5}
+.roi-crossover strong{color:var(--indigo)}
+
+/* insights */
+.roi-insights{margin-top:24px;display:grid;gap:12px}
+.roi-insight{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+.roi-insight-icon{font-size:20px;flex-shrink:0;line-height:1;margin-top:1px}
+.roi-insight-text{font-size:14px;color:var(--sub);line-height:1.6}
+.roi-insight-text strong{color:var(--ink)}
+
+/* CTA */
+.roi-cta{margin-top:28px;background:var(--indigo);border-radius:20px;padding:clamp(28px,5vw,44px);text-align:center;color:#fff}
+.roi-cta h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,4vw,30px);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.roi-cta p{font-size:15px;opacity:.85;line-height:1.65;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.roi-cta-btn{display:inline-block;background:#fff;color:var(--indigo);font-family:var(--display);font-weight:700;font-size:15px;padding:13px 28px;border-radius:11px;text-decoration:none;transition:opacity .15s,transform .12s;letter-spacing:-.01em}
+.roi-cta-btn:hover{opacity:.92;transform:translateY(-1px)}
+
+/* reset */
+.roi-reset{text-align:center;margin-top:16px}
+.roi-reset a{font-size:13.5px;color:var(--sub);text-decoration:none;cursor:pointer;border-bottom:1px dashed var(--line)}
+.roi-reset a:hover{color:var(--ink)}
+
+@media(max-width:540px){
+  .roi-bars{gap:6px}
+  .roi-bar-val{font-size:9px}
+  .roi-bar-lbl{font-size:10px}
+  .roi-chart-legend{gap:12px}
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+
+  <section class="blog-hero wrap">
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Are you <em>renting traffic</em><br>when you could own it?</h1>
+    <p class="blog-lede">Enter your Google Ads spend. See exactly when SEO investment breaks even — and how much you save every year after that.</p>
+  </section>
+
+  <div class="roi-outer">
+  <div class="roi-wrap">
+
+    <!-- INPUT CARD -->
+    <div class="roi-card" id="roi-form">
+      <div class="roi-card-title"><span>📊</span> Your numbers</div>
+      <div class="roi-fields">
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-adspend">Monthly Google Ads spend</label>
+          <p class="roi-hint">How much do you currently spend on Google Ads or other paid search per month?</p>
+          <div class="roi-input-wrap has-prefix">
+            <span class="roi-prefix">$</span>
+            <input class="roi-input" id="inp-adspend" type="number" min="0" placeholder="e.g. 1000" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-cpc">Cost per click (CPC)</label>
+          <p class="roi-hint">Your average cost per click. Check Google Ads → Keywords → Avg. CPC. Typical range: $1–$8 for local services.</p>
+          <div class="roi-input-wrap has-prefix">
+            <span class="roi-prefix">$</span>
+            <input class="roi-input" id="inp-cpc" type="number" min="0.01" step="0.01" placeholder="e.g. 3.50" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="roi-field">
+          <label class="roi-label" for="inp-seo">SEO investment</label>
+          <p class="roi-hint">A one-time or monthly SEO investment (e.g. website + SEO package). This is what you're comparing against. A typical Bisyri SEO package starts from $650.</p>
+          <div class="roi-input-wrap has-prefix">
+            <span class="roi-prefix">$</span>
+            <input class="roi-input" id="inp-seo" type="number" min="0" placeholder="e.g. 1500" inputmode="numeric">
+          </div>
+        </div>
+
+      </div>
+
+      <button class="roi-calc-btn" id="calc-btn" onclick="calculate()">Calculate my break-even →</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="roi-results" id="roi-results">
+
+      <!-- Headline result -->
+      <div class="roi-current" id="res-headline">
+        <div class="roi-current-label">Break-even point</div>
+        <div class="roi-current-value" id="res-breakeven-text">Month 0</div>
+        <div class="roi-current-sub" id="res-headline-sub">After that, every month of organic traffic costs you $0 in ad spend.</div>
+      </div>
+
+      <!-- Stat panels -->
+      <p class="roi-scenarios-title">The full picture</p>
+      <div class="roi-scenarios">
+
+        <!-- Current situation -->
+        <div class="roi-scenario" id="sc-current">
+          <div class="roi-scenario-bar" id="sc-current-bar"></div>
+          <div>
+            <div class="roi-scenario-label">Current situation</div>
+            <div class="roi-scenario-desc">Monthly clicks from ads, and what that costs you every year.</div>
+          </div>
+          <div class="roi-scenario-right">
+            <div class="roi-scenario-val" id="sc-clicks">0 clicks/mo</div>
+            <div class="roi-scenario-sub" id="sc-annual-ads">$0/year</div>
+          </div>
+        </div>
+
+        <!-- SEO alternative -->
+        <div class="roi-scenario highlight" id="sc-seo">
+          <div class="roi-scenario-bar" id="sc-seo-bar"></div>
+          <div>
+            <div class="roi-scenario-badge">SEO alternative</div>
+            <div class="roi-scenario-label">After break-even</div>
+            <div class="roi-scenario-desc">Organic visits matched. Annual saving once SEO has paid for itself.</div>
+          </div>
+          <div class="roi-scenario-right">
+            <div class="roi-scenario-val" id="sc-saving">$0/yr</div>
+            <div class="roi-scenario-uplift" id="sc-saving-label">in your pocket</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 24-month chart -->
+      <div class="roi-chart">
+        <div class="roi-chart-title">Cumulative cost: Ads vs. SEO over 24 months</div>
+        <div class="roi-chart-sub">Ads keep compounding. SEO is a one-time investment that pays for itself and then stops.</div>
+        <div class="roi-chart-legend">
+          <div class="roi-legend-item"><div class="roi-legend-dot ads"></div> Google Ads (cumulative)</div>
+          <div class="roi-legend-item"><div class="roi-legend-dot seo"></div> SEO investment (one-time)</div>
+        </div>
+        <div class="roi-bars" id="roi-bars">
+          <!-- Populated by JS -->
+        </div>
+        <div class="roi-crossover" id="roi-crossover"></div>
+      </div>
+
+      <!-- Insights -->
+      <div class="roi-insights" id="roi-insights"></div>
+
+      <!-- CTA -->
+      <div class="roi-cta">
+        <h2>Ready to stop renting traffic and start owning it?</h2>
+        <p>SEO is the only marketing channel where your investment keeps compounding after you stop paying. Let's talk about what that looks like for your business.</p>
+        <a class="roi-cta-btn" href="/#contact">Talk to Bisyri — it's free →</a>
+      </div>
+
+      <div class="roi-reset"><a onclick="reset()">← Recalculate with different numbers</a></div>
+
+    </div>
+
+  </div>
+  </div>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← Back to tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+
+  function fmt(n){
+    if(n>=1000000) return '$'+(n/1000000).toFixed(1)+'M';
+    if(n>=1000) return '$'+(n/1000).toFixed(n>=10000?0:1)+'k';
+    return '$'+Math.round(n).toLocaleString();
+  }
+  function fmtFull(n){
+    return '$'+Math.round(n).toLocaleString();
+  }
+  function fmtNum(n){
+    return Math.round(n).toLocaleString();
+  }
+
+  window.calculate = function(){
+    var adSpend = parseFloat(document.getElementById('inp-adspend').value)||0;
+    var cpc     = parseFloat(document.getElementById('inp-cpc').value)||0;
+    var seoInv  = parseFloat(document.getElementById('inp-seo').value)||0;
+
+    // Validation
+    var firstInvalid = !adSpend?'inp-adspend':(!cpc?'inp-cpc':(!seoInv?'inp-seo':null));
+    if(firstInvalid){
+      var el = document.getElementById(firstInvalid);
+      el.focus();
+      el.style.borderColor='#ef4444';
+      setTimeout(function(){el.style.borderColor='';},1500);
+      return;
+    }
+
+    // Core calculations
+    var monthlyClicks  = adSpend / cpc;
+    var annualAdCost   = adSpend * 12;
+    var breakEvenMonth = Math.ceil(seoInv / adSpend);
+    var annualSaving   = annualAdCost - seoInv; // saving in year 1 vs paying ads for that year
+
+    // Headline
+    var beText = breakEvenMonth <= 1
+      ? 'Month 1'
+      : 'Month ' + breakEvenMonth;
+    document.getElementById('res-breakeven-text').textContent = beText;
+    document.getElementById('res-headline-sub').textContent =
+      'After ' + beText.toLowerCase() + ', every month of organic traffic costs you $0 in ad spend.';
+
+    // Stat panels
+    document.getElementById('sc-clicks').textContent = fmtNum(Math.round(monthlyClicks)) + ' clicks/mo';
+    document.getElementById('sc-annual-ads').textContent = fmtFull(annualAdCost) + '/year on ads';
+
+    var yr1Saving = annualAdCost - seoInv;
+    if(yr1Saving > 0){
+      document.getElementById('sc-saving').textContent = fmtFull(yr1Saving) + '/yr';
+      document.getElementById('sc-saving-label').textContent = 'saved in year 1 alone';
+    } else {
+      // seoInv > annual ads — break even in year 2+
+      var yr2Saving = annualAdCost * 2 - seoInv;
+      document.getElementById('sc-saving').textContent = fmtFull(yr2Saving > 0 ? yr2Saving : annualAdCost) + '/yr';
+      document.getElementById('sc-saving-label').textContent = yr2Saving > 0 ? 'saved in year 2' : 'saved per year after break-even';
+    }
+
+    // Scenario bar bg animations
+    setTimeout(function(){
+      document.getElementById('sc-current-bar').style.transform = 'scaleX(0.55)';
+      document.getElementById('sc-seo-bar').style.transform     = 'scaleX(1)';
+    },300);
+
+    // Build chart — show milestones at months 6, 12, 18, 24
+    var milestones = [6, 12, 18, 24];
+    var adsCosts  = milestones.map(function(m){ return adSpend * m; });
+    var seoCosts  = milestones.map(function(){ return seoInv; }); // flat one-time
+    var maxCost   = Math.max.apply(null, adsCosts.concat(seoCosts));
+
+    var barsEl = document.getElementById('roi-bars');
+    barsEl.innerHTML = '';
+
+    milestones.forEach(function(m, i){
+      var adsVal  = adsCosts[i];
+      var seoVal  = seoCosts[i];
+      var adsPct  = Math.max((adsVal / maxCost) * 100, 3);
+      var seoPct  = Math.max((seoVal / maxCost) * 100, 3);
+      var isBreakeven = (breakEvenMonth >= m - 5 && breakEvenMonth <= m);
+
+      var group = document.createElement('div');
+      group.className = 'roi-bar-group';
+
+      var valEl = document.createElement('div');
+      valEl.className = 'roi-bar-val';
+      valEl.id = 'chart-v-' + i;
+      // Show SEO cost vs Ads cost at this milestone
+      valEl.innerHTML = '<span style="color:var(--sub);opacity:.7">' + fmt(adsVal) + '</span>';
+      group.appendChild(valEl);
+
+      var track = document.createElement('div');
+      track.className = 'roi-bar-track';
+
+      var adsBar = document.createElement('div');
+      adsBar.className = 'roi-bar-fill ads-bar';
+      adsBar.id = 'chart-ads-' + i;
+      adsBar.style.height = '0%';
+
+      var seoBar = document.createElement('div');
+      seoBar.className = 'roi-bar-fill seo-bar';
+      seoBar.id = 'chart-seo-' + i;
+      seoBar.style.height = '0%';
+
+      track.appendChild(adsBar);
+      track.appendChild(seoBar);
+      group.appendChild(track);
+
+      var lbl = document.createElement('div');
+      lbl.className = 'roi-bar-lbl' + (isBreakeven ? ' breakeven' : '');
+      lbl.textContent = 'Mo. ' + m + (isBreakeven ? ' ★' : '');
+      group.appendChild(lbl);
+
+      barsEl.appendChild(group);
+
+      // Animate after a short delay
+      setTimeout(function(ai, si, ap, sp){
+        return function(){
+          document.getElementById(ai).style.height = ap + '%';
+          document.getElementById(si).style.height = sp + '%';
+        };
+      }('chart-ads-'+i, 'chart-seo-'+i, adsPct, seoPct), 150 + i * 100);
+    });
+
+    // Crossover callout
+    var m24Saving = (adSpend * 24) - seoInv;
+    document.getElementById('roi-crossover').innerHTML =
+      '<strong>Break-even: Month ' + breakEvenMonth + '.</strong> ' +
+      'By month 24, your ad budget would have cost you ' + fmtFull(adSpend * 24) +
+      ' total. Your SEO investment: ' + fmtFull(seoInv) + '. ' +
+      'You would be <strong>' + fmtFull(m24Saving) + ' ahead</strong> on SEO.';
+
+    // Insights
+    var insights = [];
+
+    if(breakEvenMonth <= 6){
+      insights.push({
+        icon:'✅',
+        text:'<strong>Your SEO investment pays for itself in under 6 months.</strong> After that, every organic visitor is free. Ads never do that — you pay every time, forever.'
+      });
+    } else if(breakEvenMonth <= 12){
+      insights.push({
+        icon:'📈',
+        text:'<strong>Within a year, SEO has paid for itself.</strong> Ad spend at that level never does — you\'ll still be paying the same amount in month 12, 24, and 36. SEO is a one-time cost that becomes free.'
+      });
+    } else {
+      var m24ahead = (adSpend * 24) - seoInv;
+      insights.push({
+        icon:'📊',
+        text:'<strong>A longer break-even, but organic traffic compounds — your ad spend never does.</strong> By month 24 you\'ll be ahead by ' + fmtFull(m24ahead > 0 ? m24ahead : 0) + '. That gap keeps growing every month after.'
+      });
+    }
+
+    insights.push({
+      icon:'💡',
+      text:'<strong>Paid ads stop the moment you pause your budget.</strong> SEO compounds — rankings built today keep delivering traffic next year and the year after, at no additional cost per click.'
+    });
+
+    var annualClicksSaved = Math.round(monthlyClicks * 12);
+    insights.push({
+      icon:'🔢',
+      text:'At your current CPC of $' + cpc.toFixed(2).replace(/\.?0+$/,'') + ', you\'re paying for <strong>' + fmtNum(annualClicksSaved) + ' clicks per year</strong>. SEO targets the same searches — those clicks become free once you rank.'
+    });
+
+    var insightsEl = document.getElementById('roi-insights');
+    insightsEl.innerHTML = insights.map(function(ins){
+      return '<div class="roi-insight"><div class="roi-insight-icon">'+ins.icon+'</div><div class="roi-insight-text">'+ins.text+'</div></div>';
+    }).join('');
+
+    // Show results
+    document.getElementById('roi-results').classList.add('visible');
+    setTimeout(function(){
+      document.getElementById('roi-results').scrollIntoView({behavior:'smooth',block:'start'});
+    },100);
+  };
+
+  window.reset = function(){
+    document.getElementById('roi-results').classList.remove('visible');
+    document.getElementById('roi-results').scrollIntoView({behavior:'smooth',block:'start'});
+    setTimeout(function(){
+      document.getElementById('roi-form').scrollIntoView({behavior:'smooth',block:'center'});
+    },300);
+    document.getElementById('sc-current-bar').style.transform = 'scaleX(0)';
+    document.getElementById('sc-seo-bar').style.transform     = 'scaleX(0)';
+  };
+
+  // Enter key triggers calculate
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&(e.target.id==='inp-adspend'||e.target.id==='inp-cpc'||e.target.id==='inp-seo')){
+      calculate();
+    }
+  });
+
+})();
+</script>
+</body></html>

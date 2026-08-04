@@ -278,3 +278,8 @@ details.faq-item[open] .faq-icon{transform:rotate(45deg)}
 /* ===== WhatsApp button ===== */
 .btn.wa{background:#25D366;color:#fff;box-shadow:0 10px 24px -12px rgba(37,211,102,.45)}
 .btn.wa:hover{transform:translateY(-2px)}
+
+/* ===== btn-primary utility (works on <a> and <button>) ===== */
+.btn-primary{font-family:var(--mono);font-size:13.5px;text-decoration:none;padding:13px 22px;border-radius:999px;transition:transform .15s,background .15s,box-shadow .15s,opacity .15s;min-height:44px;display:inline-flex;align-items:center;justify-content:center;background:var(--indigo);color:#fff;box-shadow:0 10px 24px -12px rgba(79,70,229,.7);border:0;cursor:pointer;white-space:nowrap}
+.btn-primary:hover{transform:translateY(-2px);opacity:.9}
+.btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}

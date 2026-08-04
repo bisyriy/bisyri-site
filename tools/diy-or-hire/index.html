@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Should I DIY or Hire a Web Designer? | Free Tool | Bisyri</title>
+<meta name="description" content="5 questions. Find out whether you should build your own website or hire a professional — based on your budget, timeline, and business stage. Free, instant.">
+<meta name="author" content="Bisyri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bisyri.co/tools/diy-or-hire/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bisyri">
+<meta property="og:title" content="Should I DIY or Hire a Web Designer? | Free Tool">
+<meta property="og:description" content="5 questions. Find out whether you should build your own website or hire a professional — based on your budget, timeline, and business stage. Free, instant.">
+<meta property="og:url" content="https://bisyri.co/tools/diy-or-hire/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Should I DIY or Hire a Web Designer? | Free Tool">
+<meta name="twitter:description" content="5 questions. DIY or hire? Find out based on your budget, timeline, and business stage. Free, instant.">
+<link rel="icon" type="image/svg+xml" href="../../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Should I DIY or Hire a Web Designer?",
+  "description": "5 questions about your budget, timeline, and business stage. Find out whether to build your website yourself or hire a professional designer.",
+  "url": "https://bisyri.co/tools/diy-or-hire/",
+  "applicationCategory": "BusinessApplication",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "author": {"@type": "Person", "name": "Bisyri", "url": "https://bisyri.co"}
+}
+</script>
+<style>
+/* ── DIY or Hire tool ───────────────────────────────────────── */
+.quiz-outer{padding-bottom:80px}
+.quiz-wrap{max-width:640px;margin:0 auto;padding:0 28px}
+.quiz-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(26px,5vw,44px);animation:qfade .25s ease}
+@keyframes qfade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+
+/* intro */
+.quiz-intro-icon{font-size:36px;line-height:1;margin-bottom:16px}
+.quiz-intro h2{font-family:var(--display);font-weight:700;font-size:clamp(21px,3.5vw,28px);letter-spacing:-.025em;line-height:1.1;margin-bottom:12px}
+.quiz-intro>p{font-size:15.5px;color:var(--sub);line-height:1.65;margin-bottom:24px}
+.quiz-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.quiz-meta-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--sub);text-transform:uppercase;letter-spacing:.04em}
+.quiz-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo);flex-shrink:0}
+
+/* progress */
+.quiz-prog{margin-bottom:26px}
+.quiz-prog-bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.quiz-prog-fill{height:100%;background:var(--indigo);border-radius:4px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.quiz-prog-lbl{font-family:var(--mono);font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+
+/* question */
+.quiz-qnum{font-family:var(--mono);font-size:11.5px;color:var(--indigo);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:14px}
+.quiz-qtext{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.5vw,21px);letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
+.quiz-ctx{font-size:13.5px;color:var(--sub);line-height:1.6;padding:11px 15px 11px 14px;background:var(--indigo-soft);border-radius:10px;border-left:3px solid var(--indigo);margin-bottom:26px}
+.quiz-btns{display:flex;flex-direction:column;gap:10px}
+.quiz-btn{width:100%;padding:14px 18px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);font-family:var(--body);font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:border-color .15s,background .15s,transform .12s;display:flex;align-items:flex-start;gap:12px}
+.quiz-btn:hover{border-color:var(--indigo);background:var(--indigo-soft);transform:translateX(4px)}
+.quiz-btn:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.quiz-btn-letter{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--indigo);flex-shrink:0;width:22px;height:22px;border-radius:6px;background:var(--indigo-soft);display:flex;align-items:center;justify-content:center;margin-top:1px;line-height:1}
+
+/* results */
+.quiz-result-badge{display:inline-block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;padding:5px 14px;border-radius:999px;margin-bottom:16px}
+.quiz-result-badge.diy{color:#1A8F4C;background:#EDF7F1;border:1px solid #C0E8CE}
+.quiz-result-badge.depends{color:#92400E;background:#FFFBEB;border:1px solid #FCD34D}
+.quiz-result-badge.hire{color:#4338CA;background:#EEF2FF;border:1px solid #C7D2FE}
+.quiz-result-title{font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,26px);letter-spacing:-.025em;line-height:1.15;margin-bottom:14px}
+.quiz-result-body{font-size:15px;color:var(--sub);line-height:1.7;margin-bottom:16px}
+.quiz-result-caveat{font-size:13.5px;color:var(--sub);line-height:1.65;padding:12px 16px;background:var(--indigo-soft);border-radius:10px;border-left:3px solid var(--indigo);margin-bottom:20px}
+.quiz-result-stat{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:20px;line-height:1.6}
+.quiz-result-link{font-size:14px;color:var(--indigo);display:block;margin-bottom:20px;text-decoration:none;font-weight:500}
+.quiz-result-link:hover{text-decoration:underline}
+.quiz-divider{height:1px;background:var(--line);margin:22px 0}
+.quiz-cta p{font-size:14.5px;color:var(--sub);margin-bottom:16px;line-height:1.6}
+.quiz-restart{background:none;border:0;font-family:var(--mono);font-size:12px;color:var(--sub);cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:16px;display:block;margin-inline:auto;padding:4px}
+.quiz-restart:hover{color:var(--ink)}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/" class="active">Tools</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+  <section class="blog-hero wrap">
+    <a class="article-back" href="/tools/">← Back to tools</a>
+    <div class="eyebrow">Free Tool</div>
+    <h1 class="blog-headline">Should you <em>build it yourself</em><br>or hire someone?</h1>
+    <p class="blog-lede">5 questions. One clear answer — and the reason behind it.</p>
+  </section>
+
+  <div class="quiz-outer">
+    <div class="quiz-wrap">
+      <div id="quiz-root"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span><a href="/tools/" style="color:inherit;text-decoration:none">← Back to tools</a></span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../../script.js"></script>
+<script>
+(function(){
+'use strict';
+
+var TOTAL = 5;
+
+var QS = [
+  {
+    label: 'Budget',
+    q: "What's your honest budget for this website?",
+    hint: "Be honest — the right answer here saves you from a costly mistake later.",
+    opts: [
+      {letter:'A', text:'Under $500'},
+      {letter:'B', text:'$500–$2,000'},
+      {letter:'C', text:'$2,000+'}
+    ],
+    scores: [1, 2, 3]
+  },
+  {
+    label: 'Deadline',
+    q: "How urgent is the deadline?",
+    hint: "A tight deadline can actually favour DIY — hiring a designer and going through the full build process takes weeks, not days.",
+    opts: [
+      {letter:'A', text:'I need it live within 2 weeks'},
+      {letter:'B', text:'I have 1–3 months'},
+      {letter:'C', text:'No fixed deadline'}
+    ],
+    scores: [1, 2, 3]
+  },
+  {
+    label: 'Tech skills',
+    q: "What's your technical confidence?",
+    hint: "Be realistic. Most DIY platforms are drag-and-drop, but when things break you'll need to troubleshoot.",
+    opts: [
+      {letter:'A', text:'I can barely copy-paste code'},
+      {letter:'B', text:'I can follow tutorials'},
+      {letter:'C', text:"I'm comfortable with tech"}
+    ],
+    scores: [1, 2, 3]
+  },
+  {
+    label: 'Priority',
+    q: "What matters most to your business right now?",
+    hint: "This tells us whether you need something functional or something credible. There's a difference.",
+    opts: [
+      {letter:'A', text:'Getting something live fast'},
+      {letter:'B', text:'Looking credible to clients'},
+      {letter:'C', text:'Ranking on Google'}
+    ],
+    scores: [1, 3, 2]
+  },
+  {
+    label: 'Maintenance',
+    q: "What happens if your website breaks in 6 months?",
+    hint: "A site that goes down or breaks silently loses you clients. Your comfort with fixing it matters.",
+    opts: [
+      {letter:'A', text:"I'd panic — no idea how to fix it"},
+      {letter:'B', text:"I'd figure it out eventually"},
+      {letter:'C', text:'I could handle it'}
+    ],
+    scores: [1, 2, 3]
+  }
+];
+
+var RESULTS = {
+  diy: {
+    cls: 'diy',
+    badge: 'DIY for now',
+    title: 'Your situation calls for a DIY start.',
+    body: 'With a tight budget and no urgent credibility deadline, a DIY site on Squarespace or Webflow will get you moving without overspending. The risk: you’ll likely rebuild it properly when you’re ready to grow — but that’s a problem worth having.',
+    caveat: 'One warning: DIY templates almost never rank on Google out of the box. If organic traffic matters, you’ll want professional SEO help even if you design it yourself.',
+    stat: null,
+    link: null,
+    cta: 'Want a second opinion on your DIY approach?'
+  },
+  depends: {
+    cls: 'depends',
+    badge: 'It depends',
+    title: 'It depends on what you’re optimising for.',
+    body: 'You’re in the grey zone. DIY will cost you less money but more time — and time has a cost. A professional will cost more upfront but gets you something you can actually sell with. The question is: what does losing 3 months of credibility actually cost you in missed clients?',
+    caveat: null,
+    stat: null,
+    link: {href: '/tools/website-roi-calculator/', text: 'Calculate what a better website could generate →'},
+    cta: "Let’s talk through your specific situation."
+  },
+  hire: {
+    cls: 'hire',
+    badge: 'Hire a professional',
+    title: 'Your business is at the stage where professional matters.',
+    body: 'You have the budget, the timeline, and the stakes. A DIY site at this stage doesn’t just look amateur — it costs you clients who quietly go to a competitor whose site feels more trustworthy. This is the investment that pays for itself.',
+    caveat: null,
+    stat: 'Businesses that work with a professional web designer typically see a 2–5× improvement in conversion rate vs. their previous DIY site.',
+    link: null,
+    cta: 'Talk to Bisyri — it’s free.'
+  }
+};
+
+var state = {screen: 'intro', current: 0, answers: []};
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function getResult(score) {
+  if (score <= 8) return RESULTS.diy;
+  if (score <= 11) return RESULTS.depends;
+  return RESULTS.hire;
+}
+
+function render() {
+  var root = document.getElementById('quiz-root');
+  if (!root) return;
+  if (state.screen === 'intro') root.innerHTML = introHTML();
+  else if (state.screen === 'question') root.innerHTML = questionHTML();
+  else root.innerHTML = resultHTML();
+}
+
+function introHTML() {
+  return '<div class="quiz-card">' +
+    '<div class="quiz-intro">' +
+      '<div class="quiz-intro-icon">💻</div>' +
+      '<h2>DIY or hire a designer?</h2>' +
+      '<p>Answer 5 honest questions about your budget, deadline, and business stage. Get a clear recommendation — with the reasoning behind it. No email, no sign-up, completely free.</p>' +
+      '<div class="quiz-meta">' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>5 questions</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>~1 minute</span>' +
+        '<span class="quiz-meta-item"><span class="quiz-meta-dot"></span>Instant result</span>' +
+      '</div>' +
+      '<button class="btn" onclick="diyStart()" style="font-size:15px;padding:14px 28px">Find out →</button>' +
+    '</div>' +
+  '</div>';
+}
+
+function questionHTML() {
+  var i = state.current;
+  var q = QS[i];
+  var pct = Math.round((i / TOTAL) * 100);
+  var btns = q.opts.map(function(o, idx) {
+    return '<button class="quiz-btn" onclick="diyAnswer(' + idx + ')">' +
+      '<span class="quiz-btn-letter">' + esc(o.letter) + '</span>' +
+      esc(o.text) +
+    '</button>';
+  }).join('');
+  return '<div class="quiz-card">' +
+    '<div class="quiz-prog">' +
+      '<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:' + pct + '%"></div></div>' +
+      '<span class="quiz-prog-lbl">Question ' + (i + 1) + ' of ' + TOTAL + '</span>' +
+    '</div>' +
+    '<div class="quiz-qnum">' + esc(q.label) + ' \xb7 Question ' + (i + 1) + '</div>' +
+    '<div class="quiz-qtext">' + esc(q.q) + '</div>' +
+    '<div class="quiz-ctx">' + esc(q.hint) + '</div>' +
+    '<div class="quiz-btns">' + btns + '</div>' +
+  '</div>';
+}
+
+function resultHTML() {
+  var score = 0;
+  state.answers.forEach(function(idx, qi) {
+    score += QS[qi].scores[idx];
+  });
+  var r = getResult(score);
+
+  var inner = '<div class="quiz-result-badge ' + r.cls + '">' + esc(r.badge) + '</div>' +
+    '<div class="quiz-result-title">' + esc(r.title) + '</div>' +
+    '<div class="quiz-result-body">' + esc(r.body) + '</div>';
+
+  if (r.caveat) {
+    inner += '<div class="quiz-result-caveat">' + esc(r.caveat) + '</div>';
+  }
+  if (r.stat) {
+    inner += '<div class="quiz-result-stat">“' + esc(r.stat) + '”</div>';
+  }
+  if (r.link) {
+    inner += '<a class="quiz-result-link" href="' + esc(r.link.href) + '">' + esc(r.link.text) + '</a>';
+  }
+
+  inner += '<div class="quiz-divider"></div>' +
+    '<div class="quiz-cta">' +
+      '<p>' + esc(r.cta) + '</p>' +
+      '<a class="btn" href="/#contact" style="font-size:14px;padding:12px 22px">Talk to Bisyri — it’s free →</a>' +
+    '</div>' +
+    '<button class="quiz-restart" onclick="diyRestart()">↺ Start over</button>';
+
+  return '<div class="quiz-card">' + inner + '</div>';
+}
+
+window.diyStart = function() {
+  state.screen = 'question';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+window.diyAnswer = function(optIdx) {
+  state.answers[state.current] = optIdx;
+  if (state.current < TOTAL - 1) {
+    state.current++;
+    render();
+  } else {
+    state.screen = 'result';
+    render();
+  }
+};
+
+window.diyRestart = function() {
+  state.screen = 'intro';
+  state.current = 0;
+  state.answers = [];
+  render();
+};
+
+render();
+})();
+</script>
+</body></html>

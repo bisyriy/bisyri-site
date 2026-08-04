@@ -288,4 +288,9 @@
   <url><loc>https://bisyri.co/tools/diy-or-hire/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bisyri.co/tools/marketing-channel-picker/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bisyri.co/tools/website-priority-finder/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://bisyri.co/pricing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

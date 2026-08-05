@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /thank-you/
+Disallow: /onboarding/
 
 Sitemap: https://bisyri.co/sitemap.xml

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4F46E5">
+<title>Client Onboarding Form | Bisyri</title>
+<meta name="description" content="Tell me about your business so I can get started on your project.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://bisyri.co/onboarding/">
+<link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+<noscript><style>.reveal{opacity:1}</style></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="yEf+L3LovfDuyJDUvZTT9w" async></script>
+<style>
+.ob-hero{padding-top:72px;padding-bottom:8px;text-align:center}
+.ob-headline{font-family:var(--display);font-size:clamp(1.7rem,4.2vw,2.4rem);font-weight:700;line-height:1.15;margin:0 0 14px;color:var(--ink)}
+.ob-headline em{color:var(--indigo);font-style:normal}
+.ob-lede{font-size:1rem;color:var(--sub);max-width:520px;margin:0 auto;line-height:1.7}
+.ob-time{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.78rem;color:var(--sub);margin-top:16px;background:var(--indigo-soft);padding:6px 14px;border-radius:100px}
+
+.ob-sec{padding-top:44px;padding-bottom:80px}
+.ob-form{max-width:640px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:36px 32px}
+.ob-group{margin-bottom:22px}
+.ob-group label{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.ob-group .ob-hint{display:block;font-size:.78rem;font-weight:400;color:var(--sub);margin-top:2px}
+.ob-group input, .ob-group select, .ob-group textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;
+  font-family:var(--body);font-size:.92rem;color:var(--ink);background:var(--paper);
+}
+.ob-group textarea{resize:vertical;min-height:88px;line-height:1.5}
+.ob-group input:focus, .ob-group select:focus, .ob-group textarea:focus{outline:2px solid var(--indigo);outline-offset:1px;border-color:var(--indigo)}
+.ob-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.ob-row2{grid-template-columns:1fr}}
+.ob-required{color:var(--indigo)}
+.ob-divider{border:none;border-top:1px solid var(--line);margin:28px 0}
+.ob-section-label{font-family:var(--display);font-size:.78rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.06em;margin:0 0 18px}
+.ob-submit{width:100%;padding:15px 20px;border:none;border-radius:8px;background:var(--indigo);color:#fff;font-weight:600;font-size:1rem;cursor:pointer;transition:opacity .15s}
+.ob-submit:hover{opacity:.88}
+.ob-submit:disabled{opacity:.6;cursor:not-allowed}
+.ob-status{margin-top:14px;font-size:.88rem;text-align:center}
+.ob-status.err{color:#DC2626}
+.ob-status.ok{color:#16A34A}
+.ob-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ob-note{max-width:640px;margin:20px auto 0;text-align:center;font-size:.82rem;color:var(--sub);line-height:1.6}
+.ob-note a{color:var(--indigo)}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+  <a class="logo" href="/"><img class="b" src="../images/logo.svg" alt="" width="26" height="26"> Bisyri</a>
+  <nav aria-label="Primary"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/">Tools</a><a href="/pricing/">Pricing</a><a href="/#contact">Contact</a></nav>
+  <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+</div>
+  <nav class="mnav" id="menu" aria-label="Mobile menu"><a href="/#services">Services</a><a href="/work/">Work</a><a href="/#approach">Approach</a><a href="/blog/">Blog</a><a href="/tools/">Tools</a><a href="/pricing/">Pricing</a><a href="/#contact">Contact</a></nav>
+</header>
+
+<main id="main">
+
+  <section class="ob-hero wrap">
+    <div class="eyebrow" style="text-align:center">Client Onboarding</div>
+    <h1 class="ob-headline">Tell me about your <em>business.</em></h1>
+    <p class="ob-lede">The more you share here, the less back-and-forth we need later. Rough notes are completely fine — I'll turn them into polished copy.</p>
+    <div class="ob-time">⏱ Takes about 15 minutes</div>
+  </section>
+
+  <section class="ob-sec wrap">
+    <form class="ob-form reveal" id="onboarding-form" novalidate>
+
+      <p class="ob-section-label">Your details</p>
+      <div class="ob-row2">
+        <div class="ob-group">
+          <label for="name">Your name <span class="ob-required">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="ob-group">
+          <label for="email">Email <span class="ob-required">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="ob-group">
+        <label for="business">Business name <span class="ob-required">*</span></label>
+        <input type="text" id="business" name="business" required autocomplete="organization">
+      </div>
+      <div class="ob-group">
+        <label for="plan">Which package did you get?</label>
+        <select id="plan" name="plan">
+          <option value="">Select one</option>
+          <option value="Starter — 7-Day Website">Starter — 7-Day Website ($797)</option>
+          <option value="Growth — Website + Local SEO">Growth — Website + Local SEO ($1,297)</option>
+          <option value="Done For You — Monthly">Done For You — Monthly ($497/mo)</option>
+          <option value="Website Care">Website Care ($97/mo)</option>
+          <option value="Care + SEO Health">Care + SEO Health ($197/mo)</option>
+          <option value="Not sure / other">Not sure / other</option>
+        </select>
+      </div>
+
+      <hr class="ob-divider">
+      <p class="ob-section-label">Your business</p>
+
+      <div class="ob-group">
+        <label for="website">Current website (if you have one)</label>
+        <input type="url" id="website" name="website" placeholder="https://" autocomplete="url">
+      </div>
+      <div class="ob-group">
+        <label for="what">What does your business do? <span class="ob-required">*</span></label>
+        <textarea id="what" name="what" required placeholder="e.g. residential plumbing — repairs, installs, emergency callouts"></textarea>
+      </div>
+      <div class="ob-group">
+        <label for="customers">Who are your customers?
+          <span class="ob-hint">Location, type of job, what they're searching for when they find you</span>
+        </label>
+        <textarea id="customers" name="customers"></textarea>
+      </div>
+
+      <hr class="ob-divider">
+      <p class="ob-section-label">What you want</p>
+
+      <div class="ob-group">
+        <label for="goals">What's the goal?
+          <span class="ob-hint">More calls, more bookings, look more professional, fix a specific problem — be as specific as you can</span>
+        </label>
+        <textarea id="goals" name="goals"></textarea>
+      </div>
+      <div class="ob-group">
+        <label for="style">Style, colors, or sites you like
+          <span class="ob-hint">Paste links to sites you like (or hate) and any brand colors — even rough is useful</span>
+        </label>
+        <textarea id="style" name="style"></textarea>
+      </div>
+      <div class="ob-group">
+        <label for="notes">Anything else I should know?
+          <span class="ob-hint">Deadlines, existing hosting/domain details, logo & photos — you can also just email these to bisyriy@gmail.com after submitting</span>
+        </label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+
+      <!-- honeypot -->
+      <div class="ob-hp" aria-hidden="true">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="ob-submit" id="ob-submit-btn">Submit onboarding form →</button>
+      <div class="ob-status" id="ob-status" role="status" aria-live="polite"></div>
+    </form>
+
+    <p class="ob-note">Questions before you fill this out? Email <a href="mailto:bisyriy@gmail.com">bisyriy@gmail.com</a> any time.</p>
+  </section>
+
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span>Bisyri™</span>
+  <span>
+    <a href="/privacy/" style="color:inherit;text-decoration:none;margin-right:16px">Privacy</a>
+    <a href="/terms/" style="color:inherit;text-decoration:none;margin-right:16px">Terms</a>
+    <a href="/cookies/" style="color:inherit;text-decoration:none;margin-right:16px">Cookies</a>
+    <a href="/" style="color:inherit;text-decoration:none">← Back to portfolio</a>
+  </span>
+</div></footer>
+<button class="totop" type="button" aria-label="Back to top">↑</button>
+<script src="../script.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var planMap = {
+    starter: 'Starter — 7-Day Website',
+    growth: 'Growth — Website + Local SEO',
+    dfy: 'Done For You — Monthly',
+    care: 'Website Care',
+    'care-seo': 'Care + SEO Health'
+  };
+  var planParam = params.get('plan');
+  if (planParam && planMap[planParam]) {
+    var select = document.getElementById('plan');
+    select.value = planMap[planParam];
+  }
+
+  var form = document.getElementById('onboarding-form');
+  var statusEl = document.getElementById('ob-status');
+  var btn = document.getElementById('ob-submit-btn');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusEl.textContent = '';
+    statusEl.className = 'ob-status';
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var business = document.getElementById('business').value.trim();
+    var what = document.getElementById('what').value.trim();
+
+    if (!name || !email || !business || !what) {
+      statusEl.textContent = 'Please fill in your name, email, business name, and what your business does.';
+      statusEl.className = 'ob-status err';
+      return;
+    }
+
+    var payload = {
+      name: name,
+      email: email,
+      business: business,
+      plan: document.getElementById('plan').value,
+      website: document.getElementById('website').value.trim(),
+      what: what,
+      customers: document.getElementById('customers').value.trim(),
+      goals: document.getElementById('goals').value.trim(),
+      style: document.getElementById('style').value.trim(),
+      notes: document.getElementById('notes').value.trim(),
+      company: document.getElementById('company').value
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    fetch('/api/onboarding', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+    .then(function(result){
+      if (result.ok) {
+        form.style.display = 'none';
+        statusEl.textContent = "Got it — thanks! I'll be in touch within 1–2 business days to confirm your start date.";
+        statusEl.className = 'ob-status ok';
+        statusEl.style.fontSize = '1rem';
+      } else {
+        statusEl.textContent = result.data.error || 'Something went wrong. Please try again or email bisyriy@gmail.com.';
+        statusEl.className = 'ob-status err';
+        btn.disabled = false;
+        btn.textContent = 'Submit onboarding form →';
+      }
+    })
+    .catch(function(){
+      statusEl.textContent = 'Something went wrong. Please try again or email bisyriy@gmail.com.';
+      statusEl.className = 'ob-status err';
+      btn.disabled = false;
+      btn.textContent = 'Submit onboarding form →';
+    });
+  });
+})();
+</script>
+</body></html>
